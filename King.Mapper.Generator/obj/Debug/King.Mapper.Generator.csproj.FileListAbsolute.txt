@@ -1,1 +1,2 @@
 D:\Git\King.Mapper.Generator\King.Mapper.Generator\King.Mapper.Generator\bin\Debug\King.Mapper.Generator.exe.config
+D:\Git\King.Mapper.Generator\King.Mapper.Generator\bin\Debug\King.Mapper.Generator.exe.config
