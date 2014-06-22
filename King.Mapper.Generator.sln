@@ -5,6 +5,12 @@ VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "King.Mapper.Generator", "King.Mapper.Generator\King.Mapper.Generator.csproj", "{1D1DA9ED-7D16-47AE-A718-F989EF97EA47}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{BF933523-B789-4573-B378-129B8E3AF699}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "King.Mapper.Generator.Core", "King.Mapper.Generator.Core\King.Mapper.Generator.Core.csproj", "{1AE5BE5C-13AD-4E25-9ACD-0AFC587B6587}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "King.Mapper.Generator.Unit", "King.Mapper.Generator.Unit\King.Mapper.Generator.Unit.csproj", "{DBD15692-DF69-47CC-862C-71571E6F6670}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,8 +21,19 @@ Global
 		{1D1DA9ED-7D16-47AE-A718-F989EF97EA47}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D1DA9ED-7D16-47AE-A718-F989EF97EA47}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D1DA9ED-7D16-47AE-A718-F989EF97EA47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AE5BE5C-13AD-4E25-9ACD-0AFC587B6587}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AE5BE5C-13AD-4E25-9ACD-0AFC587B6587}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AE5BE5C-13AD-4E25-9ACD-0AFC587B6587}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AE5BE5C-13AD-4E25-9ACD-0AFC587B6587}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBD15692-DF69-47CC-862C-71571E6F6670}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBD15692-DF69-47CC-862C-71571E6F6670}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBD15692-DF69-47CC-862C-71571E6F6670}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBD15692-DF69-47CC-862C-71571E6F6670}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DBD15692-DF69-47CC-862C-71571E6F6670} = {BF933523-B789-4573-B378-129B8E3AF699}
 	EndGlobalSection
 EndGlobal
