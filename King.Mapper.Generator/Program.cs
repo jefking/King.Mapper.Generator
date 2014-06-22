@@ -12,6 +12,7 @@
         public static void Main(string[] args)
         {
             Trace.TraceInformation("King.Mapper.Generator Starting.");
+            Trace.TraceInformation("Source Code @: https://github.com/jefking/King.Mapper.Generator");
 
             if (args == null)
             {
