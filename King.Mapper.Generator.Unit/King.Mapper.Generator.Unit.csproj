@@ -38,6 +38,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="King.Mapper, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\King.Mapper.1.6.0\lib\net40\King.Mapper.dll</HintPath>
+    </Reference>
     <Reference Include="NSubstitute">
       <HintPath>..\packages\NSubstitute.1.7.2.0\lib\NET45\NSubstitute.dll</HintPath>
     </Reference>
@@ -58,6 +62,7 @@
   <ItemGroup>
     <Compile Include="CodeTests.cs" />
     <Compile Include="Models\DefinitionTests.cs" />
+    <Compile Include="Models\SchemaTests.cs" />
     <Compile Include="Models\VariableTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
