@@ -1,7 +1,9 @@
 ﻿namespace King.Mapper.Generator.Unit
 {
+    using King.Mapper.Generator.Models;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using System;
+    using System.Collections.Generic;
 
     [TestClass]
     public class CodeTests
@@ -9,21 +11,14 @@
         [TestMethod]
         public void Constructor()
         {
-            new Code(Guid.NewGuid().ToString(), Guid.NewGuid().ToString());
+            new Code(new List<Schema>());
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentException))]
-        public void ConstructorConnectionStringNull()
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void ConstructorSchemasNull()
         {
-            new Code(null, Guid.NewGuid().ToString());
-        }
-
-        [TestMethod]
-        [ExpectedException(typeof(ArgumentException))]
-        public void ConstructorFolderNull()
-        {
-            new Code(Guid.NewGuid().ToString(), null);
+            new Code(null);
         }
     }
 }

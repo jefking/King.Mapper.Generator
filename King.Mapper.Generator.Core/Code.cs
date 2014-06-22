@@ -1,6 +1,8 @@
 ﻿namespace King.Mapper.Generator
 {
+    using King.Mapper.Generator.Models;
     using System;
+    using System.Collections.Generic;
 
     /// <summary>
     /// Code Generator
@@ -11,12 +13,7 @@
         /// <summary>
         /// Connection String
         /// </summary>
-        private readonly string connectionString = null;
-
-        /// <summary>
-        /// Folder for code to be placed
-        /// </summary>
-        private readonly string folder = null;
+        private readonly IEnumerable<Schema> schemas = null;
         #endregion
 
         #region Constructors
@@ -25,19 +22,14 @@
         /// </summary>
         /// <param name="connectionString"></param>
         /// <param name="folder"></param>
-        public Code(string connectionString, string folder)
+        public Code(IEnumerable<Schema> schemas)
         {
-            if (string.IsNullOrWhiteSpace(connectionString))
+            if (null == schemas)
             {
-                throw new ArgumentException("connectionString");
-            }
-            if (string.IsNullOrWhiteSpace(folder))
-            {
-                throw new ArgumentException("folder");
+                throw new ArgumentNullException("schemas");
             }
 
-            this.connectionString = connectionString;
-            this.folder = folder;
+            this.schemas = schemas;
         }
         #endregion
 
