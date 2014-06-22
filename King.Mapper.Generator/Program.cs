@@ -1,5 +1,7 @@
 ﻿namespace King.Mapper.Generator
 {
+    using King.Mapper.Generator.Sql;
+    using System;
     using System.Diagnostics;
     using System.Linq;
 
@@ -26,9 +28,15 @@
             var connectionString = args[0];
             var folder = args[1].Replace(@"\\", @"\").Replace("\"", string.Empty);
 
-            var code = new Code(connectionString, folder);
-
-            Trace.WriteLine("No-Op");
+            try
+            {
+                var loader = new DataLoader(connectionString);
+                var schemas = loader.Load();
+            }
+            catch (Exception ex)
+            {
+                Trace.TraceError("Failure: '{0}'", ex.Message);
+            }
 
             Trace.TraceInformation("King.Mapper.Generator Completed.");
         }

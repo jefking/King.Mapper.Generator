@@ -25,6 +25,11 @@
         #endregion
 
         #region Constructors
+        public DataLoader(string connectionString)
+            :this(connectionString, new Loader<Schema>())
+        {
+        }
+
         public DataLoader(string connectionString, ILoader<Schema> loader)
         {
             if (string.IsNullOrWhiteSpace(connectionString))
@@ -36,6 +41,7 @@
                 throw new ArgumentNullException("loader");
             }
 
+            this.connectionString = connectionString;
             this.loader = loader;
         }
         #endregion

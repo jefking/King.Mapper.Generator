@@ -13,6 +13,12 @@
         [TestMethod]
         public void Constructor()
         {
+            new DataLoader(Guid.NewGuid().ToString());
+        }
+
+        [TestMethod]
+        public void ConstructorWithLoader()
+        {
             var loader = Substitute.For<ILoader<Schema>>();
             new DataLoader(Guid.NewGuid().ToString(), loader);
         }
