@@ -1,5 +1,8 @@
 ﻿namespace King.Mapper.Generator.Sql
 {
+    /// <summary>
+    /// SQL Statements
+    /// </summary>
     public struct Statement
     {
         #region Members

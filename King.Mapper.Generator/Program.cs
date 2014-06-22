@@ -20,6 +20,8 @@
             var connectionString = args[0];
             var folder = args[1].Replace(@"\\", @"\").Replace("\"", string.Empty);
 
+            var code = new Code(connectionString, folder);
+
             Trace.WriteLine("No-Op");
         }
         #endregion
