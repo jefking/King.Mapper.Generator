@@ -3,11 +3,16 @@
     using System.Diagnostics;
     using System.Linq;
 
+    /// <summary>
+    /// King.Mapper.Generator Program
+    /// </summary>
     public class Program
     {
         #region Methods
         public static void Main(string[] args)
         {
+            Trace.TraceInformation("King.Mapper.Generator Starting.");
+
             if (args == null)
             {
                 Trace.TraceError("No parameters specified, usage: \"Connection String\" Directory.");
@@ -23,6 +28,8 @@
             var code = new Code(connectionString, folder);
 
             Trace.WriteLine("No-Op");
+
+            Trace.TraceInformation("King.Mapper.Generator Completed.");
         }
         #endregion
     }
