@@ -1,17 +1,22 @@
 ﻿namespace King.Mapper.Generator
 {
-    using System;
-    using System.Collections.Generic;
     using System.Diagnostics;
     using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
 
     public class Program
     {
         #region Methods
         public static void Main(string[] args)
         {
+            if (args == null)
+            {
+                Trace.TraceError("No parameters specified, usage: \"Connection String\" Directory.");
+            }
+            if (2 > args.Length || args.Any(a => string.IsNullOrWhiteSpace(a)))
+            {
+                Trace.TraceError("Invalid parameters specified: '{0}'", args.Select(a => string.Format("'{0}'", a)));
+            }
+
             Trace.WriteLine("No-Op");
         }
         #endregion
