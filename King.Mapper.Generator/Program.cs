@@ -17,6 +17,9 @@
                 Trace.TraceError("Invalid parameters specified: '{0}'", args.Select(a => string.Format("'{0}'", a)));
             }
 
+            var connectionString = args[0];
+            var folder = args[1].Replace(@"\\", @"\").Replace("\"", string.Empty);
+
             Trace.WriteLine("No-Op");
         }
         #endregion
