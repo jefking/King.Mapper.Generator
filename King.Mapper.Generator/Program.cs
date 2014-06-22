@@ -9,9 +9,11 @@
 
     public class Program
     {
-        static void Main(string[] args)
+        #region Methods
+        public static void Main(string[] args)
         {
             Trace.WriteLine("No-Op");
         }
+        #endregion
     }
 }
