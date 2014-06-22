@@ -40,5 +40,8 @@
             this.folder = folder;
         }
         #endregion
+
+        #region Methods
+        #endregion
     }
 }
