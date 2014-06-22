@@ -1,8 +1,0 @@
-D:\Git\King.Mapper.Generator\King.Mapper.Generator\King.Mapper.Generator\bin\Debug\King.Mapper.Generator.exe.config
-D:\Git\King.Mapper.Generator\King.Mapper.Generator\bin\Debug\King.Mapper.Generator.exe.config
-D:\Git\King.Mapper.Generator\King.Mapper.Generator\bin\Debug\King.Mapper.Generator.exe
-D:\Git\King.Mapper.Generator\King.Mapper.Generator\bin\Debug\King.Mapper.Generator.pdb
-D:\Git\King.Mapper.Generator\King.Mapper.Generator\bin\Debug\King.Mapper.Generator.dll
-D:\Git\King.Mapper.Generator\King.Mapper.Generator\obj\Debug\King.Mapper.Generator.csprojResolveAssemblyReference.cache
-D:\Git\King.Mapper.Generator\King.Mapper.Generator\obj\Debug\King.Mapper.Generator.exe
-D:\Git\King.Mapper.Generator\King.Mapper.Generator\obj\Debug\King.Mapper.Generator.pdb
