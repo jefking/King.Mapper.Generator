@@ -31,7 +31,11 @@
             try
             {
                 var loader = new DataLoader(connectionString);
-                var schemas = loader.Load();
+                var task = loader.Load();
+                task.Wait();
+
+                var schemas = task.Result;
+                var code = new Code(schemas);
             }
             catch (Exception ex)
             {
