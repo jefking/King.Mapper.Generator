@@ -73,34 +73,25 @@ foreach (var proc in this.Manifest.Values)
             
             #line default
             #line hidden
-            this.Write(" : IStoredProcedure\r\n\t{\r\n\t\t#region Members\r\n        /// <summary>\r\n        /// St" +
-                    "ored Proc Name\r\n        /// </summary>\r\n\t\tprivate const string StoredProcName = " +
-                    "\"");
+            this.Write(" : IStoredProcedure\r\n\t{\r\n        /// <summary>\r\n        /// Gets Stored Proc name" +
+                    " with Schema\r\n        /// </summary>\r\n\t\tpublic string Name\r\n\t\t{\r\n\t\t\tget\r\n\t\t\t{\r\n\t" +
+                    "\t\t\treturn \"");
             
-            #line 32 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProcedures.tt"
+            #line 35 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProcedures.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(proc.Preface));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 32 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProcedures.tt"
+            #line 35 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProcedures.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(proc.Name));
             
             #line default
             #line hidden
-            this.Write("\";\r\n\t\t#endregion\r\n\r\n        /// <summary>\r\n        /// Gets Stored Proc name with" +
-                    " Schema\r\n        /// </summary>\r\n\t\tpublic string Name\r\n\t\t{\r\n\t\t\tget\r\n\t\t\t{\r\n\t\t\t\tre" +
-                    "turn ");
+            this.Write("\";\r\n\t\t\t}\r\n\t\t}\r\n\r\n");
             
-            #line 42 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProcedures.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(proc.Preface+proc.Name));
-            
-            #line default
-            #line hidden
-            this.Write(".StoredProcName;\r\n\t\t\t}\r\n\t\t}\r\n\r\n");
-            
-            #line 46 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProcedures.tt"
+            #line 39 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProcedures.tt"
 
 if (null != proc.Variables && 0 < proc.Variables.Count())
 {
@@ -110,7 +101,7 @@ if (null != proc.Variables && 0 < proc.Variables.Count())
             #line hidden
             this.Write("\t\t#region Parameters\r\n");
             
-            #line 51 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProcedures.tt"
+            #line 44 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProcedures.tt"
 
 foreach (var parameter in proc.Variables)
 {
@@ -123,53 +114,38 @@ foreach (var parameter in proc.Variables)
             
             #line default
             #line hidden
-            this.Write("        /// <summary>\r\n        /// Named Parameter Value\r\n        /// </summary>\r" +
-                    "\n\t\tpublic const string ");
+            this.Write("        /// <summary>\r\n        /// Gets or sets the parameter value\r\n        /// " +
+                    "</summary>\r\n\t\t[DataMapper(\"@");
             
-            #line 63 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProcedures.tt"
+            #line 56 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProcedures.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(paramName));
             
             #line default
             #line hidden
-            this.Write("Parameter = \"@");
+            this.Write("\", ");
             
-            #line 63 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProcedures.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(paramName));
-            
-            #line default
-            #line hidden
-            this.Write("\";\r\n\t\t\r\n        /// <summary>\r\n        /// Gets or sets the parameter value\r\n    " +
-                    "    /// </summary>\r\n\t\t[DataMapper(");
-            
-            #line 68 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProcedures.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(paramName));
-            
-            #line default
-            #line hidden
-            this.Write("Parameter, ");
-            
-            #line 68 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProcedures.tt"
+            #line 56 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProcedures.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(dataTypeDb));
             
             #line default
             #line hidden
             this.Write(")]\r\n\t\tpublic ");
             
-            #line 69 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProcedures.tt"
+            #line 57 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProcedures.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(dataTypeCSharp));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 69 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProcedures.tt"
+            #line 57 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProcedures.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(paramName));
             
             #line default
             #line hidden
             this.Write("\r\n\t\t{\r\n\t\t\tget;\r\n\t\t\tset;\r\n\t\t}\r\n\r\n");
             
-            #line 75 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProcedures.tt"
+            #line 63 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProcedures.tt"
 
 	}
 }
@@ -179,7 +155,7 @@ foreach (var parameter in proc.Variables)
             #line hidden
             this.Write("\t\t#endregion\r\n");
             
-            #line 80 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProcedures.tt"
+            #line 68 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProcedures.tt"
 
 }
 
@@ -188,7 +164,7 @@ foreach (var parameter in proc.Variables)
             #line hidden
             this.Write("\t}\r\n\r\n");
             
-            #line 85 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProcedures.tt"
+            #line 73 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProcedures.tt"
 
 }
 
