@@ -35,7 +35,7 @@ namespace King.Mapper.Generator.Templates
 //     the code is regenerated.
 // </auto-generated>
 // ------------------------------------------------------------------------------
-namespace King.Mapper.Data.Generated
+namespace King.Mapper.Generated.Sql
 {
     using System;
     using System.Collections.Generic;
