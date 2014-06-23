@@ -1,11 +1,16 @@
 King.Mapper.Generator
 ============
 
-COMING SOON
+COMING SOON - ALPHA RELEASED
 
+## NuGet
+[Add via NuGet](https://www.nuget.org/packages/King.Mapper.Generator)
+```
+PM> Install-Package King.Mapper.Generator
+```
 ## Contributing
 
-Contributions are always welcome. If you have find any issues, please report them to the [Github Issues Tracker](https://github.com/jefking/King.Azure.BackgroundWorker/issues?sort=created&direction=desc&state=open).
+Contributions are always welcome. If you have find any issues, please report them to the [Github Issues Tracker](https://github.com/jefking/King.Mapper.Generator/issues?sort=created&direction=desc&state=open).
 
 ## About the Author
 
