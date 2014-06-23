@@ -74,8 +74,8 @@ foreach (var proc in this.Manifest.Values)
             #line default
             #line hidden
             this.Write(" : IStoredProcedure\r\n\t{\r\n        /// <summary>\r\n        /// Gets Stored Proc name" +
-                    " with Schema\r\n        /// </summary>\r\n\t\tpublic string Data.Sql.IStoredProcedure." +
-                    "Name\r\n\t\t{\r\n\t\t\tget\r\n\t\t\t{\r\n\t\t\t\treturn \"");
+                    " with Schema\r\n        /// </summary>\r\n\t\tpublic string King.Mapper.Data.Sql.IStor" +
+                    "edProcedure.Name\r\n\t\t{\r\n\t\t\tget\r\n\t\t\t{\r\n\t\t\t\treturn \"");
             
             #line 35 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProcedures.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(proc.Preface));
