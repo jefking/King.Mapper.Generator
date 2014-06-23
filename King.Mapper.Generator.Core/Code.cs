@@ -1,13 +1,14 @@
 ﻿namespace King.Mapper.Generator
 {
     using King.Mapper.Generator.Models;
+    using King.Mapper.Generator.Templates;
     using System;
     using System.Collections.Generic;
 
     /// <summary>
     /// Code Generator
     /// </summary>
-    public class Code
+    public class Code : IRender
     {
         #region Members
         /// <summary>
@@ -34,6 +35,15 @@
         #endregion
 
         #region Methods
+        public string Render()
+        {
+            var procs = new StoredProcedures()
+            {
+                Manifest = this.manifest,
+            };
+
+            return procs.TransformText();
+        }
         #endregion
     }
 }
