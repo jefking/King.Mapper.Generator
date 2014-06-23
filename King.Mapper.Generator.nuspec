@@ -6,7 +6,7 @@
         <title>King.Mapper.Generator</title>
         <authors>Jef King</authors>
         <owners>Jef King</owners>
-        <licenseUrl>https://github.com/jefking/King.Mapper.Generator</licenseUrl>
+        <licenseUrl>https://github.com/jefking/King.Mapper.Generator/blob/master/LICENSE</licenseUrl>
         <projectUrl>https://github.com/jefking/King.Mapper.Generator</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>Data access layer generation for King.Mapper framework.</description>
