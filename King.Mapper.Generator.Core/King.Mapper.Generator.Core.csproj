@@ -45,6 +45,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Code.cs" />
+    <Compile Include="DataTypeMappings.cs" />
+    <Compile Include="FileWriter.cs" />
+    <Compile Include="Interfaces.cs" />
     <Compile Include="Models\Definition.cs" />
     <Compile Include="Models\DefinitionComparer.cs" />
     <Compile Include="Models\Schema.cs" />

@@ -1,5 +1,79 @@
 ﻿<#@ template language="C#" #>
-<#@ assembly name="System.Core" #>
 <#@ import namespace="System.Linq" #>
-<#@ import namespace="System.Text" #>
-<#@ import namespace="System.Collections.Generic" #>
+namespace King.Mapper.Data.Generated
+{
+    using System;
+    using System.Collections.Generic;
+    using System.Data;
+	using King.Mapper.Data;
+
+<#
+foreach (var proc in this.Manifest.Values)
+{
+#>
+    /// <summary>
+    /// Class that Represents <#=proc.Preface#>.<#=proc.Name#> Stored Procedure
+    /// </summary>
+	public partial class <#=proc.Preface+proc.Name#> : IStoredProc
+	{
+		#region Members
+        /// <summary>
+        /// Stored Proc Name
+        /// </summary>
+		private const string StoredProcName = "<#=proc.Preface#>.<#=proc.Name#>";
+		#endregion
+
+        /// <summary>
+        /// Gets Stored Proc name with Schema
+        /// </summary>
+		public string StoredProc
+		{
+			get
+			{
+				return <#=proc.Preface+proc.Name#>.StoredProcName;
+			}
+		}
+
+<#
+if (null != proc.Variables && 0 < proc.Variables.Count())
+{
+#>
+		#region Parameters
+<#
+foreach (var parameter in proc.Variables)
+{
+	var paramName = parameter.Name.Replace("@", string.Empty);
+	if (!string.IsNullOrWhiteSpace(paramName))
+	{
+		var dataTypeCSharp = DataTypeMappings.DataTypeCSharp(parameter.DataType);
+		var dataTypeDb = DataTypeMappings.DataTypeDbType(parameter.DataType);
+#>
+        /// <summary>
+        /// Named Parameter Value
+        /// </summary>
+		public const string <#=paramName#>Parameter = "@<#=paramName#>";
+		
+        /// <summary>
+        /// Gets or sets the parameter value
+        /// </summary>
+		[DataMapper(<#=paramName#>Parameter, <#=dataTypeDb#>)]
+		public <#=dataTypeCSharp#> <#=paramName#>
+		{
+			get;
+			set;
+		}
+
+<#
+	}
+}
+#>
+		#endregion
+<#
+}
+#>
+	}
+
+<#
+}
+#>
+}

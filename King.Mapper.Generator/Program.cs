@@ -2,6 +2,7 @@
 {
     using King.Mapper.Generator.Sql;
     using System;
+    using System.Collections.Generic;
     using System.Diagnostics;
     using System.Linq;
 
@@ -32,15 +33,25 @@
 
             try
             {
+                Trace.TraceInformation("Loading schema from data source.");
+
                 var loader = new DataLoader(connectionString);
                 var task = loader.Load();
                 task.Wait();
+
+                Trace.TraceInformation("Processing schema.");
 
                 var schemas = task.Result;
                 var definitions = loader.Definitions(schemas);
                 var manifest = loader.Manifest(definitions, schemas);
 
-                var code = new Code(manifest);
+                Trace.TraceInformation("Rendering files.");
+
+                var renderers = new List<IRender>();
+                renderers.Add(new Code(manifest));
+
+                var writer = new FileWriter(renderers, folder);
+                writer.WriteAll();
             }
             catch (Exception ex)
             {

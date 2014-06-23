@@ -34,7 +34,24 @@
         }
         #endregion
 
+        #region Properties
+        /// <summary>
+        /// File Name for output
+        /// </summary>
+        public string FileName
+        {
+            get
+            {
+                return "StoredProcedures.Generated.cs";
+            }
+        }
+        #endregion
+
         #region Methods
+        /// <summary>
+        /// Render
+        /// </summary>
+        /// <returns></returns>
         public string Render()
         {
             var procs = new StoredProcedures()
