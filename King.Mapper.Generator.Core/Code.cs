@@ -13,7 +13,7 @@
         /// <summary>
         /// Connection String
         /// </summary>
-        private readonly IEnumerable<Schema> schemas = null;
+        private readonly IDictionary<string, Definition> manifest = null;
         #endregion
 
         #region Constructors
@@ -22,14 +22,14 @@
         /// </summary>
         /// <param name="connectionString"></param>
         /// <param name="folder"></param>
-        public Code(IEnumerable<Schema> schemas)
+        public Code(IDictionary<string, Definition> manifest)
         {
-            if (null == schemas)
+            if (null == manifest)
             {
-                throw new ArgumentNullException("schemas");
+                throw new ArgumentNullException("manifest");
             }
 
-            this.schemas = schemas;
+            this.manifest = manifest;
         }
         #endregion
 

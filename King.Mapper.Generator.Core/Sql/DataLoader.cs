@@ -69,7 +69,7 @@
             return schemas;
         }
 
-        public IEnumerable<Definition> Distinct(IEnumerable<Schema> schemas)
+        public IEnumerable<Definition> Definitions(IEnumerable<Schema> schemas)
         {
             return (from s in schemas
                     select s.Map<Definition>()).Distinct();

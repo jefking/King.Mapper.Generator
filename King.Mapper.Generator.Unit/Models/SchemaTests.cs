@@ -50,7 +50,7 @@
         {
             var item = new Schema();
             var property = (from p in item.GetType().GetProperties()
-                            where p.Name == "Name"
+                            where p.Name == "Preface"
                             select p).FirstOrDefault();
 
             Assert.IsNotNull(property);
@@ -61,12 +61,12 @@
         }
 
         [TestMethod]
-        public void StoredProcedure()
+        public void Preface()
         {
             var item = new Schema();
             var data = Guid.NewGuid().ToString();
-            item.StoredProcedure = data;
-            Assert.AreEqual<string>(data, item.StoredProcedure);
+            item.Preface = data;
+            Assert.AreEqual<string>(data, item.Preface);
         }
 
         [TestMethod]

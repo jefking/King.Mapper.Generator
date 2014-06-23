@@ -37,7 +37,10 @@
                 task.Wait();
 
                 var schemas = task.Result;
-                var code = new Code(schemas);
+                var definitions = loader.Definitions(schemas);
+                var manifest = loader.Manifest(definitions, schemas);
+
+                var code = new Code(manifest);
             }
             catch (Exception ex)
             {

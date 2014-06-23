@@ -11,7 +11,7 @@
         [TestMethod]
         public void Constructor()
         {
-            new Code(new List<Schema>());
+            new Code(new Dictionary<string, Definition>());
         }
 
         [TestMethod]
