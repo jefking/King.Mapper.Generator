@@ -8,6 +8,10 @@ COMING SOON - ALPHA RELEASED
 ```
 PM> Install-Package King.Mapper.Generator
 ```
+## Usage
+```
+King.Mapper.Generator.Core.exe "SQL Server Connection String" C:\Code
+```
 ## Contributing
 
 Contributions are always welcome. If you have find any issues, please report them to the [Github Issues Tracker](https://github.com/jefking/King.Mapper.Generator/issues?sort=created&direction=desc&state=open).
