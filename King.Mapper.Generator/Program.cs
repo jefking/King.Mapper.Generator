@@ -19,10 +19,12 @@
             if (args == null)
             {
                 Trace.TraceError("No parameters specified, usage: \"Connection String\" Directory.");
+                return;
             }
             if (2 > args.Length || args.Any(a => string.IsNullOrWhiteSpace(a)))
             {
                 Trace.TraceError("Invalid parameters specified: '{0}'", args.Select(a => string.Format("'{0}'", a)));
+                return;
             }
 
             var connectionString = args[0];
