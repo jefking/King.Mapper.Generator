@@ -1,13 +1,13 @@
 ﻿namespace King.Mapper.Generator.Sql
 {
+    using King.Mapper;
     using King.Mapper.Data;
     using King.Mapper.Generator.Models;
     using System;
-    using System.Linq;
     using System.Collections.Generic;
     using System.Data.SqlClient;
+    using System.Linq;
     using System.Threading.Tasks;
-    using King.Mapper;
 
     /// <summary>
     /// Data Loader
@@ -53,7 +53,7 @@
         /// Load data from Database, and return the models.
         /// </summary>
         /// <returns>Schemas to process</returns>
-        public async Task<IEnumerable<Schema>> Load()
+        public async Task<IDictionary<string, Definition>> Load()
         {
             IEnumerable<Schema> schemas = null;
             using (var connection = new SqlConnection(connectionString))
@@ -66,17 +66,9 @@
                 }
             }
 
-            return schemas;
-        }
+            var definitions = (from s in schemas
+                               select s.Map<Definition>()).Distinct(new DefinitionComparer());
 
-        public IEnumerable<Definition> Definitions(IEnumerable<Schema> schemas)
-        {
-            return (from s in schemas
-                    select s.Map<Definition>()).Distinct(new DefinitionComparer());
-        }
-
-        public IDictionary<string, Definition> Manifest(IEnumerable<Definition> definitions, IEnumerable<Schema> schemas)
-        {
             var manifest = new Dictionary<string, Definition>();
             foreach (var d in definitions)
             {

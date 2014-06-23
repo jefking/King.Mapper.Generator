@@ -7,7 +7,7 @@
     public interface IDataLoader
     {
         #region Methods
-        Task<IEnumerable<Schema>> Load();
+        Task<IDictionary<string, Definition>> Load();
         #endregion
     }
 }

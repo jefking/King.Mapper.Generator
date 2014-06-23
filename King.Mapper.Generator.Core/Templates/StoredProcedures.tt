@@ -28,7 +28,7 @@ foreach (var proc in this.Manifest.Values)
         /// <summary>
         /// Gets Stored Proc name with Schema
         /// </summary>
-		public string Name
+		public string Data.Sql.IStoredProcedure.Name
 		{
 			get
 			{

@@ -41,9 +41,7 @@
 
                 Trace.TraceInformation("Processing schema.");
 
-                var schemas = task.Result;
-                var definitions = loader.Definitions(schemas);
-                var manifest = loader.Manifest(definitions, schemas);
+                var manifest = task.Result;
 
                 Trace.TraceInformation("Loading renderers.");
 
