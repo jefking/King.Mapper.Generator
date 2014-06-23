@@ -14,7 +14,8 @@ namespace King.Mapper.Generated.Sql
     using System;
     using System.Collections.Generic;
     using System.Data;
-	using King.Mapper.Data;
+    using King.Mapper.Data;
+    using King.Mapper.Data.Sql;
 
 <#
 foreach (var proc in this.Manifest.Values)
@@ -28,7 +29,7 @@ foreach (var proc in this.Manifest.Values)
         /// <summary>
         /// Gets Stored Proc name with Schema
         /// </summary>
-		public string King.Mapper.Data.Sql.IStoredProcedure.Name
+		string IStoredProcedure.Name
 		{
 			get
 			{
