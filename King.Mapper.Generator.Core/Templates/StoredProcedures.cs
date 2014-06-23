@@ -106,7 +106,7 @@ if (null != proc.Variables && 0 < proc.Variables.Count())
 
 foreach (var parameter in proc.Variables)
 {
-	var paramName = parameter.Name.Replace("@", string.Empty);
+	var paramName = parameter.ParameterName.Replace("@", string.Empty);
 	if (!string.IsNullOrWhiteSpace(paramName))
 	{
 		var dataTypeCSharp = DataTypeMappings.DataTypeCSharp(parameter.DataType);

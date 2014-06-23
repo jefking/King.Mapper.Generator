@@ -10,7 +10,7 @@
         }
 
         [ActionName("Parameter")]
-        public string Name
+        public string ParameterName
         {
             get;
             set;
