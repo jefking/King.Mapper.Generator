@@ -45,10 +45,12 @@
                 var definitions = loader.Definitions(schemas);
                 var manifest = loader.Manifest(definitions, schemas);
 
-                Trace.TraceInformation("Rendering files.");
+                Trace.TraceInformation("Loading renderers.");
 
                 var renderers = new List<IRender>();
                 renderers.Add(new Code(manifest));
+
+                Trace.TraceInformation("Writing files.");
 
                 var writer = new FileWriter(renderers, folder);
                 writer.WriteAll();

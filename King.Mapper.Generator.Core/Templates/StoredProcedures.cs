@@ -58,8 +58,9 @@ foreach (var proc in this.Manifest.Values)
             
             #line default
             #line hidden
-            this.Write(" : IStoredProc\r\n\t{\r\n\t\t#region Members\r\n        /// <summary>\r\n        /// Stored " +
-                    "Proc Name\r\n        /// </summary>\r\n\t\tprivate const string StoredProcName = \"");
+            this.Write(" : IStoredProcedure\r\n\t{\r\n\t\t#region Members\r\n        /// <summary>\r\n        /// St" +
+                    "ored Proc Name\r\n        /// </summary>\r\n\t\tprivate const string StoredProcName = " +
+                    "\"");
             
             #line 23 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProcedures.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(proc.Preface));
@@ -74,8 +75,8 @@ foreach (var proc in this.Manifest.Values)
             #line default
             #line hidden
             this.Write("\";\r\n\t\t#endregion\r\n\r\n        /// <summary>\r\n        /// Gets Stored Proc name with" +
-                    " Schema\r\n        /// </summary>\r\n\t\tpublic string StoredProc\r\n\t\t{\r\n\t\t\tget\r\n\t\t\t{\r\n" +
-                    "\t\t\t\treturn ");
+                    " Schema\r\n        /// </summary>\r\n\t\tpublic string Name\r\n\t\t{\r\n\t\t\tget\r\n\t\t\t{\r\n\t\t\t\tre" +
+                    "turn ");
             
             #line 33 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProcedures.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(proc.Preface+proc.Name));
