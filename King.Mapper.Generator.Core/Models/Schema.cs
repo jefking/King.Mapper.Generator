@@ -1,5 +1,8 @@
 ﻿namespace King.Mapper.Generator.Models
 {
+    using King.Mapper.Data;
+    using System;
+
     /// <summary>
     /// Schema
     /// </summary>
@@ -19,13 +22,20 @@
         }
 
         [ActionName("Schema")]
-        public string Name
+        /// <summary>
+        /// Preface
+        /// </summary>
+        public string Preface
         {
             get;
             set;
         }
 
-        public string StoredProcedure
+        [ActionName("StoredProcedure")]
+        /// <summary>
+        /// Name
+        /// </summary>
+        public string Name
         {
             get;
             set;

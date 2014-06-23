@@ -3,9 +3,11 @@
     using King.Mapper.Data;
     using King.Mapper.Generator.Models;
     using System;
+    using System.Linq;
     using System.Collections.Generic;
     using System.Data.SqlClient;
     using System.Threading.Tasks;
+    using King.Mapper;
 
     /// <summary>
     /// Data Loader
@@ -65,6 +67,30 @@
             }
 
             return schemas;
+        }
+
+        public IEnumerable<Definition> Distinct(IEnumerable<Schema> schemas)
+        {
+            return (from s in schemas
+                    select s.Map<Definition>()).Distinct();
+        }
+
+        public IDictionary<string, Definition> Manifest(IEnumerable<Definition> definitions, IEnumerable<Schema> schemas)
+        {
+            var manifest = new Dictionary<string, Definition>();
+            foreach (var d in definitions)
+            {
+                d.Variables = from s in schemas
+                              where s.Name == d.Name
+                                  && s.Preface == d.Preface
+                                  && !string.IsNullOrWhiteSpace(s.Parameter)
+                                  && !string.IsNullOrWhiteSpace(s.DataType)
+                              select s.Map<Variable>();
+
+                manifest.Add(string.Format("{0}{1}", d.Preface, d.Name), d);
+            }
+
+            return manifest;
         }
         #endregion
     }

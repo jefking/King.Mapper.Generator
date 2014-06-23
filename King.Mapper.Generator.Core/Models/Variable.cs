@@ -8,11 +8,14 @@
             get;
             set;
         }
+
+        [ActionName("Parameter")]
         public string Name
         {
             get;
             set;
         }
+
         public int MaxLength
         {
             get;
