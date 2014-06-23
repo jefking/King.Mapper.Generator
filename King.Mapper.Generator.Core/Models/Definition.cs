@@ -3,7 +3,7 @@
     using System;
     using System.Collections.Generic;
 
-    public class Definition : IComparable
+    public class Definition
     {
         #region Properties
         /// <summary>
@@ -31,19 +31,6 @@
         {
             get;
             set;
-        }
-        #endregion
-
-        #region Methods
-        /// <summary>
-        /// Compare To
-        /// </summary>
-        /// <param name="other">Other</param>
-        /// <returns>Comparison</returns>
-        public int CompareTo(object other)
-        {
-            var otherProcInfo = other as Definition;
-            return this.Preface.CompareTo(otherProcInfo.Preface) + this.Name.CompareTo(otherProcInfo.Name);
         }
         #endregion
     }

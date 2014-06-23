@@ -72,7 +72,7 @@
         public IEnumerable<Definition> Definitions(IEnumerable<Schema> schemas)
         {
             return (from s in schemas
-                    select s.Map<Definition>()).Distinct();
+                    select s.Map<Definition>()).Distinct(new DefinitionComparer());
         }
 
         public IDictionary<string, Definition> Manifest(IEnumerable<Definition> definitions, IEnumerable<Schema> schemas)

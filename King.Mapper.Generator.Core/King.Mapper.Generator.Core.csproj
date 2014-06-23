@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Code.cs" />
     <Compile Include="Models\Definition.cs" />
+    <Compile Include="Models\DefinitionComparer.cs" />
     <Compile Include="Models\Schema.cs" />
     <Compile Include="Models\Variable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
