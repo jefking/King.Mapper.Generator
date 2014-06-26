@@ -1,6 +1,5 @@
 ﻿namespace King.Mapper.Generator.Models
 {
-    using System;
     using System.Collections.Generic;
 
     public class Definition

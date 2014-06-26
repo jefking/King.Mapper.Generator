@@ -1,5 +1,6 @@
 ﻿namespace King.Mapper.Generator
 {
+    #region IRender
     public interface IRender
     {
         #region Properties
@@ -13,4 +14,5 @@
         string Render();
         #endregion
     }
+    #endregion
 }

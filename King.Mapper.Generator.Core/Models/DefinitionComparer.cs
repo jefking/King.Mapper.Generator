@@ -12,8 +12,7 @@
 
         public override int GetHashCode(Definition obj)
         {
-            var toHash = string.Format("{0}{1}", obj.Preface, obj.Name);
-            return toHash.GetHashCode();
+            return string.Format("{0}{1}", obj.Preface, obj.Name).GetHashCode();
         }
         #endregion
     }

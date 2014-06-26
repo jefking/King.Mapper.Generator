@@ -1,4 +1,5 @@
-﻿namespace King.Mapper.Generator
+﻿using System;
+namespace King.Mapper.Generator
 {
     /// <summary>
     /// Data Type Mappings
@@ -13,7 +14,12 @@
         /// <returns>Converted Data Type</returns>
         public static string DataTypeCSharp(string dataType)
         {
-            switch (dataType)
+            if (string.IsNullOrWhiteSpace(dataType))
+            {
+                throw new ArgumentException("dataType");
+            }
+
+            switch (dataType.ToLowerInvariant())
             {
                 case "varchar":
                 case "nvarchar":
@@ -60,7 +66,12 @@
         /// <returns>Converted Data Type</returns>
         public static string DataTypeDbType(string dataType)
         {
-            switch (dataType)
+            if (string.IsNullOrWhiteSpace(dataType))
+            {
+                throw new ArgumentException("dataType");
+            }
+
+            switch (dataType.ToLowerInvariant())
             {
                 case "varchar":
                 case "nvarchar":
@@ -109,30 +120,35 @@
         /// <returns>Converted Data Type</returns>
         public static string DataTypeCSharpShorten(string dataType)
         {
-            switch (dataType)
+            if (string.IsNullOrWhiteSpace(dataType))
             {
-                case "System.String":
+                throw new ArgumentException("dataType");
+            }
+
+            switch (dataType.ToLowerInvariant())
+            {
+                case "system.string":
                     return "string";
-                case "System.Double":
+                case "system.double":
                     return "double";
-                case "System.Int32":
+                case "system.int32":
                     return "int";
-                case "System.Int64":
+                case "system.int64":
                     return "long";
-                case "System.Byte":
+                case "system.byte":
                     return "byte";
-                case "System.Int16":
+                case "system.int16":
                     return "short";
-                case "System.Decimal":
+                case "system.decimal":
                     return "decimal";
-                case "System.Boolean":
+                case "system.boolean":
                     return "bool";
-                case "System.DateTime":
-                case "System.Nullable`1[System.DateTime]":
+                case "system.dateTime":
+                case "system.nullable`1[system.dateTime]":
                     return "DateTime";
-                case "System.Guid":
+                case "system.guid":
                     return "Guid";
-                case "System.Nullable`1[System.Guid]":
+                case "system.nullable`1[system.guid]":
                     return "Guid?";
                 default:
                     return "object";
