@@ -103,55 +103,6 @@
         }
 
         /// <summary>
-        /// Data Type Initialize
-        /// </summary>
-        /// <param name="dataType">Data Type</param>
-        /// <returns>Data Type Initialize String</returns>
-        public static string DataTypeInitialize(string dataType)
-        {
-            switch (dataType)
-            {
-                case "string":
-                case "System.String":
-                    return "StringHelper.ValidString()";
-                case "System.Int32":
-                case "int":
-                case "int?":
-                    return "new Random().Next()";
-                case "System.Int64":
-                case "long":
-                case "long?":
-                    return "(long)new Random().Next()";
-                case "System.Decimal":
-                case "decimal":
-                case "decimal?":
-                    return "(decimal)new Random().NextDouble()";
-                case "byte":
-                case "byte?":
-                    return "(byte)new Random().Next(byte.MinValue, byte.MaxValue)";
-                case "short":
-                case "short?":
-                    return "(short)new Random().Next(short.MinValue, short.MaxValue)";
-                case "DateTime":
-                case "DateTime?":
-                case "System.Nullable`1[System.DateTime]":
-                    return "DateTime.UtcNow";
-                case "bool":
-                case "bool?":
-                    return "true";
-                case "Guid":
-                case "Guid?":
-                case "System.Nullable`1[System.Guid]":
-                case "System.Guid":
-                    return "Guid.NewGuid()";
-                case "object":
-                    return "new object()";
-                default:
-                    return "null";
-            }
-        }
-
-        /// <summary>
         /// Data Type C# Shortened
         /// </summary>
         /// <param name="dataType">Data Type</param>
@@ -162,6 +113,8 @@
             {
                 case "System.String":
                     return "string";
+                case "System.Double":
+                    return "double";
                 case "System.Int32":
                     return "int";
                 case "System.Int64":
@@ -184,37 +137,6 @@
                 default:
                     return "object";
             }
-        }
-
-        /// <summary>
-        /// String Too Long
-        /// </summary>
-        /// <param name="size">Size</param>
-        /// <returns>Testing</returns>
-        public static string StringTooLong(int size)
-        {
-            if (-2 == size)
-            {
-                size = 1024;
-            }
-
-            return string.Format(@"var data = StringHelper.ValidString({1}, {0})", size + 1, size * 2);
-        }
-
-        /// <summary>
-        /// String Too Long
-        /// </summary>
-        /// <param name="size">Size</param>
-        /// <returns>Testing</returns>
-        public static string StringValid(int size)
-        {
-            if (size > 1024)
-            {
-                size = 1024;
-            }
-
-            return string.Format(@"var random = new Random();
-            var data = StringHelper.ValidString(random.Next({0}))", size);
         }
         #endregion
     }
