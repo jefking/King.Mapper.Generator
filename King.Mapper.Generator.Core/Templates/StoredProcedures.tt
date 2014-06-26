@@ -12,7 +12,6 @@
 namespace King.Mapper.Generated.Sql
 {
     using System;
-    using System.Collections.Generic;
     using System.Data;
     using King.Mapper.Data;
 
