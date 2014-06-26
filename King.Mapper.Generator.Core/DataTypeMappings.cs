@@ -65,7 +65,9 @@
                 case "varchar":
                 case "nvarchar":
                 case "ntext":
+                case "text":
                 case "string":
+                case "nchar":
                     return "DbType.String";
                 case "int":
                     return "DbType.Int32";
@@ -74,6 +76,7 @@
                 case "tinyint":
                     return "DbType.Byte";
                 case "smallint":
+                case "char":
                     return "DbType.Int16";
                 case "money":
                     return "DbType.Currency";
@@ -85,6 +88,15 @@
                     return "DbType.DateTime";
                 case "uniqueidentifier":
                     return "DbType.Guid";
+                case "float":
+                    return "DbType.Single";
+                case "image":
+                case "binary":
+                    return "DbType.Binary";
+                case "datetime2":
+                    return "DbType.DateTime2";
+                case "date":
+                    return "DbType.Date";
                 default:
                     return "DbType.Object";
             }

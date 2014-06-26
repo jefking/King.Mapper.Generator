@@ -122,8 +122,8 @@ namespace King.Mapper.Generated.Sql
         /// <summary>
         /// Gets or sets the parameter value
         /// </summary>
-		[DataMapper("@TestFloat", DbType.Object)]
-		public object TestFloat
+		[DataMapper("@TestFloat", DbType.Single)]
+		public float? TestFloat
 		{
 			get;
 			set;
@@ -132,8 +132,8 @@ namespace King.Mapper.Generated.Sql
         /// <summary>
         /// Gets or sets the parameter value
         /// </summary>
-		[DataMapper("@TestDate", DbType.Object)]
-		public object TestDate
+		[DataMapper("@TestDate", DbType.Date)]
+		public DateTime? TestDate
 		{
 			get;
 			set;
@@ -142,8 +142,8 @@ namespace King.Mapper.Generated.Sql
         /// <summary>
         /// Gets or sets the parameter value
         /// </summary>
-		[DataMapper("@TestDateTime2", DbType.Object)]
-		public object TestDateTime2
+		[DataMapper("@TestDateTime2", DbType.DateTime2)]
+		public DateTime? TestDateTime2
 		{
 			get;
 			set;
@@ -162,8 +162,8 @@ namespace King.Mapper.Generated.Sql
         /// <summary>
         /// Gets or sets the parameter value
         /// </summary>
-		[DataMapper("@TestChar", DbType.Object)]
-		public object TestChar
+		[DataMapper("@TestChar", DbType.Int16)]
+		public char TestChar
 		{
 			get;
 			set;
@@ -172,8 +172,8 @@ namespace King.Mapper.Generated.Sql
         /// <summary>
         /// Gets or sets the parameter value
         /// </summary>
-		[DataMapper("@TestText", DbType.Object)]
-		public object TestText
+		[DataMapper("@TestText", DbType.String)]
+		public string TestText
 		{
 			get;
 			set;
@@ -182,8 +182,8 @@ namespace King.Mapper.Generated.Sql
         /// <summary>
         /// Gets or sets the parameter value
         /// </summary>
-		[DataMapper("@TestNChar", DbType.Object)]
-		public object TestNChar
+		[DataMapper("@TestNChar", DbType.String)]
+		public char TestNChar
 		{
 			get;
 			set;
@@ -202,8 +202,8 @@ namespace King.Mapper.Generated.Sql
         /// <summary>
         /// Gets or sets the parameter value
         /// </summary>
-		[DataMapper("@TestBinary", DbType.Object)]
-		public object TestBinary
+		[DataMapper("@TestBinary", DbType.Binary)]
+		public byte[] TestBinary
 		{
 			get;
 			set;
@@ -212,8 +212,8 @@ namespace King.Mapper.Generated.Sql
         /// <summary>
         /// Gets or sets the parameter value
         /// </summary>
-		[DataMapper("@TestImage", DbType.Object)]
-		public object TestImage
+		[DataMapper("@TestImage", DbType.Binary)]
+		public byte[] TestImage
 		{
 			get;
 			set;
