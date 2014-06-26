@@ -38,9 +38,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="King.Mapper, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="King.Mapper, Version=1.3.0.2, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\King.Mapper.1.6.0\lib\net40\King.Mapper.dll</HintPath>
+      <HintPath>..\packages\King.Mapper.1.7.0\lib\net40\King.Mapper.dll</HintPath>
     </Reference>
     <Reference Include="NSubstitute">
       <HintPath>..\packages\NSubstitute.1.7.2.0\lib\NET45\NSubstitute.dll</HintPath>

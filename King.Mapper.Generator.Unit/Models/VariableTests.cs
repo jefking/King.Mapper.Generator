@@ -28,12 +28,12 @@
         }
 
         [TestMethod]
-        public void Name()
+        public void ParameterName()
         {
             var item = new Variable();
             var data = Guid.NewGuid().ToString();
-            item.Name = data;
-            Assert.AreEqual<string>(data, item.Name);
+            item.ParameterName = data;
+            Assert.AreEqual<string>(data, item.ParameterName);
         }
 
         [TestMethod]

@@ -15,12 +15,6 @@
         }
 
         [TestMethod]
-        public void IsIComparable()
-        {
-            Assert.IsNotNull(new Definition() as IComparable);
-        }
-
-        [TestMethod]
         public void Preface()
         {
             var item = new Definition();
@@ -45,22 +39,6 @@
             var data = new List<Variable>();
             item.Variables = data;
             Assert.AreEqual<IEnumerable<Variable>>(data, item.Variables);
-        }
-
-        [TestMethod]
-        public void CompareTo()
-        {
-            var item = new Definition()
-            {
-                Name = Guid.NewGuid().ToString(),
-                Preface = Guid.NewGuid().ToString(),
-            };
-            var compare = new Definition()
-            {
-                Name = Guid.NewGuid().ToString(),
-                Preface = Guid.NewGuid().ToString(),
-            };
-            Assert.AreEqual<int>(item.Preface.CompareTo(compare.Preface) + item.Name.CompareTo(compare.Name), item.CompareTo(compare));
         }
     }
 }
