@@ -18,6 +18,7 @@
                 case "varchar":
                 case "nvarchar":
                 case "ntext":
+                case "text":
                 case "string":
                     return "string";
                 case "int":
@@ -34,9 +35,19 @@
                 case "bit":
                     return "bool?";
                 case "datetime":
+                case "date":
+                case "datetime2":
                     return "DateTime?";
                 case "uniqueidentifier":
                     return "Guid?";
+                case "float":
+                    return "float?";
+                case "char":
+                case "nchar":
+                    return "char";
+                case "binary":
+                case "image":
+                    return "byte[]";
                 default:
                     return "object";
             }
