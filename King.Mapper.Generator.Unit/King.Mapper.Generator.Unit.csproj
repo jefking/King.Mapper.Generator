@@ -62,12 +62,19 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="CodeGeneratorTests.cs" />
     <Compile Include="CodeTests.cs" />
+    <Compile Include="DataTypeMappingsTests.cs" />
+    <Compile Include="FileWriterTests.cs" />
+    <Compile Include="Models\DefinitionComparerTests.cs" />
     <Compile Include="Models\DefinitionTests.cs" />
     <Compile Include="Models\SchemaTests.cs" />
     <Compile Include="Models\VariableTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RenderFactoryTests.cs" />
     <Compile Include="Sql\DataLoaderTests.cs" />
+    <Compile Include="Sql\StatementTests.cs" />
+    <Compile Include="Templates\StoredProceduresTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\King.Mapper.Generator.Core\King.Mapper.Generator.Core.csproj">
