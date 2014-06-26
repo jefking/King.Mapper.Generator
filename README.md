@@ -3,7 +3,6 @@ King.Mapper.Generator
 
 COMING SOON - BETA RELEASED
 + Output compiles
-+ Untested
 
 ## NuGet
 [Add via NuGet](https://www.nuget.org/packages/King.Mapper.Generator)
