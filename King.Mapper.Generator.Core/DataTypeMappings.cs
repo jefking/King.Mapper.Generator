@@ -1,6 +1,7 @@
-﻿using System;
-namespace King.Mapper.Generator
+﻿namespace King.Mapper.Generator
 {
+    using System;
+
     /// <summary>
     /// Data Type Mappings
     /// </summary>

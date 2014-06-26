@@ -19,13 +19,17 @@
     }
     #endregion
 
+    #region IFileWriter
     public interface IFileWriter
     {
         void WriteAll(IEnumerable<IRender> renderers);
     }
+    #endregion
 
+    #region IRenderFactory
     public interface IRenderFactory
     {
         IEnumerable<IRender> Load(IDictionary<string, Definition> manifest);
     }
+    #endregion
 }

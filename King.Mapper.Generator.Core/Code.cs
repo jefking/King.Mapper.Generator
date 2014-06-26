@@ -54,12 +54,12 @@
         /// <returns></returns>
         public string Render()
         {
-            var procs = new StoredProcedures()
+            var template = new StoredProcedures()
             {
                 Manifest = this.manifest,
             };
 
-            return procs.TransformText();
+            return template.TransformText();
         }
         #endregion
     }
