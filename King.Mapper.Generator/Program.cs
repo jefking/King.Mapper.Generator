@@ -2,7 +2,6 @@
 {
     using King.Mapper.Generator.Sql;
     using System;
-    using System.Collections.Generic;
     using System.Diagnostics;
     using System.Linq;
 
@@ -12,6 +11,11 @@
     public class Program
     {
         #region Methods
+        /// <summary>
+        /// Main Entry Point for the Application
+        /// </summary>
+        /// <param name="args">Arguments</param>
+        /// <returns>Exit Code</returns>
         public static int Main(string[] args)
         {
             Trace.TraceInformation("King.Mapper.Generator Starting.");
@@ -33,25 +37,9 @@
 
             try
             {
-                Trace.TraceInformation("Loading schema from data source.");
-
-                var loader = new DataLoader(connectionString);
-                var task = loader.Load();
+                var codeGenerator = new CodeGenerator(new DataLoader(connectionString), new RenderFactory(), new FileWriter(folder));
+                var task = codeGenerator.Generate();
                 task.Wait();
-
-                Trace.TraceInformation("Processing schema.");
-
-                var manifest = task.Result;
-
-                Trace.TraceInformation("Loading renderers.");
-
-                var renderers = new List<IRender>();
-                renderers.Add(new Code(manifest));
-
-                Trace.TraceInformation("Writing files.");
-
-                var writer = new FileWriter(renderers, folder);
-                writer.WriteAll();
             }
             catch (Exception ex)
             {

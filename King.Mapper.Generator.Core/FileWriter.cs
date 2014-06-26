@@ -8,14 +8,9 @@
     /// <summary>
     /// Writes Files to Disk
     /// </summary>
-    public class FileWriter
+    public class FileWriter : IFileWriter
     {
         #region Members
-        /// <summary>
-        /// Renderers
-        /// </summary>
-        private readonly IEnumerable<IRender> renderers = null;
-
         /// <summary>
         /// Folder
         /// </summary>
@@ -28,17 +23,13 @@
         /// </summary>
         /// <param name="renderers">Renderers</param>
         /// <param name="folder">Output Folder</param>
-        public FileWriter(IEnumerable<IRender> renderers, string folder)
+        public FileWriter(string folder)
         {
-            if (null == renderers)
-            {
-                throw new ArgumentNullException("renderers");
-            }
             if (string.IsNullOrWhiteSpace(folder))
             {
                 throw new ArgumentException("folder");
             }
-            this.renderers = renderers;
+
             this.folder = folder;
         }
         #endregion
@@ -47,9 +38,14 @@
         /// <summary>
         /// Write All Renderers
         /// </summary>
-        public void WriteAll()
+        public void WriteAll(IEnumerable<IRender> renderers)
         {
-            Parallel.ForEach(this.renderers, renderer =>
+            if (null == renderers)
+            {
+                throw new ArgumentNullException("renderers");
+            }
+
+            Parallel.ForEach(renderers, renderer =>
                 {
                     File.WriteAllText(string.Format("{0}{1}", folder, renderer.FileName), renderer.Render());
                 }
