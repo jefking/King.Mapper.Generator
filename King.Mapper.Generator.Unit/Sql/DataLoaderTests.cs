@@ -68,11 +68,9 @@
             {
                 Name = Guid.NewGuid().ToString(),
                 Preface = Guid.NewGuid().ToString(),
-                DataType = Guid.NewGuid().ToString(),
-                Parameter = Guid.NewGuid().ToString(),
             };
-
-            defs.Add(schema.Map<Definition>());
+            var def = schema.Map<Definition>(); 
+            defs.Add(def);
 
             var schemaCount = random.Next(15);
             for (var i = 0; i < schemaCount; i++)
@@ -84,6 +82,7 @@
                     DataType = Guid.NewGuid().ToString(),
                     Parameter = Guid.NewGuid().ToString(),
                 };
+                schemas.Add(s);
             }
             var count = random.Next(15);
             for (var i = 0; i < count; i++)
@@ -100,7 +99,9 @@
             var dl = new DataLoader(Guid.NewGuid().ToString(), loader);
             var manifest = dl.BuildManifest(defs, schemas);
             Assert.IsNotNull(manifest);
-            Assert.AreEqual<int>(schemaCount, manifest.Count);
+            Assert.AreEqual<int>(count + 1, manifest.Count);
+            var c = new DefinitionComparer();
+            Assert.AreEqual<int>(schemaCount, manifest[c.GetHashCode(def)].Variables.Count());
         }
 
         [TestMethod]
@@ -109,7 +110,8 @@
             var loader = Substitute.For<ILoader<Schema>>();
             var dl = new DataLoader(Guid.NewGuid().ToString(), loader);
             var returned = dl.BuildManifest(new List<Definition>(), new List<Schema>());
-            Assert.AreEqual<int>(1, returned.Count());
+            Assert.IsNotNull(returned);
+            Assert.AreEqual<int>(0, returned.Count());
         }
 
         [TestMethod]
