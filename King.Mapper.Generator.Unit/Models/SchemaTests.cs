@@ -1,13 +1,10 @@
 ﻿namespace King.Mapper.Generator.Unit.Models
 {
+    using King.Mapper;
     using King.Mapper.Generator.Models;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using System;
-    using System.Collections.Generic;
     using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using King.Mapper;
 
     [TestClass]
     public class SchemaTests
@@ -47,6 +44,21 @@
 
         [TestMethod]
         public void NameAction()
+        {
+            var item = new Schema();
+            var property = (from p in item.GetType().GetProperties()
+                            where p.Name == "Name"
+                            select p).FirstOrDefault();
+
+            Assert.IsNotNull(property);
+            var action = property.GetAttribute<ActionNameAttribute>();
+            Assert.IsNotNull(action);
+            Assert.AreEqual<string>("StoredProcedure", action.Name);
+            Assert.AreEqual<ActionFlags>(ActionFlags.Load, action.Action);
+        }
+
+        [TestMethod]
+        public void PrefaceAction()
         {
             var item = new Schema();
             var property = (from p in item.GetType().GetProperties()
