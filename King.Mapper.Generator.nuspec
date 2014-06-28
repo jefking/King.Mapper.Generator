@@ -20,7 +20,7 @@
         </dependencies>
     </metadata>
     <files>
-        <file src="King.Mapper.Generator\bin\Release\King.Mapper.Generator.Core.exe" target="tools\King.Mapper.Generator.Core.exe" />
+        <file src="King.Mapper.Generator\bin\Release\King.Mapper.Generator.Core.exe" target="tools\King.Mapper.Generator.exe" />
         <file src="King.Mapper.Generator\bin\Release\King.Mapper.Generator.dll" target="tools\King.Mapper.Generator.dll" />
     </files>
 </package>
