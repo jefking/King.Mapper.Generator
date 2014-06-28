@@ -5,6 +5,13 @@ King.Mapper.Generator
 ```
 King.Mapper.Generator.Core.exe "SQL Server Connection String" C:\Code
 ```
+##Output
+```
+StoredProcedures.Generated.cs
+```
+##Add Nuget to Solution
+[King.Mapper](https://www.nuget.org/packages/King.Mapper)
+
 ## NuGet
 [Add via NuGet](https://www.nuget.org/packages/King.Mapper.Generator)
 ```
