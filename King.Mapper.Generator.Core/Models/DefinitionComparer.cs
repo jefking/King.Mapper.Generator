@@ -1,17 +1,43 @@
 ﻿namespace King.Mapper.Generator.Models
 {
+    using System;
     using System.Collections.Generic;
 
     public class DefinitionComparer : EqualityComparer<Definition>
     {
         #region Methods
+        /// <summary>
+        /// Equals
+        /// </summary>
+        /// <param name="x">Definition</param>
+        /// <param name="y">Definition</param>
+        /// <returns>Are Equal</returns>
         public override bool Equals(Definition x, Definition y)
         {
-            return x.Preface.CompareTo(y.Preface) + x.Name.CompareTo(y.Name) == 0;
+            if (null == x)
+            {
+                throw new ArgumentNullException("x");
+            }
+            if (null == y)
+            {
+                throw new ArgumentNullException("y");
+            }
+
+            return this.GetHashCode(x) == this.GetHashCode(y);
         }
 
+        /// <summary>
+        /// Get Hash Code
+        /// </summary>
+        /// <param name="obj">Definition</param>
+        /// <returns>Hash Code</returns>
         public override int GetHashCode(Definition obj)
         {
+            if (null == obj)
+            {
+                throw new ArgumentNullException("obj");
+            }
+
             return string.Format("{0}{1}", obj.Preface, obj.Name).GetHashCode();
         }
         #endregion
