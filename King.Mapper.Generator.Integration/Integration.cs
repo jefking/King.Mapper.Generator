@@ -1,13 +1,13 @@
 ﻿namespace King.Mapper.Generator.Integration
 {
-    using System;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using System.Configuration;
-    using System.Threading.Tasks;
-    using System.Data.SqlClient;
-    using King.Mapper.Integration.Model;
-    using King.Mapper.Generated.Sql;
     using King.Mapper.Data;
+    using King.Mapper.Generated.Sql;
+    using King.Mapper.Integration.Model;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using System;
+    using System.Configuration;
+    using System.Data.SqlClient;
+    using System.Threading.Tasks;
 
     [TestClass]
     public class Integration

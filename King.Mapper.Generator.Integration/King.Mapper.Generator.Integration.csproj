@@ -68,6 +68,7 @@
     <Compile Include="Integration.cs" />
     <Compile Include="Model\SelectData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sql\DataLoaderTests.cs" />
     <Compile Include="StoredProcedures.Generated.cs" />
   </ItemGroup>
   <ItemGroup>
