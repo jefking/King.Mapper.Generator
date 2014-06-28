@@ -144,9 +144,10 @@
                     return "decimal";
                 case "system.boolean":
                     return "bool";
-                case "system.dateTime":
-                case "system.nullable`1[system.dateTime]":
+                case "system.datetime":
                     return "DateTime";
+                case "system.nullable`1[system.datetime]":
+                    return "DateTime?";
                 case "system.guid":
                     return "Guid";
                 case "system.nullable`1[system.guid]":
