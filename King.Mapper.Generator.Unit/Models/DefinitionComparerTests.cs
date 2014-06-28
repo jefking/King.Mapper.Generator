@@ -92,7 +92,7 @@
         }
 
         [TestMethod]
-        public void GetHashCode()
+        public void GetHashCodeTest()
         {
             var x = new Definition()
             {
