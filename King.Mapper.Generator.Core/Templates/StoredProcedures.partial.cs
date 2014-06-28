@@ -12,7 +12,7 @@
         /// <summary>
         /// Gets or sets Manifest
         /// </summary>
-        public IDictionary<string, Definition> Manifest
+        public IDictionary<int, Definition> Manifest
         {
             get;
             set;

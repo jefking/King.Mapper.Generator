@@ -7,7 +7,7 @@
     public class RenderFactory : IRenderFactory
     {
         #region Methods
-        public IEnumerable<IRender> Load(IDictionary<string, Definition> manifest)
+        public IEnumerable<IRender> Load(IDictionary<int, Definition> manifest)
         {
             if (null == manifest)
             {

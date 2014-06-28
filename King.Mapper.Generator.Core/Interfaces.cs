@@ -20,6 +20,9 @@
     #endregion
 
     #region IFileWriter
+    /// <summary>
+    /// File Writer
+    /// </summary>
     public interface IFileWriter
     {
         void WriteAll(IEnumerable<IRender> renderers);
@@ -27,9 +30,12 @@
     #endregion
 
     #region IRenderFactory
+    /// <summary>
+    /// Render Factory
+    /// </summary>
     public interface IRenderFactory
     {
-        IEnumerable<IRender> Load(IDictionary<string, Definition> manifest);
+        IEnumerable<IRender> Load(IDictionary<int, Definition> manifest);
     }
     #endregion
 }

@@ -14,7 +14,7 @@
         /// <summary>
         /// Connection String
         /// </summary>
-        private readonly IDictionary<string, Definition> manifest = null;
+        private readonly IDictionary<int, Definition> manifest = null;
         #endregion
 
         #region Constructors
@@ -23,7 +23,7 @@
         /// </summary>
         /// <param name="connectionString"></param>
         /// <param name="folder"></param>
-        public Code(IDictionary<string, Definition> manifest)
+        public Code(IDictionary<int, Definition> manifest)
         {
             if (null == manifest)
             {

@@ -3,6 +3,9 @@
     using System;
     using System.Collections.Generic;
 
+    /// <summary>
+    /// Definition Comparer
+    /// </summary>
     public class DefinitionComparer : EqualityComparer<Definition>
     {
         #region Methods

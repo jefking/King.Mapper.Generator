@@ -53,7 +53,7 @@
         /// Load data from Database, and return the models.
         /// </summary>
         /// <returns>Schemas to process</returns>
-        public async Task<IDictionary<string, Definition>> Load()
+        public async Task<IDictionary<int, Definition>> Load()
         {
             var schemas = await this.Schemas();
 
@@ -89,6 +89,11 @@
         /// <returns></returns>
         public IEnumerable<Definition> Minimize(IEnumerable<Schema> schemas)
         {
+            if (null == schemas)
+            {
+                throw new ArgumentNullException("schemas");
+            }
+
             var compare = new DefinitionComparer();
             return (from s in schemas
                     select s.Map<Definition>()).Distinct(compare);
@@ -100,9 +105,18 @@
         /// <param name="definitions">Definitions</param>
         /// <param name="schemas">Schemas</param>
         /// <returns></returns>
-        public IDictionary<string, Definition> BuildManifest(IEnumerable<Definition> definitions, IEnumerable<Schema> schemas)
+        public IDictionary<int, Definition> BuildManifest(IEnumerable<Definition> definitions, IEnumerable<Schema> schemas)
         {
-            var manifest = new Dictionary<string, Definition>();
+            if (null == definitions)
+            {
+                throw new ArgumentNullException("definitions");
+            }
+            if (null == schemas)
+            {
+                throw new ArgumentNullException("schemas");
+            }
+            var manifest = new Dictionary<int, Definition>();
+            var comparer = new DefinitionComparer();
             foreach (var d in definitions)
             {
                 d.Variables = from s in schemas
@@ -112,7 +126,7 @@
                                   && !string.IsNullOrWhiteSpace(s.DataType)
                               select s.Map<Variable>();
 
-                manifest.Add(string.Format("{0}{1}", d.Preface, d.Name), d);
+                manifest.Add(comparer.GetHashCode(d), d);
             }
 
             return manifest;

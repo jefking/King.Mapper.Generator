@@ -8,7 +8,7 @@
     public interface IDataLoader
     {
         #region Methods
-        Task<IDictionary<string, Definition>> Load();
+        Task<IDictionary<int, Definition>> Load();
         #endregion
     }
     #endregion
