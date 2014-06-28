@@ -58,7 +58,7 @@
             IEnumerable<Schema> schemas = null;
             using (var connection = new SqlConnection(connectionString))
             {
-                using (var execute = new SqlCommand(Statement.sqlStatement, connection))
+                using (var execute = new SqlCommand(Statement.SelectSchema, connection))
                 {
                     await connection.OpenAsync();
 

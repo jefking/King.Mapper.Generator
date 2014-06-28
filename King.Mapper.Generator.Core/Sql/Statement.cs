@@ -9,7 +9,7 @@
         /// <summary>
         /// SQL Statement
         /// </summary>
-        public const string sqlStatement = @"SELECT parm.name AS [Parameter]
+        public const string SelectSchema = @"SELECT parm.name AS [Parameter]
                                                 , typ.name AS [DataType]
                                                 , SPECIFIC_SCHEMA AS [Schema]
                                                 , SPECIFIC_NAME AS [StoredProcedure]
