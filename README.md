@@ -3,7 +3,9 @@ King.Mapper.Generator
 
 ## Usage
 ```
-King.Mapper.Generator.Core.exe "SQL Server Connection String" C:\Code
+King.Mapper.Generator.Core.exe "[SQL Server Connection String]" [Folder]
+**Example:**
+King.Mapper.Generator.Core.exe "Server=localhost;Database=MapperGenerator;Trusted_Connection=True;" C:\Code
 ```
 ##Output
 ```
