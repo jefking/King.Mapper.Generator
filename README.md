@@ -1,8 +1,9 @@
 King.Mapper.Generator
 ============
 
-COMING SOON - BETA RELEASED
-+ Output compiles
+Production Ready
+- Test coverage
+- Documentation coming soon!
 
 ## NuGet
 [Add via NuGet](https://www.nuget.org/packages/King.Mapper.Generator)
