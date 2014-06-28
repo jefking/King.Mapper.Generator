@@ -55,6 +55,19 @@
         /// <returns>Schemas to process</returns>
         public async Task<IDictionary<string, Definition>> Load()
         {
+            var schemas = await this.Schemas();
+
+            var definitions = this.Minimize(schemas);
+
+            return this.BuildManifest(definitions, schemas);
+        }
+
+        /// <summary>
+        /// Load Schemas from data source
+        /// </summary>
+        /// <returns></returns>
+        public async Task<IEnumerable<Schema>> Schemas()
+        {
             IEnumerable<Schema> schemas = null;
             using (var connection = new SqlConnection(connectionString))
             {
@@ -66,9 +79,29 @@
                 }
             }
 
-            var definitions = (from s in schemas
-                               select s.Map<Definition>()).Distinct(new DefinitionComparer());
+            return schemas;
+        }
 
+        /// <summary>
+        /// Minimize Schemas, product definintions
+        /// </summary>
+        /// <param name="schemas"></param>
+        /// <returns></returns>
+        public IEnumerable<Definition> Minimize(IEnumerable<Schema> schemas)
+        {
+            var compare = new DefinitionComparer();
+            return (from s in schemas
+                    select s.Map<Definition>()).Distinct(compare);
+        }
+
+        /// <summary>
+        /// Build Manifest, from definitions and schemas
+        /// </summary>
+        /// <param name="definitions">Definitions</param>
+        /// <param name="schemas">Schemas</param>
+        /// <returns></returns>
+        public IDictionary<string, Definition> BuildManifest(IEnumerable<Definition> definitions, IEnumerable<Schema> schemas)
+        {
             var manifest = new Dictionary<string, Definition>();
             foreach (var d in definitions)
             {
