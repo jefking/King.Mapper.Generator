@@ -19,7 +19,7 @@
         public void Load()
         {
             var factory = new RenderFactory();
-            var renderers = factory.Load(new Dictionary<string, Definition>());
+            var renderers = factory.Load(new Dictionary<int, Definition>());
 
             Assert.IsNotNull(renderers);
             Assert.AreEqual<int>(1, renderers.Count());

@@ -11,7 +11,7 @@
         [TestMethod]
         public void Constructor()
         {
-            new Code(new Dictionary<string, Definition>());
+            new Code(new Dictionary<int, Definition>());
         }
 
         [TestMethod]
@@ -24,14 +24,14 @@
         [TestMethod]
         public void FileName()
         {
-            var c = new Code(new Dictionary<string, Definition>());
+            var c = new Code(new Dictionary<int, Definition>());
             Assert.AreEqual<string>("StoredProcedures.Generated.cs", c.FileName);
         }
 
         [TestMethod]
         public void Render()
         {
-            var c = new Code(new Dictionary<string, Definition>());
+            var c = new Code(new Dictionary<int, Definition>());
             var output = c.Render();
 
             Assert.IsFalse(string.IsNullOrWhiteSpace(output));

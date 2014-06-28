@@ -56,7 +56,7 @@
         [TestMethod]
         public async Task Generate()
         {
-            IDictionary<string, Definition> manifest = new Dictionary<string, Definition>();
+            var manifest = new Dictionary<int, Definition>();
             var loader = Substitute.For<IDataLoader>();
             loader.Load().Returns(Task.FromResult(manifest));
 

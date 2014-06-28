@@ -17,13 +17,13 @@
         [TestMethod]
         public void Manifest()
         {
-            var expected = new Dictionary<string, Definition>();
+            var expected = new Dictionary<int, Definition>();
             var sp = new StoredProcedures()
             {
                 Manifest = expected,
             };
 
-            Assert.AreEqual<IDictionary<string, Definition>>(expected, sp.Manifest);
+            Assert.AreEqual<IDictionary<int, Definition>>(expected, sp.Manifest);
         }
 
         [TestMethod]
@@ -31,7 +31,7 @@
         {
             var sp = new StoredProcedures()
             {
-                Manifest = new Dictionary<string, Definition>(),
+                Manifest = new Dictionary<int, Definition>(),
             };
 
             Assert.IsFalse(string.IsNullOrWhiteSpace(sp.TransformText()));

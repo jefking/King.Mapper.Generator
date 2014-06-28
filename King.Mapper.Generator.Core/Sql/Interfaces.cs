@@ -5,6 +5,9 @@
     using System.Threading.Tasks;
 
     #region IDataLoader
+    /// <summary>
+    /// Data Loader
+    /// </summary>
     public interface IDataLoader
     {
         #region Methods
