@@ -1,18 +1,14 @@
 King.Mapper.Generator
 ============
 
-Production Ready
-- Test coverage
-- Documentation coming soon!
-
+## Usage
+```
+King.Mapper.Generator.Core.exe "SQL Server Connection String" C:\Code
+```
 ## NuGet
 [Add via NuGet](https://www.nuget.org/packages/King.Mapper.Generator)
 ```
 PM> Install-Package King.Mapper.Generator
-```
-## Usage
-```
-King.Mapper.Generator.Core.exe "SQL Server Connection String" C:\Code
 ```
 ## Contributing
 
