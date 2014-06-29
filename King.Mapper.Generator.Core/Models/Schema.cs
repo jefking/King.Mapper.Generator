@@ -9,38 +9,47 @@
     public class Schema
     {
         #region Properties
+        /// <summary>
+        /// Parameter
+        /// </summary>
         public string Parameter
         {
             get;
             set;
         }
 
+        /// <summary>
+        /// Data Type
+        /// </summary>
         public string DataType
         {
             get;
             set;
         }
 
-        [ActionName("Schema")]
         /// <summary>
         /// Preface
         /// </summary>
+        [ActionName("Schema")]
         public string Preface
         {
             get;
             set;
         }
 
-        [ActionName("StoredProcedure")]
         /// <summary>
         /// Name
         /// </summary>
+        [ActionName("StoredProcedure")]
         public string Name
         {
             get;
             set;
         }
 
+        /// <summary>
+        /// Maximum Length
+        /// </summary>
         public string MaxLength
         {
             get;

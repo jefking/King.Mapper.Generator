@@ -11,6 +11,10 @@
     public interface IDataLoader
     {
         #region Methods
+        /// <summary>
+        /// Load
+        /// </summary>
+        /// <returns>Manifest</returns>
         Task<IDictionary<int, Definition>> Load();
         #endregion
     }

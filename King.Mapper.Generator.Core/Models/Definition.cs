@@ -2,6 +2,9 @@
 {
     using System.Collections.Generic;
 
+    /// <summary>
+    /// Definition
+    /// </summary>
     public class Definition
     {
         #region Properties

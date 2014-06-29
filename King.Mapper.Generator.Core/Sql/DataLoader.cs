@@ -27,11 +27,20 @@
         #endregion
 
         #region Constructors
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="connectionString">Connection String</param>
         public DataLoader(string connectionString)
             :this(connectionString, new Loader<Schema>())
         {
         }
 
+        /// <summary>
+        /// Mockable Constructor
+        /// </summary>
+        /// <param name="connectionString">Connection String</param>
+        /// <param name="loader">Loader</param>
         public DataLoader(string connectionString, ILoader<Schema> loader)
         {
             if (string.IsNullOrWhiteSpace(connectionString))
