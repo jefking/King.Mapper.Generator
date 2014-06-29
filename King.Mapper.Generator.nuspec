@@ -15,9 +15,6 @@
         <copyright>Jef King</copyright>
         <language>en-US</language>
         <tags>Code Generation King.Mapper DAL Data Access Layer Stored Procedure SQL Server Azure Database Data DBO SPROC ORM Relational</tags>
-        <dependencies>
-            <dependency id="King.Mapper" version="1.7.1" />
-        </dependencies>
     </metadata>
     <files>
         <file src="King.Mapper.Generator\bin\Release\King.Mapper.Generator.exe" target="tools\King.Mapper.Generator.exe" />
