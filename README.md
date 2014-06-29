@@ -1,6 +1,8 @@
 King.Mapper.Generator
 ============
 
+Generate a data access layer for your SQL Server database for use with the [King.Mapper](https://github.com/jefking/King.Mapper) framework.
+
 ## Usage
 ```
 King.Mapper.Generator.exe "[SQL Server Connection String]" [Folder]

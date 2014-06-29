@@ -9,7 +9,7 @@
     <licenseUrl>https://github.com/jefking/King.Mapper.Generator/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/jefking/King.Mapper.Generator</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Generate your data access layer for the King.Mapper framework.</description>
+    <description>Generate a data access layer for your SQL Server database for use with the King.Mapper framework.</description>
     <summary>Why write your own DAL when you can get it for free? SQL Server C# generation from Stored Procedure definitions.</summary>
     <releaseNotes>Production Release</releaseNotes>
     <copyright>Jef King</copyright>
