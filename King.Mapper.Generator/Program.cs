@@ -24,11 +24,13 @@
             if (args == null)
             {
                 Trace.TraceError("No parameters specified, usage: \"Connection String\" Directory.");
+
                 return -1;
             }
             if (2 > args.Length || args.Any(a => string.IsNullOrWhiteSpace(a)))
             {
                 Trace.TraceError("Invalid parameters specified: '{0}'", args.Select(a => string.Format("'{0}'", a)));
+
                 return -1;
             }
 
@@ -44,6 +46,7 @@
             catch (Exception ex)
             {
                 Trace.TraceError("Failure: '{0}'", ex.Message);
+
                 return -1;
             }
 
