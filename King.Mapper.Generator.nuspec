@@ -1,23 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
-    <metadata>
-        <id>King.Mapper.Generator</id>
-        <version>1.1.0</version>
-        <title>King.Mapper.Generator</title>
-        <authors>Jef King</authors>
-        <owners>Jef King</owners>
-        <licenseUrl>https://github.com/jefking/King.Mapper.Generator/blob/master/LICENSE</licenseUrl>
-        <projectUrl>https://github.com/jefking/King.Mapper.Generator</projectUrl>
-        <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <description>Generate your data access layer for the King.Mapper framework.</description>
-        <summary>Why write your own DAL when you can get it for free? SQL Server C# generation from Stored Procedure definitions.</summary>
-        <releaseNotes>Production Release</releaseNotes>
-        <copyright>Jef King</copyright>
-        <language>en-US</language>
-        <tags>Code Generation King.Mapper DAL Data Access Layer Stored Procedure SQL Server Azure Database Data DBO SPROC ORM Relational</tags>
-    </metadata>
-    <files>
-        <file src="King.Mapper.Generator\bin\Release\King.Mapper.Generator.exe" target="tools\King.Mapper.Generator.exe" />
-        <file src="King.Mapper.Generator\bin\Release\King.Mapper.Generator.Core.dll" target="tools\King.Mapper.Generator.Core.dll" />
-    </files>
+  <metadata>
+    <id>King.Mapper.Generator</id>
+    <version>1.1.0</version>
+    <title>King.Mapper.Generator</title>
+    <authors>Jef King</authors>
+    <owners>Jef King</owners>
+    <licenseUrl>https://github.com/jefking/King.Mapper.Generator/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/jefking/King.Mapper.Generator</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Generate your data access layer for the King.Mapper framework.</description>
+    <summary>Why write your own DAL when you can get it for free? SQL Server C# generation from Stored Procedure definitions.</summary>
+    <releaseNotes>Production Release</releaseNotes>
+    <copyright>Jef King</copyright>
+    <language>en-US</language>
+    <tags>Code Generation King.Mapper DAL Data Access Layer Stored Procedure SQL Server Azure Database Data DBO SPROC ORM Relational</tags>
+  </metadata>
+  <files>
+    <file src="King.Mapper.Generator\bin\Release\King.Mapper.Generator.exe" target="tools\King.Mapper.Generator.exe" />
+    <file src="King.Mapper.Generator\bin\Release\King.Mapper.Generator.Core.dll" target="tools\King.Mapper.Generator.Core.dll" />
+  </files>
 </package>
