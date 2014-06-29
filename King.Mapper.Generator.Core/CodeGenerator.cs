@@ -21,6 +21,9 @@
         /// </summary>
         private readonly IFileWriter writer = null;
 
+        /// <summary>
+        /// Render Factory
+        /// </summary>
         private readonly IRenderFactory renderFactory = null;
         #endregion
 
