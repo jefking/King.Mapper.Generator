@@ -4,9 +4,17 @@
     using System;
     using System.Collections.Generic;
 
+    /// <summary>
+    /// Render Factory
+    /// </summary>
     public class RenderFactory : IRenderFactory
     {
         #region Methods
+        /// <summary>
+        /// Load Renderers
+        /// </summary>
+        /// <param name="manifest">Manifest</param>
+        /// <returns>Renderers</returns>
         public IEnumerable<IRender> Load(IDictionary<int, Definition> manifest)
         {
             if (null == manifest)

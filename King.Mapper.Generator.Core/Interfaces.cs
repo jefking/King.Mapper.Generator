@@ -4,9 +4,15 @@
     using System.Collections.Generic;
 
     #region IRender
+    /// <summary>
+    /// Render
+    /// </summary>
     public interface IRender
     {
         #region Properties
+        /// <summary>
+        /// File Name
+        /// </summary>
         string FileName
         {
             get;
@@ -14,6 +20,10 @@
         #endregion
 
         #region Methods
+        /// <summary>
+        /// Render
+        /// </summary>
+        /// <returns>Output</returns>
         string Render();
         #endregion
     }
@@ -25,7 +35,13 @@
     /// </summary>
     public interface IFileWriter
     {
+        #region Methods
+        /// <summary>
+        /// Write All
+        /// </summary>
+        /// <param name="renderers">Renderers</param>
         void WriteAll(IEnumerable<IRender> renderers);
+        #endregion
     }
     #endregion
 
@@ -35,7 +51,14 @@
     /// </summary>
     public interface IRenderFactory
     {
+        #region Methods
+        /// <summary>
+        /// Load Renderers with Manifest
+        /// </summary>
+        /// <param name="manifest">Manifest</param>
+        /// <returns>Renderers</returns>
         IEnumerable<IRender> Load(IDictionary<int, Definition> manifest);
+        #endregion
     }
     #endregion
 }
