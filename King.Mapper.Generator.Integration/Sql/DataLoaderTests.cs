@@ -33,7 +33,7 @@
             var def = schema.Map<Definition>();
             defs.Add(def);
 
-            var schemaCount = random.Next(15);
+            var schemaCount = random.Next(15) + 1;
             for (var i = 0; i < schemaCount; i++)
             {
                 var s = new Schema()

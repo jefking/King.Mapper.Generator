@@ -7,13 +7,13 @@
     /// <summary>
     /// Stored Procedures Render
     /// </summary>
-    public class StoredProceduresTestsRender : Renderer
+    public class StoredProceduresUnitTestsRender : Renderer
     {
         #region Constructors
         /// <summary>
         /// Default Constructor
         /// </summary>
-        public StoredProceduresTestsRender(IDictionary<int, Definition> manifest)
+        public StoredProceduresUnitTestsRender(IDictionary<int, Definition> manifest)
             : base(new StoredProceduresUnitTests(), manifest, "StoredProcedures.Unit.Test.Generated.cs")
         {
         }

@@ -6,32 +6,32 @@
     using System.Collections.Generic;
 
     [TestClass]
-    public class CodeTests
+    public class StoredProceduresUnitTestsRenderTests
     {
         [TestMethod]
         public void Constructor()
         {
-            new StoredProceduresRender(new Dictionary<int, Definition>());
+            new StoredProceduresUnitTestsRender(new Dictionary<int, Definition>());
         }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
         public void ConstructorSchemasNull()
         {
-            new StoredProceduresRender(null);
+            new StoredProceduresUnitTestsRender(null);
         }
 
         [TestMethod]
         public void FileName()
         {
-            var c = new StoredProceduresRender(new Dictionary<int, Definition>());
-            Assert.AreEqual<string>("StoredProcedures.Generated.cs", c.FileName);
+            var c = new StoredProceduresUnitTestsRender(new Dictionary<int, Definition>());
+            Assert.AreEqual<string>("StoredProcedures.Unit.Test.Generated.cs", c.FileName);
         }
 
         [TestMethod]
         public void Render()
         {
-            var c = new StoredProceduresRender(new Dictionary<int, Definition>());
+            var c = new StoredProceduresUnitTestsRender(new Dictionary<int, Definition>());
             var output = c.Render();
 
             Assert.IsFalse(string.IsNullOrWhiteSpace(output));

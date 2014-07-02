@@ -6,25 +6,25 @@
     using System.Collections.Generic;
 
     [TestClass]
-    public class StoredProceduresTests
+    public class StoredProceduresUnitTestsTests
     {
         [TestMethod]
         public void Constructor()
         {
-            new StoredProcedures();
+            new StoredProceduresUnitTests();
         }
 
         [TestMethod]
         public void IsIManifestTemplate()
         {
-            Assert.IsNotNull(new StoredProcedures() as IManifestTemplate);
+            Assert.IsNotNull(new StoredProceduresUnitTests() as IManifestTemplate);
         }
 
         [TestMethod]
         public void Manifest()
         {
             var expected = new Dictionary<int, Definition>();
-            var sp = new StoredProcedures()
+            var sp = new StoredProceduresUnitTests()
             {
                 Manifest = expected,
             };
@@ -35,7 +35,7 @@
         [TestMethod]
         public void TransformText()
         {
-            var sp = new StoredProcedures()
+            var sp = new StoredProceduresUnitTests()
             {
                 Manifest = new Dictionary<int, Definition>(),
             };
