@@ -14,7 +14,7 @@
         /// Default Constructor
         /// </summary>
         public StoredProceduresTestsRender(IDictionary<int, Definition> manifest)
-            : base(new StoredProceduresTests(), manifest, "StoredProcedures.Unit.Test.Generated.cs")
+            : base(new StoredProceduresUnitTests(), manifest, "StoredProcedures.Unit.Test.Generated.cs")
         {
         }
         #endregion

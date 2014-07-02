@@ -43,7 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Renderer.cs" />
-    <Compile Include="StoredProceduresTestsRender .cs" />
+    <Compile Include="StoredProceduresUnitTestsRender .cs" />
     <Compile Include="StoredProceduresRender.cs" />
     <Compile Include="DataTypeMappings.cs" />
     <Compile Include="Templates\ExtensionMethods.cs" />
@@ -68,13 +68,13 @@
     <Compile Include="Templates\StoredProcedures.partial.cs">
       <DependentUpon>StoredProcedures.tt</DependentUpon>
     </Compile>
-    <Compile Include="Templates\StoredProceduresTests.partial.cs">
-      <DependentUpon>StoredProceduresTests.tt</DependentUpon>
+    <Compile Include="Templates\StoredProceduresUnitTests.partial.cs">
+      <DependentUpon>StoredProceduresUnitTests.tt</DependentUpon>
     </Compile>
-    <Compile Include="Templates\StoredProceduresTests.cs">
+    <Compile Include="Templates\StoredProceduresUnitTests.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>StoredProceduresTests.tt</DependentUpon>
+      <DependentUpon>StoredProceduresUnitTests.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -83,9 +83,9 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>StoredProcedures.cs</LastGenOutput>
     </None>
-    <None Include="Templates\StoredProceduresTests.tt">
+    <None Include="Templates\StoredProceduresUnitTests.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>StoredProceduresTests.cs</LastGenOutput>
+      <LastGenOutput>StoredProceduresUnitTests.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>

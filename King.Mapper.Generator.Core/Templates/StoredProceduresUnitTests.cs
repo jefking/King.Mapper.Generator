@@ -16,9 +16,9 @@ namespace King.Mapper.Generator.Templates
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProceduresTests.tt"
+    #line 1 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProceduresUnitTests.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "12.0.0.0")]
-    public partial class StoredProceduresTests : StoredProceduresTestsBase
+    public partial class StoredProceduresUnitTests : StoredProceduresUnitTestsBase
     {
 #line hidden
         /// <summary>
@@ -44,7 +44,7 @@ namespace King.Mapper.Generated.Sql
     using King.Mapper.Data;
 ");
             
-            #line 19 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProceduresTests.tt"
+            #line 19 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProceduresUnitTests.tt"
 
 foreach (var proc in this.Manifest.Values)
 {
@@ -55,20 +55,20 @@ foreach (var proc in this.Manifest.Values)
             #line hidden
             this.Write("\t[TestClass]\r\n\tpublic class ");
             
-            #line 25 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProceduresTests.tt"
+            #line 25 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProceduresUnitTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(proc.Preface.CamelCase()));
             
             #line default
             #line hidden
             
-            #line 25 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProceduresTests.tt"
+            #line 25 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProceduresUnitTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(proc.Name.CamelCase()));
             
             #line default
             #line hidden
             this.Write("Tests\r\n\t{\r\n\t\t[TestMethod]\r\n\t\tpublic void Constructor()\r\n\t\t{\r\n\t\t\tnew ");
             
-            #line 30 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProceduresTests.tt"
+            #line 30 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProceduresUnitTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(className));
             
             #line default
@@ -76,35 +76,35 @@ foreach (var proc in this.Manifest.Values)
             this.Write("(); \r\n\t\t}\r\n\t\t\r\n\t\t[TestMethod]\r\n\t\tpublic void IsIStoredProc()\r\n\t\t{\r\n\t\t\tAssert.IsNo" +
                     "tNull(new ");
             
-            #line 36 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProceduresTests.tt"
+            #line 36 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProceduresUnitTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(className));
             
             #line default
             #line hidden
             this.Write("() as IStoredProc); \r\n\t\t}\r\n\t\t\r\n\t\t[TestMethod]\r\n\t\tpublic void IsIValidate");
             
-            #line 40 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProceduresTests.tt"
+            #line 40 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProceduresUnitTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(className));
             
             #line default
             #line hidden
             this.Write("()\r\n\t\t{\r\n\t\t\tAssert.IsNotNull(new ");
             
-            #line 42 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProceduresTests.tt"
+            #line 42 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProceduresUnitTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(className));
             
             #line default
             #line hidden
             this.Write("() as IValidate<");
             
-            #line 42 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProceduresTests.tt"
+            #line 42 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProceduresUnitTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(className));
             
             #line default
             #line hidden
             this.Write(">);\r\n\t\t}\r\n\r\n\t\t#region Paremeter Tests\r\n");
             
-            #line 46 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProceduresTests.tt"
+            #line 46 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProceduresUnitTests.tt"
 
 foreach (var parameter in proc.Variables)
 {
@@ -117,35 +117,35 @@ foreach (var parameter in proc.Variables)
             #line hidden
             this.Write("\t\t[TestMethod]\r\n\t\tpublic void ");
             
-            #line 54 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProceduresTests.tt"
+            #line 54 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProceduresUnitTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(name.CamelCase()));
             
             #line default
             #line hidden
             this.Write("Parameter()\r\n\t\t{\r\n\t\t\tAssert.AreEqual<string>(\"");
             
-            #line 56 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProceduresTests.tt"
+            #line 56 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProceduresUnitTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(parameter.ParameterName));
             
             #line default
             #line hidden
             this.Write("\", ");
             
-            #line 56 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProceduresTests.tt"
+            #line 56 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProceduresUnitTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(className));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 56 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProceduresTests.tt"
+            #line 56 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProceduresUnitTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(name));
             
             #line default
             #line hidden
             this.Write("Parameter);\r\n\t\t}\r\n\r\n");
             
-            #line 59 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProceduresTests.tt"
+            #line 59 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProceduresUnitTests.tt"
 
 	}
 }
@@ -155,7 +155,7 @@ foreach (var parameter in proc.Variables)
             #line hidden
             this.Write("\t\t#endregion\r\n\t\t\r\n\t\t#region Property Tests\r\n");
             
-            #line 66 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProceduresTests.tt"
+            #line 66 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProceduresUnitTests.tt"
 
 foreach (var parameter in proc.Variables)
 {
@@ -169,56 +169,56 @@ foreach (var parameter in proc.Variables)
             #line hidden
             this.Write("\t\t[TestMethod]\r\n\t\tpublic void ");
             
-            #line 75 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProceduresTests.tt"
+            #line 75 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProceduresUnitTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(name.CamelCase()));
             
             #line default
             #line hidden
             this.Write("GetSet()\r\n\t\t{\r\n\t\t\tvar item = new ");
             
-            #line 77 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProceduresTests.tt"
+            #line 77 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProceduresUnitTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(className));
             
             #line default
             #line hidden
             this.Write("();\r\n\t\t\tvar data = ");
             
-            #line 78 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProceduresTests.tt"
+            #line 78 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProceduresUnitTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(DataTypeMappings.DataTypeInitialize(dataTypeCSharp)));
             
             #line default
             #line hidden
             this.Write(";\r\n\t\t\titem.");
             
-            #line 79 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProceduresTests.tt"
+            #line 79 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProceduresUnitTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(name));
             
             #line default
             #line hidden
             this.Write(" = data;\r\n\t\t\tAssert.AreEqual<");
             
-            #line 80 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProceduresTests.tt"
+            #line 80 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProceduresUnitTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(DataTypeMappings.DataTypeCSharp(parameter.DataType)));
             
             #line default
             #line hidden
             this.Write(">(data, item.");
             
-            #line 80 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProceduresTests.tt"
+            #line 80 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProceduresUnitTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(name));
             
             #line default
             #line hidden
             this.Write(");\r\n\t\t}\r\n\r\n\t\t[TestMethod]\r\n\t\tpublic void ");
             
-            #line 84 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProceduresTests.tt"
+            #line 84 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProceduresUnitTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(name.CamelCase()));
             
             #line default
             #line hidden
             this.Write("DataMapper()\r\n\t\t{\r\n\t\t\tvar item = new ");
             
-            #line 86 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProceduresTests.tt"
+            #line 86 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProceduresUnitTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(className));
             
             #line default
@@ -226,7 +226,7 @@ foreach (var parameter in proc.Variables)
             this.Write("();\r\n            var property = (from prop in item.GetProperties()\r\n             " +
                     "              where prop.Name == \"");
             
-            #line 88 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProceduresTests.tt"
+            #line 88 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProceduresUnitTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(name));
             
             #line default
@@ -236,21 +236,21 @@ foreach (var parameter in proc.Variables)
                     "ttribute>();\r\n            Assert.IsNotNull(mapper);\r\n            Assert.AreEqual" +
                     "<string>(\"");
             
-            #line 93 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProceduresTests.tt"
+            #line 93 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProceduresUnitTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(parameter.ParameterName));
             
             #line default
             #line hidden
             this.Write("\", mapper.ParameterName);\r\n            Assert.AreEqual<DbType>(");
             
-            #line 94 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProceduresTests.tt"
+            #line 94 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProceduresUnitTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(DataTypeMappings.DataTypeDbType(parameter.DataType)));
             
             #line default
             #line hidden
             this.Write(", mapper.DatabaseType);\r\n\t\t}\r\n\r\n");
             
-            #line 97 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProceduresTests.tt"
+            #line 97 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProceduresUnitTests.tt"
 
 	}
 }
@@ -260,7 +260,7 @@ foreach (var parameter in proc.Variables)
             #line hidden
             this.Write("\t\t#endregion\r\n\t}\r\n\t\r\n");
             
-            #line 104 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProceduresTests.tt"
+            #line 104 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProceduresUnitTests.tt"
 
 }
 
@@ -279,7 +279,7 @@ foreach (var parameter in proc.Variables)
     /// Base class for this transformation
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "12.0.0.0")]
-    public class StoredProceduresTestsBase
+    public class StoredProceduresUnitTestsBase
     {
         #region Fields
         private global::System.Text.StringBuilder generationEnvironmentField;
