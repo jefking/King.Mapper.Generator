@@ -4,9 +4,9 @@
     using System.Collections.Generic;
 
     /// <summary>
-    /// Stored Procedures Template Partial
+    /// Stored Procedures Tests Template Partial
     /// </summary>
-    partial class StoredProceduresTests : IManifest
+    partial class StoredProceduresTests : IManifestTemplate
     {
         #region Properties
         /// <summary>

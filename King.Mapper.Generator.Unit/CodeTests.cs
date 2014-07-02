@@ -11,27 +11,27 @@
         [TestMethod]
         public void Constructor()
         {
-            new Code(new Dictionary<int, Definition>());
+            new StoredProceduresRender(new Dictionary<int, Definition>());
         }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
         public void ConstructorSchemasNull()
         {
-            new Code(null);
+            new StoredProceduresRender(null);
         }
 
         [TestMethod]
         public void FileName()
         {
-            var c = new Code(new Dictionary<int, Definition>());
+            var c = new StoredProceduresRender(new Dictionary<int, Definition>());
             Assert.AreEqual<string>("StoredProcedures.Generated.cs", c.FileName);
         }
 
         [TestMethod]
         public void Render()
         {
-            var c = new Code(new Dictionary<int, Definition>());
+            var c = new StoredProceduresRender(new Dictionary<int, Definition>());
             var output = c.Render();
 
             Assert.IsFalse(string.IsNullOrWhiteSpace(output));

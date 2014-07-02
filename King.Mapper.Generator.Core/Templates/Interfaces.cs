@@ -16,4 +16,8 @@
         }
         #endregion
     }
+    public interface IManifestTemplate : IManifest
+    {
+        string TransformText();
+    }
 }

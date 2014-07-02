@@ -5,16 +5,11 @@
     using System;
     using System.Collections.Generic;
 
-    /// <summary>
-    /// Code Generator
-    /// </summary>
-    public class Code : IRender
+    public class Renderer : IRender
     {
         #region Members
-        /// <summary>
-        /// Connection String
-        /// </summary>
-        private readonly IDictionary<int, Definition> manifest = null;
+        private readonly string fileName = null;
+        private readonly IManifestTemplate template = null;
         #endregion
 
         #region Constructors
@@ -23,14 +18,20 @@
         /// </summary>
         /// <param name="connectionString"></param>
         /// <param name="folder"></param>
-        public Code(IDictionary<int, Definition> manifest)
+        public Renderer(IManifestTemplate template, IDictionary<int, Definition> manifest, string fileName)
         {
+            if (null == template)
+            {
+                throw new ArgumentNullException("template");
+            }
             if (null == manifest)
             {
                 throw new ArgumentNullException("manifest");
             }
 
-            this.manifest = manifest;
+            this.template = template;
+            this.template.Manifest = manifest;
+            this.fileName = fileName;
         }
         #endregion
 
@@ -42,7 +43,7 @@
         {
             get
             {
-                return "StoredProcedures.Generated.cs";
+                return fileName;
             }
         }
         #endregion
@@ -54,11 +55,6 @@
         /// <returns></returns>
         public string Render()
         {
-            var template = new StoredProcedures()
-            {
-                Manifest = this.manifest,
-            };
-
             return template.TransformText();
         }
         #endregion

@@ -42,7 +42,8 @@
     <Reference Include="System.XML" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Code.cs" />
+    <Compile Include="Renderer.cs" />
+    <Compile Include="StoredProceduresRender.cs" />
     <Compile Include="DataTypeMappings.cs" />
     <Compile Include="Templates\ExtensionMethods.cs" />
     <Compile Include="FileWriter.cs" />

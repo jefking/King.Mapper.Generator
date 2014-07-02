@@ -6,7 +6,7 @@
     /// <summary>
     /// Stored Procedures Template Partial
     /// </summary>
-    partial class StoredProcedures : IManifest
+    partial class StoredProcedures : IManifestTemplate
     {
         #region Properties
         /// <summary>

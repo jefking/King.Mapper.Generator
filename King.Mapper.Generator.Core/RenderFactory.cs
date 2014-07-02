@@ -23,7 +23,7 @@
             }
 
             var renderers = new List<IRender>();
-            renderers.Add(new Code(manifest));
+            renderers.Add(new StoredProceduresRender(manifest));
             return renderers;
         }
         #endregion
