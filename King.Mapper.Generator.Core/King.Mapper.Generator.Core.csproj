@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Renderer.cs" />
+    <Compile Include="StoredProceduresTestsRender .cs" />
     <Compile Include="StoredProceduresRender.cs" />
     <Compile Include="DataTypeMappings.cs" />
     <Compile Include="Templates\ExtensionMethods.cs" />
