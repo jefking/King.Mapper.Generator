@@ -164,20 +164,25 @@
         /// <returns>Data Type Initialize String</returns>
         public static string DataTypeInitialize(string dataType)
         {
-            switch (dataType)
+            if (string.IsNullOrWhiteSpace(dataType))
+            {
+                throw new ArgumentException("dataType");
+            }
+
+            switch (dataType.ToLowerInvariant())
             {
                 case "string":
-                case "System.String":
-                    return "StringHelper.ValidString()";
-                case "System.Int32":
+                case "system.string":
+                    return "Guid.NewGuid().ToString()";
+                case "system.int32":
                 case "int":
                 case "int?":
                     return "new Random().Next()";
-                case "System.Int64":
+                case "system.int64":
                 case "long":
                 case "long?":
                     return "(long)new Random().Next()";
-                case "System.Decimal":
+                case "system.decimal":
                 case "decimal":
                 case "decimal?":
                     return "(decimal)new Random().NextDouble()";
@@ -187,17 +192,17 @@
                 case "short":
                 case "short?":
                     return "(short)new Random().Next(short.MinValue, short.MaxValue)";
-                case "DateTime":
-                case "DateTime?":
-                case "System.Nullable`1[System.DateTime]":
+                case "datetime":
+                case "datetime?":
+                case "system.nullable`1[system.datetime]":
                     return "DateTime.UtcNow";
                 case "bool":
                 case "bool?":
                     return "true";
-                case "Guid":
-                case "Guid?":
-                case "System.Nullable`1[System.Guid]":
-                case "System.Guid":
+                case "guid":
+                case "guid?":
+                case "system.nullable`1[system.guid]":
+                case "system.guid":
                     return "Guid.NewGuid()";
                 case "object":
                     return "new object()";

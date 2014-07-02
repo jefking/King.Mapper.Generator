@@ -286,11 +286,19 @@
             Assert.AreEqual<string>("object", DataTypeMappings.DataTypeCSharpShorten(Guid.NewGuid().ToString()));
         }
 
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void DataTypeInitializeStringNull()
+        {
+            DataTypeMappings.DataTypeDbType(null);
+        }
+
         [TestMethod]
         public void DataTypeInitializeString()
         {
-            Assert.AreEqual<string>("StringHelper.ValidString()", DataTypeMappings.DataTypeInitialize("string"));
-            Assert.AreEqual<string>("StringHelper.ValidString()", DataTypeMappings.DataTypeInitialize("System.String"));
+            Assert.AreEqual<string>("Guid.NewGuid().ToString()", DataTypeMappings.DataTypeInitialize("string"));
+            Assert.AreEqual<string>("Guid.NewGuid().ToString()", DataTypeMappings.DataTypeInitialize("System.String"));
         }
 
         [TestMethod]
