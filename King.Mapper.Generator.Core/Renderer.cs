@@ -5,10 +5,20 @@
     using System;
     using System.Collections.Generic;
 
+    /// <summary>
+    /// Renderer
+    /// </summary>
     public class Renderer : IRender
     {
         #region Members
+        /// <summary>
+        /// File Name
+        /// </summary>
         private readonly string fileName = null;
+
+        /// <summary>
+        /// Template to Render
+        /// </summary>
         private readonly IManifestTemplate template = null;
         #endregion
 
@@ -27,6 +37,10 @@
             if (null == manifest)
             {
                 throw new ArgumentNullException("manifest");
+            }
+            if (string.IsNullOrWhiteSpace(fileName))
+            {
+                throw new ArgumentException("fileName");
             }
 
             this.template = template;

@@ -16,8 +16,11 @@
         }
         #endregion
     }
+
     public interface IManifestTemplate : IManifest
     {
+        #region Methods
         string TransformText();
+        #endregion
     }
 }

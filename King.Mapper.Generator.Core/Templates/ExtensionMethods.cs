@@ -2,13 +2,17 @@
 {
     using System.Text;
 
+    /// <summary>
+    /// Extension Methods
+    /// </summary>
     public static class ExtensionMethods
     {
+        #region Methods
         /// <summary>
-        /// 
+        /// Camel Case
         /// </summary>
-        /// <param name="s"></param>
-        /// <returns></returns>
+        /// <param name="s">string</param>
+        /// <returns>Camel Case string</returns>
         public static string CamelCase(this string s)
         {
             if (string.IsNullOrWhiteSpace(s))
@@ -27,7 +31,9 @@
                 }
                 sb.Append(' ');
             }
+
             return sb.ToString().Trim();
         }
+        #endregion
     }
 }
