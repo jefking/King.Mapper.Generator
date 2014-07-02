@@ -4,6 +4,7 @@
         <id>King.Mapper.Generator</id>
         <version>1.1.5</version>
         <title>King.Mapper.Generator</title>
+	<iconUrl>https://raw.githubusercontent.com/jefking/King.Mapper.Generator/master/icon.png</iconUrl>
         <authors>Jef King</authors>
         <owners>Jef King</owners>
         <licenseUrl>https://github.com/jefking/King.Mapper.Generator/blob/master/LICENSE</licenseUrl>
