@@ -285,5 +285,86 @@
         {
             Assert.AreEqual<string>("object", DataTypeMappings.DataTypeCSharpShorten(Guid.NewGuid().ToString()));
         }
+
+        [TestMethod]
+        public void DataTypeInitializeString()
+        {
+            Assert.AreEqual<string>("StringHelper.ValidString()", DataTypeMappings.DataTypeInitialize("string"));
+            Assert.AreEqual<string>("StringHelper.ValidString()", DataTypeMappings.DataTypeInitialize("System.String"));
+        }
+
+        [TestMethod]
+        public void DataTypeInitializeInt()
+        {
+            Assert.AreEqual<string>("new Random().Next()", DataTypeMappings.DataTypeInitialize("System.Int32"));
+            Assert.AreEqual<string>("new Random().Next()", DataTypeMappings.DataTypeInitialize("int?"));
+            Assert.AreEqual<string>("new Random().Next()", DataTypeMappings.DataTypeInitialize("int"));
+        }
+
+        [TestMethod]
+        public void DataTypeInitializeLong()
+        {
+            Assert.AreEqual<string>("(long)new Random().Next()", DataTypeMappings.DataTypeInitialize("System.Int64"));
+            Assert.AreEqual<string>("(long)new Random().Next()", DataTypeMappings.DataTypeInitialize("long?"));
+            Assert.AreEqual<string>("(long)new Random().Next()", DataTypeMappings.DataTypeInitialize("long"));
+        }
+
+        [TestMethod]
+        public void DataTypeInitializeDecimal()
+        {
+            Assert.AreEqual<string>("(decimal)new Random().NextDouble()", DataTypeMappings.DataTypeInitialize("decimal?"));
+            Assert.AreEqual<string>("(decimal)new Random().NextDouble()", DataTypeMappings.DataTypeInitialize("decimal"));
+            Assert.AreEqual<string>("(decimal)new Random().NextDouble()", DataTypeMappings.DataTypeInitialize("System.Decimal"));
+        }
+
+        [TestMethod]
+        public void DataTypeInitializeByte()
+        {
+            Assert.AreEqual<string>("(byte)new Random().Next(byte.MinValue, byte.MaxValue)", DataTypeMappings.DataTypeInitialize("byte"));
+            Assert.AreEqual<string>("(byte)new Random().Next(byte.MinValue, byte.MaxValue)", DataTypeMappings.DataTypeInitialize("byte?"));
+        }
+
+        [TestMethod]
+        public void DataTypeInitializeShort()
+        {
+            Assert.AreEqual<string>("(short)new Random().Next(short.MinValue, short.MaxValue)", DataTypeMappings.DataTypeInitialize("short"));
+            Assert.AreEqual<string>("(short)new Random().Next(short.MinValue, short.MaxValue)", DataTypeMappings.DataTypeInitialize("short?"));
+        }
+
+        [TestMethod]
+        public void DataTypeInitializeDateTime()
+        {
+            Assert.AreEqual<string>("DateTime.UtcNow", DataTypeMappings.DataTypeInitialize("DateTime?"));
+            Assert.AreEqual<string>("DateTime.UtcNow", DataTypeMappings.DataTypeInitialize("DateTime"));
+            Assert.AreEqual<string>("DateTime.UtcNow", DataTypeMappings.DataTypeInitialize("System.Nullable`1[System.DateTime]"));
+        }
+
+        [TestMethod]
+        public void DataTypeInitializeBool()
+        {
+            Assert.AreEqual<string>("true", DataTypeMappings.DataTypeInitialize("bool?"));
+            Assert.AreEqual<string>("true", DataTypeMappings.DataTypeInitialize("bool"));
+        }
+
+        [TestMethod]
+        public void DataTypeInitializeGuid()
+        {
+            Assert.AreEqual<string>("Guid.NewGuid()", DataTypeMappings.DataTypeInitialize("Guid?"));
+            Assert.AreEqual<string>("Guid.NewGuid()", DataTypeMappings.DataTypeInitialize("Guid"));
+            Assert.AreEqual<string>("Guid.NewGuid()", DataTypeMappings.DataTypeInitialize("System.Nullable`1[System.Guid]"));
+            Assert.AreEqual<string>("Guid.NewGuid()", DataTypeMappings.DataTypeInitialize("System.Guid"));
+        }
+
+        [TestMethod]
+        public void DataTypeInitializeObject()
+        {
+            Assert.AreEqual<string>("new object()", DataTypeMappings.DataTypeInitialize("object"));
+        }
+
+        [TestMethod]
+        public void DataTypeInitialize()
+        {
+            Assert.AreEqual<string>("null", DataTypeMappings.DataTypeInitialize(Guid.NewGuid().ToString()));
+        }
     }
 }

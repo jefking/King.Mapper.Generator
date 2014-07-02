@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="Code.cs" />
     <Compile Include="DataTypeMappings.cs" />
+    <Compile Include="Templates\ExtensionMethods.cs" />
     <Compile Include="FileWriter.cs" />
     <Compile Include="CodeGenerator.cs" />
     <Compile Include="Interfaces.cs" />
@@ -56,6 +57,7 @@
     <Compile Include="Sql\DataLoader.cs" />
     <Compile Include="Sql\Interfaces.cs" />
     <Compile Include="Sql\Statement.cs" />
+    <Compile Include="Templates\Interfaces.cs" />
     <Compile Include="Templates\StoredProcedures.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
