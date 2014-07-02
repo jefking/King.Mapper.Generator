@@ -1,0 +1,135 @@
+﻿<#@ template language="C#" #>
+namespace RESAAS.Test.Contracts
+{
+    using System;
+    using System.Data;
+	using System.Linq;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+<#
+foreach (var proc in this.Manifest.Values)
+{
+	var className = proc.Preface + proc.Name;
+#>
+	[TestClass]
+	public class <#=proc.Preface.CamelCase()#><#=proc.Name.CamelCase()#>Test
+	{
+		[TestMethod]
+		public void Constructor()
+		{
+			new <#=className#>(); 
+		}
+		
+		[TestMethod]
+		public void IsIStoredProc()
+		{
+			Assert.IsNotNull(new <#=className#>() as IStoredProc); 
+		}
+		
+		[TestMethod]
+		public void IsIValidate<#=className#>()
+		{
+			Assert.IsNotNull(new <#=className#>() as IValidate<<#=className#>>);
+		}
+
+		#region Paremeter Tests
+<#
+foreach (var parameter in proc.Variables)
+{
+	var name = parameter.Name.Replace("@", string.Empty);
+	if (!string.IsNullOrWhiteSpace(name))
+	{
+#>
+		[TestMethod]
+		public void <#=name.CamelCase()#>Parameter()
+		{
+			Assert.AreEqual<string>("<#=parameter.Name#>", <#=className#>.<#=name#>Parameter);
+		}
+
+<#
+	}
+}
+#>
+		#endregion
+		
+		#region Property Tests
+<#
+foreach (var parameter in proc.Variables)
+{
+	var dataTypeCSharp = DataTypeMappings.DataTypeCSharp(parameter.DataType);
+	var name = parameter.Name.Replace("@", string.Empty);
+	if (!string.IsNullOrWhiteSpace(name))
+	{
+#>
+		[TestMethod]
+		public void <#=name.CamelCase()#>GetSet()
+		{
+			var item = new <#=className#>();
+			var data = <#=DataTypeMappings.DataTypeInitialize(dataTypeCSharp)#>;
+			item.<#=name#> = data;
+			Assert.AreEqual<<#=DataTypeMappings.DataTypeCSharp(parameter.DataType)#>>(data, item.<#=name#>);
+		}
+
+		[TestMethod]
+		public void <#=name.CamelCase()#>DataMapper()
+		{
+			var item = new <#=className#>();
+            var property = (from prop in item.GetProperties()
+                           where prop.Name == "<#=name#>"
+                           select prop).FirstOrDefault();
+            Assert.IsNotNull(property);
+            var mapper = property.GetAttribute<DataMapperAttribute>();
+            Assert.IsNotNull(mapper);
+            Assert.AreEqual<string>("<#=parameter.Name#>", mapper.ParameterName);
+            Assert.AreEqual<DbType>(<#=DataTypeMappings.DataTypeDbType(parameter.DataType)#>, mapper.DatabaseType);
+		}
+
+<#
+	}
+}
+#>
+		#endregion
+		/**
+		#region Validation Tests
+<#
+foreach (var parameter in proc.Variables)
+{
+	var dataTypeCSharp = DataTypeMappings.DataTypeCSharp(parameter.DataType);
+	if (dataTypeCSharp == "string")
+	{
+		var name = parameter.Name.Replace("@", string.Empty);
+		if (0 < parameter.MaxLength)
+		{
+#>
+		[TestMethod]
+		public void <#=name#>TooLong()
+		{
+			var item = new <#=className#>();
+			<#=DataTypeMappings.StringTooLong(parameter.MaxLength)#>;
+			item.<#=name#> = data;
+			var validate = new Validator<<#=className#>>();
+			Assert.IsFalse(validate.IsValid(item), validate.AllMessages(item));
+		}
+<#
+		}
+#>
+		[TestMethod]
+		public void <#=name#>Valid()
+		{
+			var item = new <#=className#>();
+			<#=DataTypeMappings.StringValid(parameter.MaxLength)#>;
+			item.<#=name#> = data;
+			var validate = new Validator<<#=className#>>();
+			Assert.IsTrue(validate.IsValid(item), validate.AllMessages(item));
+		}
+<#
+	}
+}
+#>
+		#endregion
+		**/
+	}
+	
+<#
+}
+#>
+}

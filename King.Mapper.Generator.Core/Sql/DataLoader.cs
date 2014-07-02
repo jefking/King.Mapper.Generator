@@ -124,6 +124,7 @@
             {
                 throw new ArgumentNullException("schemas");
             }
+
             var manifest = new Dictionary<int, Definition>();
             var comparer = new DefinitionComparer();
             foreach (var d in definitions)

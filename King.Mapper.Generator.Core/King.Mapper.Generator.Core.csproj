@@ -64,12 +64,24 @@
     <Compile Include="Templates\StoredProcedures.partial.cs">
       <DependentUpon>StoredProcedures.tt</DependentUpon>
     </Compile>
+    <Compile Include="Templates\StoredProceduresTests.partial.cs">
+      <DependentUpon>StoredProceduresTests.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\StoredProceduresTests.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StoredProceduresTests.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
     <None Include="Templates\StoredProcedures.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>StoredProcedures.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\StoredProceduresTests.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>StoredProceduresTests.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>

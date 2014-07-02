@@ -3,16 +3,13 @@
     using King.Mapper.Generator.Models;
     using System.Collections.Generic;
 
-    /// <summary>
-    /// Stored Procedures Template Partial
-    /// </summary>
-    partial class StoredProcedures : IManifest
+    public interface IManifest
     {
         #region Properties
         /// <summary>
         /// Gets or sets Manifest
         /// </summary>
-        public IDictionary<int, Definition> Manifest
+        IDictionary<int, Definition> Manifest
         {
             get;
             set;
