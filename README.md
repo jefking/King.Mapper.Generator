@@ -7,9 +7,18 @@ Generate a data access layer for your SQL Server database for use with the [King
 ```
 King.Mapper.Generator.exe "[SQL Server Connection String]" [Folder]
 ```
-**Example:**
+## Examples:
+**Code Generation**
+```
+King.Mapper.Generator.exe "Server=localhost;Database=db;Trusted_Connection=True;" C:\Code
+```
+**Code Generation (with MSTest Unit Test Cases)**
 ```
 King.Mapper.Generator.exe "Server=localhost;Database=db;Trusted_Connection=True;" C:\Code mstest
+```
+**Code Generation (with NUnit Unit Test Cases)**
+```
+King.Mapper.Generator.exe "Server=localhost;Database=db;Trusted_Connection=True;" C:\Code nunit
 ```
 ##Output
 ```
