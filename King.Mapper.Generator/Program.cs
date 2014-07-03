@@ -37,7 +37,7 @@
 
             var connectionString = args[0];
             var folder = args[1].Replace(@"\\", @"\").Replace("\"", string.Empty);
-            var test = args.Any(a => a.ToLowerInvariant() == "vstest");
+            var test = args.Any(a => a.ToLowerInvariant() == "mstest");
 
             try
             {
