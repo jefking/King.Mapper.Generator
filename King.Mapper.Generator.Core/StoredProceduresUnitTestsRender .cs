@@ -13,8 +13,8 @@
         /// <summary>
         /// Default Constructor
         /// </summary>
-        public StoredProceduresUnitTestsRender(IDictionary<int, Definition> manifest)
-            : base(new StoredProceduresUnitTests(), manifest, "StoredProcedures.Unit.Test.Generated.cs")
+        public StoredProceduresUnitTestsRender(IDictionary<int, Definition> manifest, TestSuite suite = TestSuite.MSTest)
+            : base(new StoredProceduresUnitTests(suite), manifest, "StoredProcedures.Unit.Test.Generated.cs")
         {
         }
         #endregion

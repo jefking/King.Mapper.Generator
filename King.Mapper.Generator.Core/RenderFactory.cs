@@ -13,7 +13,7 @@
         /// <summary>
         /// Test Code
         /// </summary>
-        private readonly bool test = false;
+        private readonly TestSuite suite = TestSuite.None;
         #endregion
 
         #region Constructors
@@ -21,9 +21,9 @@
         /// Render Factory
         /// </summary>
         /// <param name="test">Test</param>
-        public RenderFactory(bool test = false)
+        public RenderFactory(TestSuite suite)
         {
-            this.test = test;
+            this.suite = suite;
         }
         #endregion
 
@@ -42,9 +42,9 @@
 
             var renderers = new List<IRender>();
             renderers.Add(new StoredProceduresRender(manifest));
-            if (this.test)
+            if (this.suite != TestSuite.None)
             {
-                renderers.Add(new StoredProceduresUnitTestsRender(manifest));
+                renderers.Add(new StoredProceduresUnitTestsRender(manifest, suite));
             }
 
             return renderers;

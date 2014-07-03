@@ -37,11 +37,19 @@
 
             var connectionString = args[0];
             var folder = args[1].Replace(@"\\", @"\").Replace("\"", string.Empty);
-            var test = args.Any(a => a.ToLowerInvariant() == "mstest");
+            var suite = TestSuite.None;
+            if (args.Any(a => a.ToLowerInvariant() == "mstest"))
+            {
+                suite = TestSuite.MSTest;
+            }
+            else if (args.Any(a => a.ToLowerInvariant() == "nunit"))
+            {
+                suite = TestSuite.NUnit;
+            }
 
             try
             {
-                var factory = new RenderFactory(test);
+                var factory = new RenderFactory(suite);
                 var codeGenerator = new CodeGenerator(new DataLoader(connectionString), factory, new FileWriter(folder));
                 var task = codeGenerator.Generate();
                 task.Wait();

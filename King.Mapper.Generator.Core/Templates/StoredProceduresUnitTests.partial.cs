@@ -9,6 +9,17 @@
     partial class StoredProceduresUnitTests : IManifestTemplate
     {
         #region Properties
+        private readonly TestSuite suite = TestSuite.MSTest;
+        #endregion
+
+        #region Constructors
+        public StoredProceduresUnitTests(TestSuite suite = TestSuite.MSTest)
+        {
+            this.suite = suite;
+        }
+        #endregion
+
+        #region Properties
         /// <summary>
         /// Gets or sets Manifest
         /// </summary>
@@ -16,6 +27,21 @@
         {
             get;
             set;
+        }
+
+        public string TestClassAttribute
+        {
+            get
+            {
+                return suite == TestSuite.MSTest ? "TestClass" : "TestFixture";
+            }
+        }
+        public string TestMethodAttribute
+        {
+            get
+            {
+                return suite == TestSuite.MSTest ? "TestMethod" : "Test";
+            }
         }
         #endregion
     }
