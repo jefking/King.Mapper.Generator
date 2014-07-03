@@ -178,10 +178,17 @@
                 case "int":
                 case "int?":
                     return "new Random().Next()";
+                case "char":
+                case "char?":
+                    return "(char)new Random().Next()";
                 case "system.int64":
                 case "long":
                 case "long?":
                     return "(long)new Random().Next()";
+                case "system.single":
+                case "float":
+                case "float?":
+                    return "(float)new Random().Next()";
                 case "system.decimal":
                 case "decimal":
                 case "decimal?":
@@ -189,6 +196,8 @@
                 case "byte":
                 case "byte?":
                     return "(byte)new Random().Next(byte.MinValue, byte.MaxValue)";
+                case "byte[]":
+                    return string.Format(@"new byte[128];{0}new Random().NextBytes(expected)", Environment.NewLine);
                 case "short":
                 case "short?":
                     return "(short)new Random().Next(short.MinValue, short.MaxValue)";
