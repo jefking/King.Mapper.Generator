@@ -20,6 +20,7 @@
         {
             Trace.TraceInformation("King.Mapper.Generator Starting.");
             Trace.TraceInformation("Source Code @: https://github.com/jefking/King.Mapper.Generator");
+            Trace.TraceInformation("Nuget @: https://www.nuget.org/packages/King.Mapper.Generator");
 
             if (args == null)
             {
@@ -36,10 +37,12 @@
 
             var connectionString = args[0];
             var folder = args[1].Replace(@"\\", @"\").Replace("\"", string.Empty);
+            var test = args.Any(a => a.ToLowerInvariant() == "test");
 
             try
             {
-                var codeGenerator = new CodeGenerator(new DataLoader(connectionString), new RenderFactory(), new FileWriter(folder));
+                var factory = new RenderFactory(test);
+                var codeGenerator = new CodeGenerator(new DataLoader(connectionString), factory, new FileWriter(folder));
                 var task = codeGenerator.Generate();
                 task.Wait();
             }
