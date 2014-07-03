@@ -14,11 +14,11 @@ King.Mapper.Generator.exe "Server=localhost;Database=db;Trusted_Connection=True;
 ```
 **Code Generation (with MSTest Unit Test Cases)**
 ```
-King.Mapper.Generator.exe "Server=localhost;Database=db;Trusted_Connection=True;" C:\Code **mstest**
+King.Mapper.Generator.exe "Server=localhost;Database=db;Trusted_Connection=True;" C:\Code mstest
 ```
 **Code Generation (with NUnit Unit Test Cases)**
 ```
-King.Mapper.Generator.exe "Server=localhost;Database=db;Trusted_Connection=True;" C:\Code **nunit**
+King.Mapper.Generator.exe "Server=localhost;Database=db;Trusted_Connection=True;" C:\Code nunit
 ```
 ##Output
 ```
