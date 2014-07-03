@@ -9,10 +9,17 @@
     partial class StoredProceduresUnitTests : IManifestTemplate
     {
         #region Properties
+        /// <summary>
+        /// Test Suite
+        /// </summary>
         private readonly TestSuite suite = TestSuite.MSTest;
         #endregion
 
         #region Constructors
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="suite">Test Suite</param>
         public StoredProceduresUnitTests(TestSuite suite = TestSuite.MSTest)
         {
             this.suite = suite;
@@ -29,6 +36,20 @@
             set;
         }
 
+        /// <summary>
+        /// Test Class Attribute
+        /// </summary>
+        public string TestingNamespace
+        {
+            get
+            {
+                return suite == TestSuite.MSTest ? "Microsoft.VisualStudio.TestTools.UnitTesting" : "NUnit.Framework";
+            }
+        }
+
+        /// <summary>
+        /// Test Class Attribute
+        /// </summary>
         public string TestClassAttribute
         {
             get
@@ -36,6 +57,10 @@
                 return suite == TestSuite.MSTest ? "TestClass" : "TestFixture";
             }
         }
+
+        /// <summary>
+        /// Test Method Attribute
+        /// </summary>
         public string TestMethodAttribute
         {
             get

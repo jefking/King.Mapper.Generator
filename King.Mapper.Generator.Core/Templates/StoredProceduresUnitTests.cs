@@ -38,12 +38,14 @@ namespace King.Mapper.Generator.Templates
 namespace King.Mapper.Generated.Sql
 {
     using King.Mapper.Data;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using System;
-    using System.Data;
-    using System.Linq;
-
-");
+    using ");
+            
+            #line 15 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProceduresUnitTests.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(TestingNamespace));
+            
+            #line default
+            #line hidden
+            this.Write(";\r\n    using System;\r\n    using System.Data;\r\n    using System.Linq;\r\n\r\n");
             
             #line 20 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProceduresUnitTests.tt"
 

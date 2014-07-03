@@ -12,7 +12,7 @@
 namespace King.Mapper.Generated.Sql
 {
     using King.Mapper.Data;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using <#=TestingNamespace#>;
     using System;
     using System.Data;
     using System.Linq;
