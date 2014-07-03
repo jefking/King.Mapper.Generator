@@ -9,11 +9,12 @@ King.Mapper.Generator.exe "[SQL Server Connection String]" [Folder]
 ```
 **Example:**
 ```
-King.Mapper.Generator.exe "Server=localhost;Database=db;Trusted_Connection=True;" C:\Code
+King.Mapper.Generator.exe "Server=localhost;Database=db;Trusted_Connection=True;" C:\Code test
 ```
 ##Output
 ```
 StoredProcedures.Generated.cs
+StoredProcedures.Unit.Test.Generated.cs
 ```
 ##Add Nuget to Solution
 [King.Mapper](https://www.nuget.org/packages/King.Mapper)
