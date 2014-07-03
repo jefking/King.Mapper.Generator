@@ -21,7 +21,7 @@
         /// Render Factory
         /// </summary>
         /// <param name="test">Test</param>
-        public RenderFactory(TestSuite suite)
+        public RenderFactory(TestSuite suite = TestSuite.None)
         {
             this.suite = suite;
         }

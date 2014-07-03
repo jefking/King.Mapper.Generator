@@ -26,9 +26,19 @@
         }
 
         [TestMethod]
-        public void LoadTest()
+        public void LoadMSTest()
         {
-            var factory = new RenderFactory(true);
+            var factory = new RenderFactory(TestSuite.MSTest);
+            var renderers = factory.Load(new Dictionary<int, Definition>());
+
+            Assert.IsNotNull(renderers);
+            Assert.AreEqual<int>(2, renderers.Count());
+        }
+
+        [TestMethod]
+        public void LoadNUnitTest()
+        {
+            var factory = new RenderFactory(TestSuite.NUnit);
             var renderers = factory.Load(new Dictionary<int, Definition>());
 
             Assert.IsNotNull(renderers);

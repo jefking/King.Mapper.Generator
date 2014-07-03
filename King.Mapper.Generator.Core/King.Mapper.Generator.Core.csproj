@@ -42,6 +42,7 @@
     <Reference Include="System.XML" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enums.cs" />
     <Compile Include="Renderer.cs" />
     <Compile Include="StoredProceduresUnitTestsRender .cs" />
     <Compile Include="StoredProceduresRender.cs" />
