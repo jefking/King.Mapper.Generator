@@ -26,6 +26,16 @@
         }
 
         [TestMethod]
+        public void LoadTest()
+        {
+            var factory = new RenderFactory(true);
+            var renderers = factory.Load(new Dictionary<int, Definition>());
+
+            Assert.IsNotNull(renderers);
+            Assert.AreEqual<int>(2, renderers.Count());
+        }
+
+        [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
         public void LoadManifestNull()
         {
