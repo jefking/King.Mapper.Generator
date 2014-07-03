@@ -198,7 +198,7 @@
                 case "byte?":
                     return "(byte)new Random().Next(byte.MinValue, byte.MaxValue)";
                 case "byte[]":
-                    return string.Format(@"new byte[128];{0}new Random().NextBytes(expected)", Environment.NewLine);
+                    return "new byte[128]; new Random().NextBytes(expected)";
                 case "short":
                 case "short?":
                     return "(short)new Random().Next(short.MinValue, short.MaxValue)";

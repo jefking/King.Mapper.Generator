@@ -320,7 +320,7 @@
         [TestMethod]
         public void DataTypeInitializeByteArray()
         {
-            Assert.AreEqual<string>(string.Format(@"new byte[128];{0}new Random().NextBytes(expected)", Environment.NewLine), DataTypeMappings.DataTypeInitialize("byte[]"));
+            Assert.AreEqual<string>("new byte[128]; new Random().NextBytes(expected)", DataTypeMappings.DataTypeInitialize("byte[]"));
         }
 
         [TestMethod]
