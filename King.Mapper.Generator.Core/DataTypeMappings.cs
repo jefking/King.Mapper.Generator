@@ -179,6 +179,7 @@
                 case "int?":
                     return "new Random().Next()";
                 case "char":
+                case "System.Char":
                 case "char?":
                     return "(char)new Random().Next()";
                 case "system.int64":

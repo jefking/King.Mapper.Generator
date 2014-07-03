@@ -302,6 +302,28 @@
         }
 
         [TestMethod]
+        public void DataTypeInitializeChar()
+        {
+            Assert.AreEqual<string>("(char)new Random().Next()", DataTypeMappings.DataTypeInitialize("char"));
+            Assert.AreEqual<string>("(char)new Random().Next()", DataTypeMappings.DataTypeInitialize("System.Char"));
+            Assert.AreEqual<string>("(char)new Random().Next()", DataTypeMappings.DataTypeInitialize("char?"));
+        }
+
+        [TestMethod]
+        public void DataTypeInitializeFloat()
+        {
+            Assert.AreEqual<string>("(float)new Random().Next()", DataTypeMappings.DataTypeInitialize("float"));
+            Assert.AreEqual<string>("(float)new Random().Next()", DataTypeMappings.DataTypeInitialize("System.Single"));
+            Assert.AreEqual<string>("(float)new Random().Next()", DataTypeMappings.DataTypeInitialize("float?"));
+        }
+
+        [TestMethod]
+        public void DataTypeInitializeByteArray()
+        {
+            Assert.AreEqual<string>(string.Format(@"new byte[128];{0}new Random().NextBytes(expected)", Environment.NewLine), DataTypeMappings.DataTypeInitialize("byte[]"));
+        }
+
+        [TestMethod]
         public void DataTypeInitializeInt()
         {
             Assert.AreEqual<string>("new Random().Next()", DataTypeMappings.DataTypeInitialize("System.Int32"));
