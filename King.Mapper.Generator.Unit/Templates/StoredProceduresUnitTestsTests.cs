@@ -49,6 +49,22 @@
         }
 
         [Test]
+        public void AreEqualGenericMSTest()
+        {
+            var sp = new StoredProceduresUnitTests(TestSuite.MSTest);
+
+            Assert.IsTrue(sp.AreEqualGeneric);
+        }
+
+        [Test]
+        public void AreEqualGenericNUnit()
+        {
+            var sp = new StoredProceduresUnitTests(TestSuite.NUnit);
+
+            Assert.IsFalse(sp.AreEqualGeneric);
+        }
+
+        [Test]
         public void TestClassAttributeMSTest()
         {
             var sp = new StoredProceduresUnitTests(TestSuite.MSTest);
