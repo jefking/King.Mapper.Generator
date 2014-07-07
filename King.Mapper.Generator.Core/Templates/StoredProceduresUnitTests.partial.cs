@@ -68,6 +68,17 @@
                 return suite == TestSuite.MSTest ? "TestMethod" : "Test";
             }
         }
+
+        /// <summary>
+        /// AreEqual<X>
+        /// </summary>
+        public bool AreEqualGeneric
+        {
+            get
+            {
+                return suite == TestSuite.MSTest;
+            }
+        }
         #endregion
     }
 }
