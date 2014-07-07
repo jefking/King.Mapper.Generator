@@ -3,20 +3,20 @@
     using King.Mapper.Data;
     using King.Mapper.Generated.Sql;
     using King.Mapper.Integration.Model;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
     using System;
     using System.Configuration;
     using System.Data.SqlClient;
     using System.Threading.Tasks;
 
-    [TestClass]
+    [TestFixture]
     public class Integration
     {
         #region Members
         private readonly string connectionString = ConfigurationManager.AppSettings["database"];
         #endregion
 
-        [TestMethod]
+        [Test]
         public async Task Insert()
         {
             var random = new Random();
@@ -34,7 +34,7 @@
             }
         }
 
-        [TestMethod]
+        [Test]
         public async Task Select()
         {
             using (var con = new SqlConnection(connectionString))
@@ -49,19 +49,19 @@
                 var obj = data.Model<SelectData>();
 
                 Assert.IsNotNull(obj);
-                Assert.AreEqual<int?>(sproc.TestInt, obj.Identifier);
-                Assert.AreEqual<long?>(sproc.TestBigInt, obj.BigInt);
-                Assert.AreEqual<bool?>(sproc.TestBit, obj.Bit);
-                Assert.AreEqual<DateTime?>(sproc.TestDateTime.Value.Date, obj.DateTime.Date);
-                Assert.AreEqual<decimal?>(sproc.TestDecimal, obj.Decimal);
-                Assert.AreEqual<string>(sproc.TestNText, obj.NText);
-                Assert.AreEqual<Guid?>(sproc.TestGuid, obj.Unique);
-                Assert.AreEqual<decimal>(Math.Round(sproc.TestMoney.Value, 4), obj.Money);
-                Assert.AreEqual<DateTime>(sproc.TestDateTime2.Value.Date, obj.DateTime2.Date);
-                Assert.AreEqual<DateTime>(sproc.TestDate.Value.Date, obj.Date.Date);
-                Assert.AreEqual<float?>(sproc.TestFloat, obj.Float);
-                Assert.AreEqual<char?>(sproc.TestNChar, obj.NChar);
-                Assert.AreEqual<string>(sproc.TestText, obj.Text);
+                Assert.AreEqual(sproc.TestInt, obj.Identifier);
+                Assert.AreEqual(sproc.TestBigInt, obj.BigInt);
+                Assert.AreEqual(sproc.TestBit, obj.Bit);
+                Assert.AreEqual(sproc.TestDateTime.Value.Date, obj.DateTime.Date);
+                Assert.AreEqual(sproc.TestDecimal, obj.Decimal);
+                Assert.AreEqual(sproc.TestNText, obj.NText);
+                Assert.AreEqual(sproc.TestGuid, obj.Unique);
+                Assert.AreEqual(Math.Round(sproc.TestMoney.Value, 4), obj.Money);
+                Assert.AreEqual(sproc.TestDateTime2.Value.Date, obj.DateTime2.Date);
+                Assert.AreEqual(sproc.TestDate.Value.Date, obj.Date.Date);
+                Assert.AreEqual(sproc.TestFloat, obj.Float);
+                Assert.AreEqual(sproc.TestNChar, obj.NChar);
+                Assert.AreEqual(sproc.TestText, obj.Text);
                 CollectionAssert.AreEqual(sproc.TestBinary, obj.Binary);
                 CollectionAssert.AreEqual(sproc.TestImage, obj.Image);
             }

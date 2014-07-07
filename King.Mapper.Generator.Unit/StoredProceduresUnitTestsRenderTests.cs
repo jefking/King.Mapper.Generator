@@ -1,34 +1,34 @@
 ﻿namespace King.Mapper.Generator.Unit
 {
     using King.Mapper.Generator.Models;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
     using System;
     using System.Collections.Generic;
 
-    [TestClass]
+    [TestFixture]
     public class StoredProceduresUnitTestsRenderTests
     {
-        [TestMethod]
+        [Test]
         public void Constructor()
         {
             new StoredProceduresUnitTestsRender(new Dictionary<int, Definition>());
         }
 
-        [TestMethod]
+        [Test]
         [ExpectedException(typeof(ArgumentNullException))]
         public void ConstructorSchemasNull()
         {
             new StoredProceduresUnitTestsRender(null);
         }
 
-        [TestMethod]
+        [Test]
         public void FileName()
         {
             var c = new StoredProceduresUnitTestsRender(new Dictionary<int, Definition>());
-            Assert.AreEqual<string>("StoredProcedures.Unit.Test.Generated.cs", c.FileName);
+            Assert.AreEqual("StoredProcedures.Unit.Test.Generated.cs", c.FileName);
         }
 
-        [TestMethod]
+        [Test]
         public void Render()
         {
             var c = new StoredProceduresUnitTestsRender(new Dictionary<int, Definition>());

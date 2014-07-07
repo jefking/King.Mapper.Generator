@@ -1,13 +1,13 @@
 ﻿namespace King.Mapper.Generator.Unit.Templates
 {
     using King.Mapper.Generator.Templates;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
     using System;
 
-    [TestClass]
+    [TestFixture]
     public class ExtensionMethodsTests
     {
-        [TestMethod]
+        [Test]
         public void ConvertToCamelCaseParameter()
         {
             var data = "test string test";
@@ -15,7 +15,7 @@
             Assert.AreEqual(expected, data.CamelCase());
         }
 
-        [TestMethod]
+        [Test]
         public void ConvertToCamelCaseParameterTrim()
         {
             var data = "  test     string  test          ";
@@ -23,7 +23,7 @@
             Assert.AreEqual(expected, data.CamelCase());
         }
 
-        [TestMethod]
+        [Test]
         public void CamelCaseStringNull()
         {
             string data = null;

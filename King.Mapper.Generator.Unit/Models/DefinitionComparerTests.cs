@@ -1,17 +1,17 @@
 ﻿namespace King.Mapper.Generator.Unit.Models
 {
     using King.Mapper.Generator.Models;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
 
-    [TestClass]
+    [TestFixture]
     public class DefinitionComparerTests
     {
-        [TestMethod]
+        [Test]
         public void EqualsTrue()
         {
             var preface = Guid.NewGuid().ToString();
@@ -30,7 +30,7 @@
             Assert.IsTrue(c.Equals(x, y));
         }
 
-        [TestMethod]
+        [Test]
         public void EqualsSame()
         {
             var preface = Guid.NewGuid().ToString();
@@ -45,7 +45,7 @@
             Assert.IsTrue(c.Equals(x, x));
         }
 
-        [TestMethod]
+        [Test]
         [ExpectedException(typeof(ArgumentNullException))]
         public void EqualsXNull()
         {
@@ -59,7 +59,7 @@
             c.Equals(null, x);
         }
 
-        [TestMethod]
+        [Test]
         [ExpectedException(typeof(ArgumentNullException))]
         public void EqualsYNull()
         {
@@ -73,7 +73,7 @@
             c.Equals(x, null);
         }
 
-        [TestMethod]
+        [Test]
         public void Equalsfalse()
         {
             var x = new Definition()
@@ -91,7 +91,7 @@
             Assert.IsFalse(c.Equals(x, y));
         }
 
-        [TestMethod]
+        [Test]
         public void GetHashCodeTest()
         {
             var x = new Definition()
@@ -102,10 +102,10 @@
 
             var hash = string.Format("{0}{1}", x.Preface, x.Name).GetHashCode();
             var c = new DefinitionComparer();
-            Assert.AreEqual<int>(hash, c.GetHashCode(x));
+            Assert.AreEqual(hash, c.GetHashCode(x));
         }
 
-        [TestMethod]
+        [Test]
         [ExpectedException(typeof(ArgumentNullException))]
         public void GetHashCodeDefinitionNull()
         {

@@ -2,25 +2,25 @@
 {
     using King.Mapper.Generator.Models;
     using King.Mapper.Generator.Templates;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
     using System.Collections.Generic;
 
-    [TestClass]
+    [TestFixture]
     public class StoredProceduresUnitTestsTests
     {
-        [TestMethod]
+        [Test]
         public void Constructor()
         {
             new StoredProceduresUnitTests();
         }
 
-        [TestMethod]
+        [Test]
         public void IsIManifestTemplate()
         {
             Assert.IsNotNull(new StoredProceduresUnitTests() as IManifestTemplate);
         }
 
-        [TestMethod]
+        [Test]
         public void Manifest()
         {
             var expected = new Dictionary<int, Definition>();
@@ -29,58 +29,58 @@
                 Manifest = expected,
             };
 
-            Assert.AreEqual<IDictionary<int, Definition>>(expected, sp.Manifest);
+            Assert.AreEqual(expected, sp.Manifest);
         }
 
-        [TestMethod]
+        [Test]
         public void TestingNamespaceMSTest()
         {
             var sp = new StoredProceduresUnitTests(TestSuite.MSTest);
 
-            Assert.AreEqual<string>("Microsoft.VisualStudio.TestTools.UnitTesting", sp.TestingNamespace);
+            Assert.AreEqual("Microsoft.VisualStudio.TestTools.UnitTesting", sp.TestingNamespace);
         }
 
-        [TestMethod]
+        [Test]
         public void TestingNamespaceNUnit()
         {
             var sp = new StoredProceduresUnitTests(TestSuite.NUnit);
 
-            Assert.AreEqual<string>("NUnit.Framework", sp.TestingNamespace);
+            Assert.AreEqual("NUnit.Framework", sp.TestingNamespace);
         }
 
-        [TestMethod]
+        [Test]
         public void TestClassAttributeMSTest()
         {
             var sp = new StoredProceduresUnitTests(TestSuite.MSTest);
 
-            Assert.AreEqual<string>("TestClass", sp.TestClassAttribute);
+            Assert.AreEqual("TestClass", sp.TestClassAttribute);
         }
 
-        [TestMethod]
+        [Test]
         public void TestClassAttributeNUnit()
         {
             var sp = new StoredProceduresUnitTests(TestSuite.NUnit);
 
-            Assert.AreEqual<string>("TestFixture", sp.TestClassAttribute);
+            Assert.AreEqual("TestFixture", sp.TestClassAttribute);
         }
 
-        [TestMethod]
+        [Test]
         public void TestMethodAttributeMSTest()
         {
             var sp = new StoredProceduresUnitTests(TestSuite.MSTest);
 
-            Assert.AreEqual<string>("TestMethod", sp.TestMethodAttribute);
+            Assert.AreEqual("TestMethod", sp.TestMethodAttribute);
         }
 
-        [TestMethod]
+        [Test]
         public void TestMethodAttributeNUnit()
         {
             var sp = new StoredProceduresUnitTests(TestSuite.NUnit);
 
-            Assert.AreEqual<string>("Test", sp.TestMethodAttribute);
+            Assert.AreEqual("Test", sp.TestMethodAttribute);
         }
 
-        [TestMethod]
+        [Test]
         public void TransformText()
         {
             var sp = new StoredProceduresUnitTests()

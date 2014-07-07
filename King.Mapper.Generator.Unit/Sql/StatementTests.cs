@@ -1,12 +1,12 @@
 ﻿namespace King.Mapper.Generator.Unit.Sql
 {
     using King.Mapper.Generator.Sql;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
 
-    [TestClass]
+    [TestFixture]
     public class StatementTests
     {
-        [TestMethod]
+        [Test]
         public void SelectSchema()
         {
             var sql = Statement.SelectSchema;

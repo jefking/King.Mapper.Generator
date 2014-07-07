@@ -1,15 +1,15 @@
 ﻿namespace King.Mapper.Generator.Integration
 {
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
     using NSubstitute;
     using System;
     using System.Collections.Generic;
     using System.IO;
 
-    [TestClass]
+    [TestFixture]
     public class FileWriterTests
     {
-        [TestMethod]
+        [Test]
         public void WriteAll()
         {
             var fileName = "test.write";
@@ -30,7 +30,7 @@
             renderer.Received().Render();
 
             var returned = File.ReadAllText(file);
-            Assert.AreEqual<string>(contents, returned);
+            Assert.AreEqual(contents, returned);
             File.Delete(file);
         }
     }

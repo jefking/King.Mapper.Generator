@@ -2,16 +2,16 @@
 {
     using King.Mapper.Generator.Models;
     using King.Mapper.Generator.Sql;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
     using NSubstitute;
+    using NUnit.Framework;
     using System;
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
-    [TestClass]
+    [TestFixture]
     public class CodeGeneratorTests
     {
-        [TestMethod]
+        [Test]
         public void Constructor()
         {
             var loader = Substitute.For<IDataLoader>();
@@ -21,7 +21,7 @@
             new CodeGenerator(loader, factory, writer);
         }
 
-        [TestMethod]
+        [Test]
         [ExpectedException(typeof(ArgumentNullException))]
         public void ConstructorLoaderNull()
         {
@@ -31,7 +31,7 @@
             new CodeGenerator(null, factory, writer);
         }
 
-        [TestMethod]
+        [Test]
         [ExpectedException(typeof(ArgumentNullException))]
         public void ConstructorFactoryNull()
         {
@@ -41,7 +41,7 @@
             new CodeGenerator(loader, null, writer);
         }
 
-        [TestMethod]
+        [Test]
         [ExpectedException(typeof(ArgumentNullException))]
         public void ConstructorWriterNull()
         {
@@ -51,7 +51,7 @@
             new CodeGenerator(loader, factory, null);
         }
 
-        [TestMethod]
+        [Test]
         public async Task Generate()
         {
             IDictionary<int, Definition> manifest = new Dictionary<int, Definition>();

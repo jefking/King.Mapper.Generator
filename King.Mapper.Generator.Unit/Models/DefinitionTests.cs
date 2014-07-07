@@ -1,44 +1,44 @@
 ﻿namespace King.Mapper.Generator.Unit.Models
 {
     using King.Mapper.Generator.Models;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
     using System;
     using System.Collections.Generic;
 
-    [TestClass]
+    [TestFixture]
     public class DefinitionTests
     {
-        [TestMethod]
+        [Test]
         public void Constructor()
         {
             new Definition();
         }
 
-        [TestMethod]
+        [Test]
         public void Preface()
         {
             var item = new Definition();
             var data = Guid.NewGuid().ToString();
             item.Preface = data;
-            Assert.AreEqual<string>(data, item.Preface);
+            Assert.AreEqual(data, item.Preface);
         }
 
-        [TestMethod]
+        [Test]
         public void Name()
         {
             var item = new Definition();
             var data = Guid.NewGuid().ToString();
             item.Name = data;
-            Assert.AreEqual<string>(data, item.Name);
+            Assert.AreEqual(data, item.Name);
         }
 
-        [TestMethod]
+        [Test]
         public void Variables()
         {
             var item = new Definition();
             var data = new List<Variable>();
             item.Variables = data;
-            Assert.AreEqual<IEnumerable<Variable>>(data, item.Variables);
+            Assert.AreEqual(data, item.Variables);
         }
     }
 }

@@ -1,35 +1,35 @@
 ﻿namespace King.Mapper.Generator.Unit
 {
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
 
-    [TestClass]
+    [TestFixture]
     public class FileWriterTests
     {
-        [TestMethod]
+        [Test]
         public void Constructor()
         {
             new FileWriter(Guid.NewGuid().ToString());
         }
 
-        [TestMethod]
+        [Test]
         [ExpectedException(typeof(ArgumentException))]
         public void ConstructorFolderNull()
         {
             new FileWriter(null);
         }
 
-        [TestMethod]
+        [Test]
         public void IsIFileWriter()
         {
             Assert.IsNotNull(new FileWriter(Guid.NewGuid().ToString()) as IFileWriter);
         }
 
-        [TestMethod]
+        [Test]
         [ExpectedException(typeof(ArgumentNullException))]
         public void WriteAllRenderersNull()
         {

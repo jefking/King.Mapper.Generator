@@ -10,27 +10,27 @@
 namespace King.Mapper.Generated.Sql
 {
     using King.Mapper.Data;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
     using System;
     using System.Data;
     using System.Linq;
 
-	[TestClass]
+	[TestFixture]
 	public class DboSelectmultiplestatementTests
 	{
-		[TestMethod]
+		[Test]
 		public void Constructor()
 		{
 			new dboSelectMultipleStatement();
 		}
 		
-		[TestMethod]
+		[Test]
 		public void IsIStoredProcedure()
 		{
 			Assert.IsNotNull(new dboSelectMultipleStatement() as IStoredProcedure); 
 		}
 		
-		[TestMethod]
+		[Test]
 		public void FullyQualifiedName()
 		{
 			var item = new dboSelectMultipleStatement();
@@ -41,22 +41,22 @@ namespace King.Mapper.Generated.Sql
 		#endregion
 	}
 
-	[TestClass]
+	[TestFixture]
 	public class DboSimulatedinsertstatementTests
 	{
-		[TestMethod]
+		[Test]
 		public void Constructor()
 		{
 			new dboSimulatedInsertStatement();
 		}
 		
-		[TestMethod]
+		[Test]
 		public void IsIStoredProcedure()
 		{
 			Assert.IsNotNull(new dboSimulatedInsertStatement() as IStoredProcedure); 
 		}
 		
-		[TestMethod]
+		[Test]
 		public void FullyQualifiedName()
 		{
 			var item = new dboSimulatedInsertStatement();
@@ -64,16 +64,16 @@ namespace King.Mapper.Generated.Sql
 		}
 		
 		#region Property Tests
-		[TestMethod]
+		[Test]
 		public void TestintGetSet()
 		{
 			var item = new dboSimulatedInsertStatement();
 			var expected = new Random().Next();
 			item.TestInt = expected;
-			Assert.AreEqual<int?>(expected, item.TestInt);
+			Assert.AreEqual(expected, item.TestInt);
 		}
 		
-		[TestMethod]
+		[Test]
 		public void TestintDataMapper()
 		{
 			var item = new dboSimulatedInsertStatement();
@@ -83,29 +83,29 @@ namespace King.Mapper.Generated.Sql
             Assert.IsNotNull(property);
             var mapper = property.GetAttribute<DataMapperAttribute>();
             Assert.IsNotNull(mapper);
-            Assert.AreEqual<string>("@TestInt", mapper.ParameterName);
-            Assert.AreEqual<DbType>(DbType.Int32, mapper.DatabaseType);
+            Assert.AreEqual("@TestInt", mapper.ParameterName);
+            Assert.AreEqual(DbType.Int32, mapper.DatabaseType);
 		}
 
 		#endregion
 	}
 
-	[TestClass]
+	[TestFixture]
 	public class DboSimulatedselectstatementTests
 	{
-		[TestMethod]
+		[Test]
 		public void Constructor()
 		{
 			new dboSimulatedSelectStatement();
 		}
 		
-		[TestMethod]
+		[Test]
 		public void IsIStoredProcedure()
 		{
 			Assert.IsNotNull(new dboSimulatedSelectStatement() as IStoredProcedure); 
 		}
 		
-		[TestMethod]
+		[Test]
 		public void FullyQualifiedName()
 		{
 			var item = new dboSimulatedSelectStatement();
@@ -113,16 +113,16 @@ namespace King.Mapper.Generated.Sql
 		}
 		
 		#region Property Tests
-		[TestMethod]
+		[Test]
 		public void TestintGetSet()
 		{
 			var item = new dboSimulatedSelectStatement();
 			var expected = new Random().Next();
 			item.TestInt = expected;
-			Assert.AreEqual<int?>(expected, item.TestInt);
+			Assert.AreEqual(expected, item.TestInt);
 		}
 		
-		[TestMethod]
+		[Test]
 		public void TestintDataMapper()
 		{
 			var item = new dboSimulatedSelectStatement();
@@ -132,20 +132,20 @@ namespace King.Mapper.Generated.Sql
             Assert.IsNotNull(property);
             var mapper = property.GetAttribute<DataMapperAttribute>();
             Assert.IsNotNull(mapper);
-            Assert.AreEqual<string>("@TestInt", mapper.ParameterName);
-            Assert.AreEqual<DbType>(DbType.Int32, mapper.DatabaseType);
+            Assert.AreEqual("@TestInt", mapper.ParameterName);
+            Assert.AreEqual(DbType.Int32, mapper.DatabaseType);
 		}
 
-		[TestMethod]
+		[Test]
 		public void TestbigintGetSet()
 		{
 			var item = new dboSimulatedSelectStatement();
 			var expected = (long)new Random().Next();
 			item.TestBigInt = expected;
-			Assert.AreEqual<long?>(expected, item.TestBigInt);
+			Assert.AreEqual(expected, item.TestBigInt);
 		}
 		
-		[TestMethod]
+		[Test]
 		public void TestbigintDataMapper()
 		{
 			var item = new dboSimulatedSelectStatement();
@@ -155,20 +155,20 @@ namespace King.Mapper.Generated.Sql
             Assert.IsNotNull(property);
             var mapper = property.GetAttribute<DataMapperAttribute>();
             Assert.IsNotNull(mapper);
-            Assert.AreEqual<string>("@TestBigInt", mapper.ParameterName);
-            Assert.AreEqual<DbType>(DbType.Int64, mapper.DatabaseType);
+            Assert.AreEqual("@TestBigInt", mapper.ParameterName);
+            Assert.AreEqual(DbType.Int64, mapper.DatabaseType);
 		}
 
-		[TestMethod]
+		[Test]
 		public void TestbitGetSet()
 		{
 			var item = new dboSimulatedSelectStatement();
 			var expected = true;
 			item.TestBit = expected;
-			Assert.AreEqual<bool?>(expected, item.TestBit);
+			Assert.AreEqual(expected, item.TestBit);
 		}
 		
-		[TestMethod]
+		[Test]
 		public void TestbitDataMapper()
 		{
 			var item = new dboSimulatedSelectStatement();
@@ -178,20 +178,20 @@ namespace King.Mapper.Generated.Sql
             Assert.IsNotNull(property);
             var mapper = property.GetAttribute<DataMapperAttribute>();
             Assert.IsNotNull(mapper);
-            Assert.AreEqual<string>("@TestBit", mapper.ParameterName);
-            Assert.AreEqual<DbType>(DbType.Boolean, mapper.DatabaseType);
+            Assert.AreEqual("@TestBit", mapper.ParameterName);
+            Assert.AreEqual(DbType.Boolean, mapper.DatabaseType);
 		}
 
-		[TestMethod]
+		[Test]
 		public void TestdecimalGetSet()
 		{
 			var item = new dboSimulatedSelectStatement();
 			var expected = (decimal)new Random().NextDouble();
 			item.TestDecimal = expected;
-			Assert.AreEqual<decimal?>(expected, item.TestDecimal);
+			Assert.AreEqual(expected, item.TestDecimal);
 		}
 		
-		[TestMethod]
+		[Test]
 		public void TestdecimalDataMapper()
 		{
 			var item = new dboSimulatedSelectStatement();
@@ -201,20 +201,20 @@ namespace King.Mapper.Generated.Sql
             Assert.IsNotNull(property);
             var mapper = property.GetAttribute<DataMapperAttribute>();
             Assert.IsNotNull(mapper);
-            Assert.AreEqual<string>("@TestDecimal", mapper.ParameterName);
-            Assert.AreEqual<DbType>(DbType.Decimal, mapper.DatabaseType);
+            Assert.AreEqual("@TestDecimal", mapper.ParameterName);
+            Assert.AreEqual(DbType.Decimal, mapper.DatabaseType);
 		}
 
-		[TestMethod]
+		[Test]
 		public void TestmoneyGetSet()
 		{
 			var item = new dboSimulatedSelectStatement();
 			var expected = (decimal)new Random().NextDouble();
 			item.TestMoney = expected;
-			Assert.AreEqual<decimal?>(expected, item.TestMoney);
+			Assert.AreEqual(expected, item.TestMoney);
 		}
 		
-		[TestMethod]
+		[Test]
 		public void TestmoneyDataMapper()
 		{
 			var item = new dboSimulatedSelectStatement();
@@ -224,20 +224,20 @@ namespace King.Mapper.Generated.Sql
             Assert.IsNotNull(property);
             var mapper = property.GetAttribute<DataMapperAttribute>();
             Assert.IsNotNull(mapper);
-            Assert.AreEqual<string>("@TestMoney", mapper.ParameterName);
-            Assert.AreEqual<DbType>(DbType.Currency, mapper.DatabaseType);
+            Assert.AreEqual("@TestMoney", mapper.ParameterName);
+            Assert.AreEqual(DbType.Currency, mapper.DatabaseType);
 		}
 
-		[TestMethod]
+		[Test]
 		public void TestfloatGetSet()
 		{
 			var item = new dboSimulatedSelectStatement();
 			var expected = (float)new Random().Next();
 			item.TestFloat = expected;
-			Assert.AreEqual<float?>(expected, item.TestFloat);
+			Assert.AreEqual(expected, item.TestFloat);
 		}
 		
-		[TestMethod]
+		[Test]
 		public void TestfloatDataMapper()
 		{
 			var item = new dboSimulatedSelectStatement();
@@ -247,20 +247,20 @@ namespace King.Mapper.Generated.Sql
             Assert.IsNotNull(property);
             var mapper = property.GetAttribute<DataMapperAttribute>();
             Assert.IsNotNull(mapper);
-            Assert.AreEqual<string>("@TestFloat", mapper.ParameterName);
-            Assert.AreEqual<DbType>(DbType.Single, mapper.DatabaseType);
+            Assert.AreEqual("@TestFloat", mapper.ParameterName);
+            Assert.AreEqual(DbType.Single, mapper.DatabaseType);
 		}
 
-		[TestMethod]
+		[Test]
 		public void TestdateGetSet()
 		{
 			var item = new dboSimulatedSelectStatement();
 			var expected = DateTime.UtcNow;
 			item.TestDate = expected;
-			Assert.AreEqual<DateTime?>(expected, item.TestDate);
+			Assert.AreEqual(expected, item.TestDate);
 		}
 		
-		[TestMethod]
+		[Test]
 		public void TestdateDataMapper()
 		{
 			var item = new dboSimulatedSelectStatement();
@@ -270,20 +270,20 @@ namespace King.Mapper.Generated.Sql
             Assert.IsNotNull(property);
             var mapper = property.GetAttribute<DataMapperAttribute>();
             Assert.IsNotNull(mapper);
-            Assert.AreEqual<string>("@TestDate", mapper.ParameterName);
-            Assert.AreEqual<DbType>(DbType.Date, mapper.DatabaseType);
+            Assert.AreEqual("@TestDate", mapper.ParameterName);
+            Assert.AreEqual(DbType.Date, mapper.DatabaseType);
 		}
 
-		[TestMethod]
+		[Test]
 		public void Testdatetime2GetSet()
 		{
 			var item = new dboSimulatedSelectStatement();
 			var expected = DateTime.UtcNow;
 			item.TestDateTime2 = expected;
-			Assert.AreEqual<DateTime?>(expected, item.TestDateTime2);
+			Assert.AreEqual(expected, item.TestDateTime2);
 		}
 		
-		[TestMethod]
+		[Test]
 		public void Testdatetime2DataMapper()
 		{
 			var item = new dboSimulatedSelectStatement();
@@ -293,20 +293,20 @@ namespace King.Mapper.Generated.Sql
             Assert.IsNotNull(property);
             var mapper = property.GetAttribute<DataMapperAttribute>();
             Assert.IsNotNull(mapper);
-            Assert.AreEqual<string>("@TestDateTime2", mapper.ParameterName);
-            Assert.AreEqual<DbType>(DbType.DateTime2, mapper.DatabaseType);
+            Assert.AreEqual("@TestDateTime2", mapper.ParameterName);
+            Assert.AreEqual(DbType.DateTime2, mapper.DatabaseType);
 		}
 
-		[TestMethod]
+		[Test]
 		public void TestdatetimeGetSet()
 		{
 			var item = new dboSimulatedSelectStatement();
 			var expected = DateTime.UtcNow;
 			item.TestDateTime = expected;
-			Assert.AreEqual<DateTime?>(expected, item.TestDateTime);
+			Assert.AreEqual(expected, item.TestDateTime);
 		}
 		
-		[TestMethod]
+		[Test]
 		public void TestdatetimeDataMapper()
 		{
 			var item = new dboSimulatedSelectStatement();
@@ -316,20 +316,20 @@ namespace King.Mapper.Generated.Sql
             Assert.IsNotNull(property);
             var mapper = property.GetAttribute<DataMapperAttribute>();
             Assert.IsNotNull(mapper);
-            Assert.AreEqual<string>("@TestDateTime", mapper.ParameterName);
-            Assert.AreEqual<DbType>(DbType.DateTime, mapper.DatabaseType);
+            Assert.AreEqual("@TestDateTime", mapper.ParameterName);
+            Assert.AreEqual(DbType.DateTime, mapper.DatabaseType);
 		}
 
-		[TestMethod]
+		[Test]
 		public void TestcharGetSet()
 		{
 			var item = new dboSimulatedSelectStatement();
 			var expected = (char)new Random().Next();
 			item.TestChar = expected;
-			Assert.AreEqual<char>(expected, item.TestChar);
+			Assert.AreEqual(expected, item.TestChar);
 		}
 		
-		[TestMethod]
+		[Test]
 		public void TestcharDataMapper()
 		{
 			var item = new dboSimulatedSelectStatement();
@@ -339,20 +339,20 @@ namespace King.Mapper.Generated.Sql
             Assert.IsNotNull(property);
             var mapper = property.GetAttribute<DataMapperAttribute>();
             Assert.IsNotNull(mapper);
-            Assert.AreEqual<string>("@TestChar", mapper.ParameterName);
-            Assert.AreEqual<DbType>(DbType.Int16, mapper.DatabaseType);
+            Assert.AreEqual("@TestChar", mapper.ParameterName);
+            Assert.AreEqual(DbType.Int16, mapper.DatabaseType);
 		}
 
-		[TestMethod]
+		[Test]
 		public void TesttextGetSet()
 		{
 			var item = new dboSimulatedSelectStatement();
 			var expected = Guid.NewGuid().ToString();
 			item.TestText = expected;
-			Assert.AreEqual<string>(expected, item.TestText);
+			Assert.AreEqual(expected, item.TestText);
 		}
 		
-		[TestMethod]
+		[Test]
 		public void TesttextDataMapper()
 		{
 			var item = new dboSimulatedSelectStatement();
@@ -362,20 +362,20 @@ namespace King.Mapper.Generated.Sql
             Assert.IsNotNull(property);
             var mapper = property.GetAttribute<DataMapperAttribute>();
             Assert.IsNotNull(mapper);
-            Assert.AreEqual<string>("@TestText", mapper.ParameterName);
-            Assert.AreEqual<DbType>(DbType.String, mapper.DatabaseType);
+            Assert.AreEqual("@TestText", mapper.ParameterName);
+            Assert.AreEqual(DbType.String, mapper.DatabaseType);
 		}
 
-		[TestMethod]
+		[Test]
 		public void TestncharGetSet()
 		{
 			var item = new dboSimulatedSelectStatement();
 			var expected = (char)new Random().Next();
 			item.TestNChar = expected;
-			Assert.AreEqual<char>(expected, item.TestNChar);
+			Assert.AreEqual(expected, item.TestNChar);
 		}
 		
-		[TestMethod]
+		[Test]
 		public void TestncharDataMapper()
 		{
 			var item = new dboSimulatedSelectStatement();
@@ -385,20 +385,20 @@ namespace King.Mapper.Generated.Sql
             Assert.IsNotNull(property);
             var mapper = property.GetAttribute<DataMapperAttribute>();
             Assert.IsNotNull(mapper);
-            Assert.AreEqual<string>("@TestNChar", mapper.ParameterName);
-            Assert.AreEqual<DbType>(DbType.String, mapper.DatabaseType);
+            Assert.AreEqual("@TestNChar", mapper.ParameterName);
+            Assert.AreEqual(DbType.String, mapper.DatabaseType);
 		}
 
-		[TestMethod]
+		[Test]
 		public void TestntextGetSet()
 		{
 			var item = new dboSimulatedSelectStatement();
 			var expected = Guid.NewGuid().ToString();
 			item.TestNText = expected;
-			Assert.AreEqual<string>(expected, item.TestNText);
+			Assert.AreEqual(expected, item.TestNText);
 		}
 		
-		[TestMethod]
+		[Test]
 		public void TestntextDataMapper()
 		{
 			var item = new dboSimulatedSelectStatement();
@@ -408,20 +408,20 @@ namespace King.Mapper.Generated.Sql
             Assert.IsNotNull(property);
             var mapper = property.GetAttribute<DataMapperAttribute>();
             Assert.IsNotNull(mapper);
-            Assert.AreEqual<string>("@TestNText", mapper.ParameterName);
-            Assert.AreEqual<DbType>(DbType.String, mapper.DatabaseType);
+            Assert.AreEqual("@TestNText", mapper.ParameterName);
+            Assert.AreEqual(DbType.String, mapper.DatabaseType);
 		}
 
-		[TestMethod]
+		[Test]
 		public void TestbinaryGetSet()
 		{
 			var item = new dboSimulatedSelectStatement();
 			var expected = new byte[128]; new Random().NextBytes(expected);
 			item.TestBinary = expected;
-			Assert.AreEqual<byte[]>(expected, item.TestBinary);
+			Assert.AreEqual(expected, item.TestBinary);
 		}
 		
-		[TestMethod]
+		[Test]
 		public void TestbinaryDataMapper()
 		{
 			var item = new dboSimulatedSelectStatement();
@@ -431,20 +431,20 @@ namespace King.Mapper.Generated.Sql
             Assert.IsNotNull(property);
             var mapper = property.GetAttribute<DataMapperAttribute>();
             Assert.IsNotNull(mapper);
-            Assert.AreEqual<string>("@TestBinary", mapper.ParameterName);
-            Assert.AreEqual<DbType>(DbType.Binary, mapper.DatabaseType);
+            Assert.AreEqual("@TestBinary", mapper.ParameterName);
+            Assert.AreEqual(DbType.Binary, mapper.DatabaseType);
 		}
 
-		[TestMethod]
+		[Test]
 		public void TestimageGetSet()
 		{
 			var item = new dboSimulatedSelectStatement();
 			var expected = new byte[128]; new Random().NextBytes(expected);
 			item.TestImage = expected;
-			Assert.AreEqual<byte[]>(expected, item.TestImage);
+			Assert.AreEqual(expected, item.TestImage);
 		}
 		
-		[TestMethod]
+		[Test]
 		public void TestimageDataMapper()
 		{
 			var item = new dboSimulatedSelectStatement();
@@ -454,20 +454,20 @@ namespace King.Mapper.Generated.Sql
             Assert.IsNotNull(property);
             var mapper = property.GetAttribute<DataMapperAttribute>();
             Assert.IsNotNull(mapper);
-            Assert.AreEqual<string>("@TestImage", mapper.ParameterName);
-            Assert.AreEqual<DbType>(DbType.Binary, mapper.DatabaseType);
+            Assert.AreEqual("@TestImage", mapper.ParameterName);
+            Assert.AreEqual(DbType.Binary, mapper.DatabaseType);
 		}
 
-		[TestMethod]
+		[Test]
 		public void TestguidGetSet()
 		{
 			var item = new dboSimulatedSelectStatement();
 			var expected = Guid.NewGuid();
 			item.TestGuid = expected;
-			Assert.AreEqual<Guid?>(expected, item.TestGuid);
+			Assert.AreEqual(expected, item.TestGuid);
 		}
 		
-		[TestMethod]
+		[Test]
 		public void TestguidDataMapper()
 		{
 			var item = new dboSimulatedSelectStatement();
@@ -477,8 +477,8 @@ namespace King.Mapper.Generated.Sql
             Assert.IsNotNull(property);
             var mapper = property.GetAttribute<DataMapperAttribute>();
             Assert.IsNotNull(mapper);
-            Assert.AreEqual<string>("@TestGuid", mapper.ParameterName);
-            Assert.AreEqual<DbType>(DbType.Guid, mapper.DatabaseType);
+            Assert.AreEqual("@TestGuid", mapper.ParameterName);
+            Assert.AreEqual(DbType.Guid, mapper.DatabaseType);
 		}
 
 		#endregion

@@ -234,7 +234,7 @@ foreach (var parameter in proc.Variables)
             
             #line default
             #line hidden
-            this.Write("\", mapper.ParameterName);\r\n            Assert.AreEqual<DbType>(");
+            this.Write("\", mapper.ParameterName);\r\n            Assert.AreEqual(");
             
             #line 76 "D:\Git\King.Mapper.Generator\King.Mapper.Generator.Core\Templates\StoredProceduresUnitTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(DataTypeMappings.DataTypeDbType(parameter.DataType)));

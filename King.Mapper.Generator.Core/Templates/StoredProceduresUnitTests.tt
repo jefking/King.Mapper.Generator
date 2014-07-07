@@ -72,8 +72,8 @@ foreach (var parameter in proc.Variables)
             Assert.IsNotNull(property);
             var mapper = property.GetAttribute<DataMapperAttribute>();
             Assert.IsNotNull(mapper);
-            Assert.AreEqual<string>("<#=parameter.ParameterName#>", mapper.ParameterName);
-            Assert.AreEqual<DbType>(<#=DataTypeMappings.DataTypeDbType(parameter.DataType)#>, mapper.DatabaseType);
+            Assert.AreEqual("<#=parameter.ParameterName#>", mapper.ParameterName);
+            Assert.AreEqual(<#=DataTypeMappings.DataTypeDbType(parameter.DataType)#>, mapper.DatabaseType);
 		}
 
 <#

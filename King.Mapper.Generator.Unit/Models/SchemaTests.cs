@@ -2,47 +2,47 @@
 {
     using King.Mapper;
     using King.Mapper.Generator.Models;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
     using System;
     using System.Linq;
 
-    [TestClass]
+    [TestFixture]
     public class SchemaTests
     {
-        [TestMethod]
+        [Test]
         public void Constructor()
         {
             new Schema();
         }
 
-        [TestMethod]
+        [Test]
         public void Parameter()
         {
             var item = new Schema();
             var data = Guid.NewGuid().ToString();
             item.Parameter = data;
-            Assert.AreEqual<string>(data, item.Parameter);
+            Assert.AreEqual(data, item.Parameter);
         }
 
-        [TestMethod]
+        [Test]
         public void DataType()
         {
             var item = new Schema();
             var data = Guid.NewGuid().ToString();
             item.DataType = data;
-            Assert.AreEqual<string>(data, item.DataType);
+            Assert.AreEqual(data, item.DataType);
         }
 
-        [TestMethod]
+        [Test]
         public void Name()
         {
             var item = new Schema();
             var data = Guid.NewGuid().ToString();
             item.Name = data;
-            Assert.AreEqual<string>(data, item.Name);
+            Assert.AreEqual(data, item.Name);
         }
 
-        [TestMethod]
+        [Test]
         public void NameAction()
         {
             var item = new Schema();
@@ -53,11 +53,11 @@
             Assert.IsNotNull(property);
             var action = property.GetAttribute<ActionNameAttribute>();
             Assert.IsNotNull(action);
-            Assert.AreEqual<string>("StoredProcedure", action.Name);
-            Assert.AreEqual<ActionFlags>(ActionFlags.Load, action.Action);
+            Assert.AreEqual("StoredProcedure", action.Name);
+            Assert.AreEqual(ActionFlags.Load, action.Action);
         }
 
-        [TestMethod]
+        [Test]
         public void PrefaceAction()
         {
             var item = new Schema();
@@ -68,26 +68,26 @@
             Assert.IsNotNull(property);
             var action = property.GetAttribute<ActionNameAttribute>();
             Assert.IsNotNull(action);
-            Assert.AreEqual<string>("Schema", action.Name);
-            Assert.AreEqual<ActionFlags>(ActionFlags.Load, action.Action);
+            Assert.AreEqual("Schema", action.Name);
+            Assert.AreEqual(ActionFlags.Load, action.Action);
         }
 
-        [TestMethod]
+        [Test]
         public void Preface()
         {
             var item = new Schema();
             var data = Guid.NewGuid().ToString();
             item.Preface = data;
-            Assert.AreEqual<string>(data, item.Preface);
+            Assert.AreEqual(data, item.Preface);
         }
 
-        [TestMethod]
+        [Test]
         public void MaxLength()
         {
             var item = new Schema();
             var data = Guid.NewGuid().ToString();
             item.MaxLength = data;
-            Assert.AreEqual<string>(data, item.MaxLength);
+            Assert.AreEqual(data, item.MaxLength);
         }
     }
 }

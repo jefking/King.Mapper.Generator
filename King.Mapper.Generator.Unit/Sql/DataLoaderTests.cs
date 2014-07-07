@@ -3,29 +3,29 @@
     using King.Mapper.Data;
     using King.Mapper.Generator.Models;
     using King.Mapper.Generator.Sql;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
     using NSubstitute;
     using System;
     using System.Collections.Generic;
     using System.Linq;
 
-    [TestClass]
+    [TestFixture]
     public class DataLoaderTests
     {
-        [TestMethod]
+        [Test]
         public void Constructor()
         {
             new DataLoader(Guid.NewGuid().ToString());
         }
 
-        [TestMethod]
+        [Test]
         public void ConstructorWithLoader()
         {
             var loader = Substitute.For<ILoader<Schema>>();
             new DataLoader(Guid.NewGuid().ToString(), loader);
         }
 
-        [TestMethod]
+        [Test]
         [ExpectedException(typeof(ArgumentException))]
         public void ConstructorConnectionStringNull()
         {
@@ -33,14 +33,14 @@
             new DataLoader(null, loader);
         }
 
-        [TestMethod]
+        [Test]
         [ExpectedException(typeof(ArgumentNullException))]
         public void ConstructorLoaderNull()
         {
             new DataLoader(Guid.NewGuid().ToString(), null);
         }
 
-        [TestMethod]
+        [Test]
         [ExpectedException(typeof(ArgumentNullException))]
         public void BuildManifestDefinitionsNull()
         {
@@ -49,7 +49,7 @@
             dl.BuildManifest(null, new List<Schema>());
         }
 
-        [TestMethod]
+        [Test]
         [ExpectedException(typeof(ArgumentNullException))]
         public void BuildManifestSchemaNull()
         {
@@ -58,7 +58,7 @@
             dl.BuildManifest(new List<Definition>(), null);
         }
 
-        [TestMethod]
+        [Test]
         public void BuildManifest()
         {
             var random = new Random();
@@ -99,22 +99,22 @@
             var dl = new DataLoader(Guid.NewGuid().ToString(), loader);
             var manifest = dl.BuildManifest(defs, schemas);
             Assert.IsNotNull(manifest);
-            Assert.AreEqual<int>(count + 1, manifest.Count);
+            Assert.AreEqual(count + 1, manifest.Count);
             var c = new DefinitionComparer();
-            Assert.AreEqual<int>(schemaCount, manifest[c.GetHashCode(def)].Variables.Count());
+            Assert.AreEqual(schemaCount, manifest[c.GetHashCode(def)].Variables.Count());
         }
 
-        [TestMethod]
+        [Test]
         public void BuildManifestEmtpy()
         {
             var loader = Substitute.For<ILoader<Schema>>();
             var dl = new DataLoader(Guid.NewGuid().ToString(), loader);
             var returned = dl.BuildManifest(new List<Definition>(), new List<Schema>());
             Assert.IsNotNull(returned);
-            Assert.AreEqual<int>(0, returned.Count());
+            Assert.AreEqual(0, returned.Count());
         }
 
-        [TestMethod]
+        [Test]
         [ExpectedException(typeof(ArgumentNullException))]
         public void MinimizeSchemaNull()
         {
@@ -123,7 +123,7 @@
             dl.Minimize(null);
         }
 
-        [TestMethod]
+        [Test]
         public void Minimize()
         {
             var schemas = new List<Schema>();
@@ -140,11 +140,11 @@
             var returned = dl.Minimize(schemas);
 
             Assert.IsNotNull(returned);
-            Assert.AreEqual<int>(1, returned.Count());
+            Assert.AreEqual(1, returned.Count());
             var def = returned.FirstOrDefault();
             Assert.IsNotNull(def);
-            Assert.AreEqual<string>(schema.Name, def.Name);
-            Assert.AreEqual<string>(schema.Preface, def.Preface);
+            Assert.AreEqual(schema.Name, def.Name);
+            Assert.AreEqual(schema.Preface, def.Preface);
         }
     }
 }

@@ -2,29 +2,29 @@
 {
     using King.Mapper.Generator.Models;
     using King.Mapper.Generator.Templates;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
     using NSubstitute;
     using System;
     using System.Collections.Generic;
 
-    [TestClass]
+    [TestFixture]
     public class RendererTests
     {
-        [TestMethod]
+        [Test]
         public void Constructor()
         {
             var template = Substitute.For<IManifestTemplate>();
             new Renderer(template, new Dictionary<int, Definition>(), Guid.NewGuid().ToString());
         }
 
-        [TestMethod]
+        [Test]
         public void IsIRender()
         {
             var template = Substitute.For<IManifestTemplate>();
             Assert.IsNotNull(new Renderer(template, new Dictionary<int, Definition>(), Guid.NewGuid().ToString()) as IRender);
         }
 
-        [TestMethod]
+        [Test]
         [ExpectedException(typeof(ArgumentNullException))]
         public void ConstructorSchemasNull()
         {
@@ -32,14 +32,14 @@
             new Renderer(template, null, Guid.NewGuid().ToString());
         }
 
-        [TestMethod]
+        [Test]
         [ExpectedException(typeof(ArgumentNullException))]
         public void ConstructorTemplateNull()
         {
             new Renderer(null, new Dictionary<int, Definition>(), Guid.NewGuid().ToString());
         }
 
-        [TestMethod]
+        [Test]
         [ExpectedException(typeof(ArgumentException))]
         public void ConstructorFileNull()
         {
@@ -47,16 +47,16 @@
             new Renderer(template, new Dictionary<int, Definition>(), null);
         }
 
-        [TestMethod]
+        [Test]
         public void FileName()
         {
             var file = Guid.NewGuid().ToString();
             var template = Substitute.For<IManifestTemplate>();
             var c = new Renderer(template, new Dictionary<int, Definition>(), file);
-            Assert.AreEqual<string>(file, c.FileName);
+            Assert.AreEqual(file, c.FileName);
         }
 
-        [TestMethod]
+        [Test]
         public void Render()
         {
             var template = Substitute.For<IManifestTemplate>();

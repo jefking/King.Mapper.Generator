@@ -2,25 +2,25 @@
 {
     using King.Mapper.Generator.Models;
     using King.Mapper.Generator.Templates;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
     using System.Collections.Generic;
 
-    [TestClass]
+    [TestFixture]
     public class StoredProceduresTests
     {
-        [TestMethod]
+        [Test]
         public void Constructor()
         {
             new StoredProcedures();
         }
 
-        [TestMethod]
+        [Test]
         public void IsIManifestTemplate()
         {
             Assert.IsNotNull(new StoredProcedures() as IManifestTemplate);
         }
 
-        [TestMethod]
+        [Test]
         public void Manifest()
         {
             var expected = new Dictionary<int, Definition>();
@@ -29,10 +29,10 @@
                 Manifest = expected,
             };
 
-            Assert.AreEqual<IDictionary<int, Definition>>(expected, sp.Manifest);
+            Assert.AreEqual(expected, sp.Manifest);
         }
 
-        [TestMethod]
+        [Test]
         public void TransformText()
         {
             var sp = new StoredProcedures()

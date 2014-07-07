@@ -3,7 +3,7 @@
     using King.Mapper.Data;
     using King.Mapper.Generator.Models;
     using King.Mapper.Generator.Sql;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
     using NSubstitute;
     using System;
     using System.Collections.Generic;
@@ -12,14 +12,14 @@
     using System.Linq;
     using System.Threading.Tasks;
 
-    [TestClass]
+    [TestFixture]
     public class DataLoaderTests
     {
         #region Members
         private readonly string connectionString = ConfigurationManager.AppSettings["database"];
         #endregion
 
-        [TestMethod]
+        [Test]
         public async Task Load()
         {
             var random = new Random();
@@ -54,10 +54,10 @@
 
             Assert.IsNotNull(manifest);
             var c = new DefinitionComparer();
-            Assert.AreEqual<int>(schemaCount, manifest[c.GetHashCode(def)].Variables.Count());
+            Assert.AreEqual(schemaCount, manifest[c.GetHashCode(def)].Variables.Count());
         }
 
-        [TestMethod]
+        [Test]
         public async Task Schemas()
         {
             var loader = Substitute.For<ILoader<Schema>>();

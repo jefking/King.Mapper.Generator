@@ -1,51 +1,51 @@
 ﻿namespace King.Mapper.Generator.Unit
 {
     using King.Mapper.Generator.Models;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
     using System;
     using System.Collections.Generic;
     using System.Linq;
 
-    [TestClass]
+    [TestFixture]
     public class RenderFactoryTests
     {
-        [TestMethod]
+        [Test]
         public void IsIRenderFactory()
         {
             Assert.IsNotNull(new RenderFactory() as IRenderFactory);
         }
 
-        [TestMethod]
+        [Test]
         public void Load()
         {
             var factory = new RenderFactory();
             var renderers = factory.Load(new Dictionary<int, Definition>());
 
             Assert.IsNotNull(renderers);
-            Assert.AreEqual<int>(1, renderers.Count());
+            Assert.AreEqual(1, renderers.Count());
         }
 
-        [TestMethod]
+        [Test]
         public void LoadMSTest()
         {
             var factory = new RenderFactory(TestSuite.MSTest);
             var renderers = factory.Load(new Dictionary<int, Definition>());
 
             Assert.IsNotNull(renderers);
-            Assert.AreEqual<int>(2, renderers.Count());
+            Assert.AreEqual(2, renderers.Count());
         }
 
-        [TestMethod]
+        [Test]
         public void LoadNUnitTest()
         {
             var factory = new RenderFactory(TestSuite.NUnit);
             var renderers = factory.Load(new Dictionary<int, Definition>());
 
             Assert.IsNotNull(renderers);
-            Assert.AreEqual<int>(2, renderers.Count());
+            Assert.AreEqual(2, renderers.Count());
         }
 
-        [TestMethod]
+        [Test]
         [ExpectedException(typeof(ArgumentNullException))]
         public void LoadManifestNull()
         {
