@@ -7,7 +7,7 @@ Generate a data access layer for your SQL Server database for use with the [King
 ```
 King.Mapper.Generator.exe "[SQL Server Connection String]" [Folder]
 ```
-## Examples:
+## Examples
 **Code Generation**
 ```
 King.Mapper.Generator.exe "Server=localhost;Database=db;Trusted_Connection=True;" C:\Code
@@ -20,6 +20,7 @@ King.Mapper.Generator.exe "Server=localhost;Database=db;Trusted_Connection=True;
 ```
 King.Mapper.Generator.exe "Server=localhost;Database=db;Trusted_Connection=True;" C:\Code nunit
 ```
+**[Example](https://github.com/jefking/King.Mapper.Generator/blob/master/King.Mapper.Generator.Integration/StoredProcedures.Unit.Test.Generated.cs)**
 ##Output
 ```
 StoredProcedures.Generated.cs
