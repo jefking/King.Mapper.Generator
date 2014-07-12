@@ -9,15 +9,15 @@ PM> Install-Package King.Mapper.Generator
 ## Usage
 **Code Generation**
 ```
-King.Mapper.Generator.exe "Server=localhost;Database=db;Trusted_Connection=True;" C:\Code
+King.Mapper.Generator.exe "Server=localhost;Database=db;Trusted_Connection=True;" C:\Project code
 ```
-**Code Generation (with MSTest Unit Test Cases)**
+**MSTest: Unit Test Cases**
 ```
-King.Mapper.Generator.exe "Server=localhost;Database=db;Trusted_Connection=True;" C:\Code mstest
+King.Mapper.Generator.exe "Server=localhost;Database=db;Trusted_Connection=True;" C:\Project mstest
 ```
-**Code Generation (with NUnit Unit Test Cases)**
+**NUnit: Unit Test Cases**
 ```
-King.Mapper.Generator.exe "Server=localhost;Database=db;Trusted_Connection=True;" C:\Code nunit
+King.Mapper.Generator.exe "Server=localhost;Database=db;Trusted_Connection=True;" C:\Project nunit
 ```
 ### Output
 >**Example: [StoredProcedures.Generated.cs](https://github.com/jefking/King.Mapper.Generator/blob/master/King.Mapper.Generator.Integration/StoredProcedures.Generated.cs)** 

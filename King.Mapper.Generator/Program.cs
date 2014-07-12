@@ -47,9 +47,11 @@
                 suite = TestSuite.NUnit;
             }
 
+            var code = args.Any(a => a.ToLowerInvariant() == "code");
+
             try
             {
-                var factory = new RenderFactory(suite);
+                var factory = new RenderFactory(code, suite);
                 var codeGenerator = new CodeGenerator(new DataLoader(connectionString), factory, new FileWriter(folder));
                 var task = codeGenerator.Generate();
                 task.Wait();
