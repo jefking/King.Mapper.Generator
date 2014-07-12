@@ -49,10 +49,13 @@
 
             var code = args.Any(a => a.ToLowerInvariant() == "code");
 
+            var loader = new DataLoader(connectionString);
+            var factory = new RenderFactory(code, suite);
+            var writer = new FileWriter(folder);
+            var codeGenerator = new CodeGenerator(loader, factory, writer);
+
             try
             {
-                var factory = new RenderFactory(code, suite);
-                var codeGenerator = new CodeGenerator(new DataLoader(connectionString), factory, new FileWriter(folder));
                 var task = codeGenerator.Generate();
                 task.Wait();
             }

@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics;
     using System.IO;
     using System.Threading.Tasks;
 
@@ -44,9 +45,11 @@
             {
                 throw new ArgumentNullException("renderers");
             }
-
+            
             Parallel.ForEach(renderers, renderer =>
                 {
+                    Trace.TraceInformation("Writing file '{0}' in folder: '{1}'.", renderer.FileName, folder);
+
                     File.WriteAllText(string.Format("{0}{1}", folder, renderer.FileName), renderer.Render());
                 }
             );
