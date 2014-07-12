@@ -36,7 +36,12 @@
             }
 
             var connectionString = args[0];
-            var folder = args[1].Replace(@"\\", @"\").Replace("\"", string.Empty);
+
+            var folder = args[1];
+            folder = folder.Replace(@"\\", @"\"); // Double Backslash to single Backslash
+            folder = folder.Replace("\"", string.Empty); // Replace Quotes in Path
+            folder = folder.EndsWith('\\') ? folder : folder + '\\'; // Trailing Backslash in Path
+
             var suite = TestSuite.None;
             if (args.Any(a => a.ToLowerInvariant() == "mstest"))
             {
