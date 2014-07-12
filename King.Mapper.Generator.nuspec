@@ -21,6 +21,6 @@
         <file src="King.Mapper.Generator\bin\Release\King.Mapper.dll" target="content\King.Mapper.Generator\King.Mapper.dll" />
         <file src="King.Mapper.Generator\bin\Release\King.Mapper.Generator.Core.dll" target="content\King.Mapper.Generator\King.Mapper.Generator.Core.dll" />
         <file src="King.Mapper.Generator\bin\Release\King.Mapper.Generator.exe" target="content\King.Mapper.Generator\King.Mapper.Generator.exe" />
-        <file src="King.Mapper.Generator\bin\Release\King.Mapper.Generator.exe.config" target="content\King.Mapper.Generator.exe.config" />
+        <file src="King.Mapper.Generator\bin\Release\King.Mapper.Generator.exe.config" target="content\King.Mapper.Generator\King.Mapper.Generator.exe.config" />
     </files>
 </package>
