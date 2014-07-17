@@ -19,6 +19,10 @@ King.Mapper.Generator.exe "Server=localhost;Database=db;Trusted_Connection=True;
 ```
 King.Mapper.Generator.exe "Server=localhost;Database=db;Trusted_Connection=True;" C:\Project nunit
 ```
+**Visual Studio (Build Event)**
+```
+$(ProjectDir)King.Mapper.Generator\King.Mapper.Generator.exe "Server=localhost;Database=db;Trusted_Connection=True;" $(ProjectDir)\ code nunit
+```
 ### Output
 >**Example: [StoredProcedures.Generated.cs](https://github.com/jefking/King.Mapper.Generator/blob/master/King.Mapper.Generator.Integration/StoredProcedures.Generated.cs)** 
 >
