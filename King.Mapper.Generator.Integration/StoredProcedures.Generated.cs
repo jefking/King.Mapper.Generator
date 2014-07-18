@@ -14,6 +14,33 @@ namespace King.Mapper.Generated.Sql
     using King.Mapper.Data;
 
     /// <summary>
+    /// Class that Represents dbo.GenerateIssues Stored Procedure
+    /// </summary>
+	public partial class dboGenerateIssues : IStoredProcedure
+	{
+        /// <summary>
+        /// Gets Stored Proc name with Schema
+        /// </summary>
+		public string FullyQualifiedName()
+		{
+			return "[dbo].[GenerateIssues]";
+		}
+
+		#region Parameters
+        /// <summary>
+        /// Gets or sets the parameter value
+        /// </summary>
+		[DataMapper("@myInt", DbType.Int32)]
+		public int? myInt
+		{
+			get;
+			set;
+		}
+
+		#endregion
+	}
+
+    /// <summary>
     /// Class that Represents dbo.SelectMultipleStatement Stored Procedure
     /// </summary>
 	public partial class dboSelectMultipleStatement : IStoredProcedure
