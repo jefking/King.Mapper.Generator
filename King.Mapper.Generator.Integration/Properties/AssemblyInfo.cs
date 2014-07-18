@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 
 [assembly: AssemblyTitle("King.Mapper.Generator.Integration")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Integration Testing project")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Jef King")]
 [assembly: AssemblyProduct("King.Mapper.Generator.Integration")]
