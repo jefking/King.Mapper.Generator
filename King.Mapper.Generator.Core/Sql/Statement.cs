@@ -20,6 +20,7 @@
 	                                             AND sp.name = SPECIFIC_NAME
                                             LEFT OUTER JOIN sys.types typ ON parm.system_type_id = typ.system_type_id
 	                                            AND typ.name <> 'sysname'
+												AND typ.is_user_defined = 0
                                             ORDER BY SPECIFIC_NAME, SPECIFIC_SCHEMA";
         #endregion
     }
