@@ -16,74 +16,48 @@ namespace King.Mapper.Generated.Sql
     using System.Linq;
 
 	[TestFixture]
-	public class DboSelectmultiplestatementTests
+	public class ReviewsGetmoderationhistoryTests
 	{
 		[Test]
 		public void Constructor()
 		{
-			new dboSelectMultipleStatement();
+			new ReviewsGetModerationHistory();
 		}
 		
 		[Test]
 		public void IsIStoredProcedure()
 		{
-			Assert.IsNotNull(new dboSelectMultipleStatement() as IStoredProcedure); 
+			Assert.IsNotNull(new ReviewsGetModerationHistory() as IStoredProcedure); 
 		}
 		
 		[Test]
 		public void FullyQualifiedName()
 		{
-			var item = new dboSelectMultipleStatement();
-			Assert.AreEqual("[dbo].[SelectMultipleStatement]", item.FullyQualifiedName());
-		}
-		
-		#region Property Tests
-		#endregion
-	}
-
-	[TestFixture]
-	public class DboSimulatedinsertstatementTests
-	{
-		[Test]
-		public void Constructor()
-		{
-			new dboSimulatedInsertStatement();
-		}
-		
-		[Test]
-		public void IsIStoredProcedure()
-		{
-			Assert.IsNotNull(new dboSimulatedInsertStatement() as IStoredProcedure); 
-		}
-		
-		[Test]
-		public void FullyQualifiedName()
-		{
-			var item = new dboSimulatedInsertStatement();
-			Assert.AreEqual("[dbo].[SimulatedInsertStatement]", item.FullyQualifiedName());
+			var item = new ReviewsGetModerationHistory();
+			Assert.AreEqual("[Reviews].[GetModerationHistory]", item.FullyQualifiedName());
 		}
 		
 		#region Property Tests
 		[Test]
-		public void TestintGetSet()
+		public void ReviewidGetSet()
 		{
-			var item = new dboSimulatedInsertStatement();
+			var item = new ReviewsGetModerationHistory();
 			var expected = new Random().Next();
-			item.TestInt = expected;
-			Assert.AreEqual(expected, item.TestInt);
+			item.ReviewID = expected;
+			Assert.AreEqual(expected, item.ReviewID);
 		}
 		
 		[Test]
-		public void TestintDataMapper()
+		public void ReviewidDataMapper()
 		{
-			var item = new dboSimulatedInsertStatement();
+			var item = new ReviewsGetModerationHistory();
             var property = (from prop in item.GetProperties()
-                           where prop.Name == "TestInt"
+                           where prop.Name == "ReviewID"
                            select prop).FirstOrDefault();
             Assert.IsNotNull(property);
             var mapper = property.GetAttribute<DataMapperAttribute>();
             Assert.IsNotNull(mapper);
-            Assert.AreEqual("@TestInt", mapper.ParameterName);
+            Assert.AreEqual("@ReviewID", mapper.ParameterName);
             Assert.AreEqual(DbType.Int32, mapper.DatabaseType);
 		}
 
@@ -91,394 +65,1416 @@ namespace King.Mapper.Generated.Sql
 	}
 
 	[TestFixture]
-	public class DboSimulatedselectstatementTests
+	public class ReviewsGetreviewTests
 	{
 		[Test]
 		public void Constructor()
 		{
-			new dboSimulatedSelectStatement();
+			new ReviewsGetReview();
 		}
 		
 		[Test]
 		public void IsIStoredProcedure()
 		{
-			Assert.IsNotNull(new dboSimulatedSelectStatement() as IStoredProcedure); 
+			Assert.IsNotNull(new ReviewsGetReview() as IStoredProcedure); 
 		}
 		
 		[Test]
 		public void FullyQualifiedName()
 		{
-			var item = new dboSimulatedSelectStatement();
-			Assert.AreEqual("[dbo].[SimulatedSelectStatement]", item.FullyQualifiedName());
+			var item = new ReviewsGetReview();
+			Assert.AreEqual("[Reviews].[GetReview]", item.FullyQualifiedName());
 		}
 		
 		#region Property Tests
 		[Test]
-		public void TestintGetSet()
+		public void ReviewidGetSet()
 		{
-			var item = new dboSimulatedSelectStatement();
+			var item = new ReviewsGetReview();
 			var expected = new Random().Next();
-			item.TestInt = expected;
-			Assert.AreEqual(expected, item.TestInt);
+			item.ReviewID = expected;
+			Assert.AreEqual(expected, item.ReviewID);
 		}
 		
 		[Test]
-		public void TestintDataMapper()
+		public void ReviewidDataMapper()
 		{
-			var item = new dboSimulatedSelectStatement();
+			var item = new ReviewsGetReview();
             var property = (from prop in item.GetProperties()
-                           where prop.Name == "TestInt"
+                           where prop.Name == "ReviewID"
                            select prop).FirstOrDefault();
             Assert.IsNotNull(property);
             var mapper = property.GetAttribute<DataMapperAttribute>();
             Assert.IsNotNull(mapper);
-            Assert.AreEqual("@TestInt", mapper.ParameterName);
+            Assert.AreEqual("@ReviewID", mapper.ParameterName);
+            Assert.AreEqual(DbType.Int32, mapper.DatabaseType);
+		}
+
+		#endregion
+	}
+
+	[TestFixture]
+	public class ReviewsGetreviewratingTests
+	{
+		[Test]
+		public void Constructor()
+		{
+			new ReviewsGetReviewRating();
+		}
+		
+		[Test]
+		public void IsIStoredProcedure()
+		{
+			Assert.IsNotNull(new ReviewsGetReviewRating() as IStoredProcedure); 
+		}
+		
+		[Test]
+		public void FullyQualifiedName()
+		{
+			var item = new ReviewsGetReviewRating();
+			Assert.AreEqual("[Reviews].[GetReviewRating]", item.FullyQualifiedName());
+		}
+		
+		#region Property Tests
+		[Test]
+		public void ReviewidGetSet()
+		{
+			var item = new ReviewsGetReviewRating();
+			var expected = new Random().Next();
+			item.ReviewID = expected;
+			Assert.AreEqual(expected, item.ReviewID);
+		}
+		
+		[Test]
+		public void ReviewidDataMapper()
+		{
+			var item = new ReviewsGetReviewRating();
+            var property = (from prop in item.GetProperties()
+                           where prop.Name == "ReviewID"
+                           select prop).FirstOrDefault();
+            Assert.IsNotNull(property);
+            var mapper = property.GetAttribute<DataMapperAttribute>();
+            Assert.IsNotNull(mapper);
+            Assert.AreEqual("@ReviewID", mapper.ParameterName);
+            Assert.AreEqual(DbType.Int32, mapper.DatabaseType);
+		}
+
+		#endregion
+	}
+
+	[TestFixture]
+	public class ReviewsGetreviewsTests
+	{
+		[Test]
+		public void Constructor()
+		{
+			new ReviewsGetReviews();
+		}
+		
+		[Test]
+		public void IsIStoredProcedure()
+		{
+			Assert.IsNotNull(new ReviewsGetReviews() as IStoredProcedure); 
+		}
+		
+		[Test]
+		public void FullyQualifiedName()
+		{
+			var item = new ReviewsGetReviews();
+			Assert.AreEqual("[Reviews].[GetReviews]", item.FullyQualifiedName());
+		}
+		
+		#region Property Tests
+		[Test]
+		public void PageindexGetSet()
+		{
+			var item = new ReviewsGetReviews();
+			var expected = new Random().Next();
+			item.PageIndex = expected;
+			Assert.AreEqual(expected, item.PageIndex);
+		}
+		
+		[Test]
+		public void PageindexDataMapper()
+		{
+			var item = new ReviewsGetReviews();
+            var property = (from prop in item.GetProperties()
+                           where prop.Name == "PageIndex"
+                           select prop).FirstOrDefault();
+            Assert.IsNotNull(property);
+            var mapper = property.GetAttribute<DataMapperAttribute>();
+            Assert.IsNotNull(mapper);
+            Assert.AreEqual("@PageIndex", mapper.ParameterName);
             Assert.AreEqual(DbType.Int32, mapper.DatabaseType);
 		}
 
 		[Test]
-		public void TestbigintGetSet()
+		public void PagesizeGetSet()
 		{
-			var item = new dboSimulatedSelectStatement();
-			var expected = (long)new Random().Next();
-			item.TestBigInt = expected;
-			Assert.AreEqual(expected, item.TestBigInt);
+			var item = new ReviewsGetReviews();
+			var expected = new Random().Next();
+			item.PageSize = expected;
+			Assert.AreEqual(expected, item.PageSize);
 		}
 		
 		[Test]
-		public void TestbigintDataMapper()
+		public void PagesizeDataMapper()
 		{
-			var item = new dboSimulatedSelectStatement();
+			var item = new ReviewsGetReviews();
             var property = (from prop in item.GetProperties()
-                           where prop.Name == "TestBigInt"
+                           where prop.Name == "PageSize"
                            select prop).FirstOrDefault();
             Assert.IsNotNull(property);
             var mapper = property.GetAttribute<DataMapperAttribute>();
             Assert.IsNotNull(mapper);
-            Assert.AreEqual("@TestBigInt", mapper.ParameterName);
-            Assert.AreEqual(DbType.Int64, mapper.DatabaseType);
+            Assert.AreEqual("@PageSize", mapper.ParameterName);
+            Assert.AreEqual(DbType.Int32, mapper.DatabaseType);
 		}
 
 		[Test]
-		public void TestbitGetSet()
+		public void TypeGetSet()
 		{
-			var item = new dboSimulatedSelectStatement();
-			var expected = true;
-			item.TestBit = expected;
-			Assert.AreEqual(expected, item.TestBit);
+			var item = new ReviewsGetReviews();
+			var expected = new Random().Next();
+			item.Type = expected;
+			Assert.AreEqual(expected, item.Type);
 		}
 		
 		[Test]
-		public void TestbitDataMapper()
+		public void TypeDataMapper()
 		{
-			var item = new dboSimulatedSelectStatement();
+			var item = new ReviewsGetReviews();
             var property = (from prop in item.GetProperties()
-                           where prop.Name == "TestBit"
+                           where prop.Name == "Type"
                            select prop).FirstOrDefault();
             Assert.IsNotNull(property);
             var mapper = property.GetAttribute<DataMapperAttribute>();
             Assert.IsNotNull(mapper);
-            Assert.AreEqual("@TestBit", mapper.ParameterName);
-            Assert.AreEqual(DbType.Boolean, mapper.DatabaseType);
+            Assert.AreEqual("@Type", mapper.ParameterName);
+            Assert.AreEqual(DbType.Int32, mapper.DatabaseType);
 		}
 
 		[Test]
-		public void TestdecimalGetSet()
+		public void SiteidGetSet()
 		{
-			var item = new dboSimulatedSelectStatement();
-			var expected = (decimal)new Random().NextDouble();
-			item.TestDecimal = expected;
-			Assert.AreEqual(expected, item.TestDecimal);
+			var item = new ReviewsGetReviews();
+			var expected = new Random().Next();
+			item.SiteID = expected;
+			Assert.AreEqual(expected, item.SiteID);
 		}
 		
 		[Test]
-		public void TestdecimalDataMapper()
+		public void SiteidDataMapper()
 		{
-			var item = new dboSimulatedSelectStatement();
+			var item = new ReviewsGetReviews();
             var property = (from prop in item.GetProperties()
-                           where prop.Name == "TestDecimal"
+                           where prop.Name == "SiteID"
                            select prop).FirstOrDefault();
             Assert.IsNotNull(property);
             var mapper = property.GetAttribute<DataMapperAttribute>();
             Assert.IsNotNull(mapper);
-            Assert.AreEqual("@TestDecimal", mapper.ParameterName);
-            Assert.AreEqual(DbType.Decimal, mapper.DatabaseType);
+            Assert.AreEqual("@SiteID", mapper.ParameterName);
+            Assert.AreEqual(DbType.Int32, mapper.DatabaseType);
 		}
 
 		[Test]
-		public void TestmoneyGetSet()
+		public void LcidGetSet()
 		{
-			var item = new dboSimulatedSelectStatement();
-			var expected = (decimal)new Random().NextDouble();
-			item.TestMoney = expected;
-			Assert.AreEqual(expected, item.TestMoney);
+			var item = new ReviewsGetReviews();
+			var expected = new Random().Next();
+			item.LCID = expected;
+			Assert.AreEqual(expected, item.LCID);
 		}
 		
 		[Test]
-		public void TestmoneyDataMapper()
+		public void LcidDataMapper()
 		{
-			var item = new dboSimulatedSelectStatement();
+			var item = new ReviewsGetReviews();
             var property = (from prop in item.GetProperties()
-                           where prop.Name == "TestMoney"
+                           where prop.Name == "LCID"
                            select prop).FirstOrDefault();
             Assert.IsNotNull(property);
             var mapper = property.GetAttribute<DataMapperAttribute>();
             Assert.IsNotNull(mapper);
-            Assert.AreEqual("@TestMoney", mapper.ParameterName);
-            Assert.AreEqual(DbType.Currency, mapper.DatabaseType);
+            Assert.AreEqual("@LCID", mapper.ParameterName);
+            Assert.AreEqual(DbType.Int32, mapper.DatabaseType);
 		}
 
 		[Test]
-		public void TestfloatGetSet()
+		public void KeyGetSet()
 		{
-			var item = new dboSimulatedSelectStatement();
-			var expected = (float)new Random().Next();
-			item.TestFloat = expected;
-			Assert.AreEqual(expected, item.TestFloat);
+			var item = new ReviewsGetReviews();
+			var expected = Guid.NewGuid().ToString();
+			item.Key = expected;
+			Assert.AreEqual(expected, item.Key);
 		}
 		
 		[Test]
-		public void TestfloatDataMapper()
+		public void KeyDataMapper()
 		{
-			var item = new dboSimulatedSelectStatement();
+			var item = new ReviewsGetReviews();
             var property = (from prop in item.GetProperties()
-                           where prop.Name == "TestFloat"
+                           where prop.Name == "Key"
                            select prop).FirstOrDefault();
             Assert.IsNotNull(property);
             var mapper = property.GetAttribute<DataMapperAttribute>();
             Assert.IsNotNull(mapper);
-            Assert.AreEqual("@TestFloat", mapper.ParameterName);
-            Assert.AreEqual(DbType.Single, mapper.DatabaseType);
+            Assert.AreEqual("@Key", mapper.ParameterName);
+            Assert.AreEqual(DbType.String, mapper.DatabaseType);
 		}
 
 		[Test]
-		public void TestdateGetSet()
+		public void LastmoderationstatusGetSet()
 		{
-			var item = new dboSimulatedSelectStatement();
+			var item = new ReviewsGetReviews();
+			var expected = new Random().Next();
+			item.LastModerationStatus = expected;
+			Assert.AreEqual(expected, item.LastModerationStatus);
+		}
+		
+		[Test]
+		public void LastmoderationstatusDataMapper()
+		{
+			var item = new ReviewsGetReviews();
+            var property = (from prop in item.GetProperties()
+                           where prop.Name == "LastModerationStatus"
+                           select prop).FirstOrDefault();
+            Assert.IsNotNull(property);
+            var mapper = property.GetAttribute<DataMapperAttribute>();
+            Assert.IsNotNull(mapper);
+            Assert.AreEqual("@LastModerationStatus", mapper.ParameterName);
+            Assert.AreEqual(DbType.Int32, mapper.DatabaseType);
+		}
+
+		[Test]
+		public void CreateddatestartGetSet()
+		{
+			var item = new ReviewsGetReviews();
 			var expected = DateTime.UtcNow;
-			item.TestDate = expected;
-			Assert.AreEqual(expected, item.TestDate);
+			item.CreatedDateStart = expected;
+			Assert.AreEqual(expected, item.CreatedDateStart);
 		}
 		
 		[Test]
-		public void TestdateDataMapper()
+		public void CreateddatestartDataMapper()
 		{
-			var item = new dboSimulatedSelectStatement();
+			var item = new ReviewsGetReviews();
             var property = (from prop in item.GetProperties()
-                           where prop.Name == "TestDate"
+                           where prop.Name == "CreatedDateStart"
                            select prop).FirstOrDefault();
             Assert.IsNotNull(property);
             var mapper = property.GetAttribute<DataMapperAttribute>();
             Assert.IsNotNull(mapper);
-            Assert.AreEqual("@TestDate", mapper.ParameterName);
-            Assert.AreEqual(DbType.Date, mapper.DatabaseType);
-		}
-
-		[Test]
-		public void Testdatetime2GetSet()
-		{
-			var item = new dboSimulatedSelectStatement();
-			var expected = DateTime.UtcNow;
-			item.TestDateTime2 = expected;
-			Assert.AreEqual(expected, item.TestDateTime2);
-		}
-		
-		[Test]
-		public void Testdatetime2DataMapper()
-		{
-			var item = new dboSimulatedSelectStatement();
-            var property = (from prop in item.GetProperties()
-                           where prop.Name == "TestDateTime2"
-                           select prop).FirstOrDefault();
-            Assert.IsNotNull(property);
-            var mapper = property.GetAttribute<DataMapperAttribute>();
-            Assert.IsNotNull(mapper);
-            Assert.AreEqual("@TestDateTime2", mapper.ParameterName);
-            Assert.AreEqual(DbType.DateTime2, mapper.DatabaseType);
-		}
-
-		[Test]
-		public void TestdatetimeGetSet()
-		{
-			var item = new dboSimulatedSelectStatement();
-			var expected = DateTime.UtcNow;
-			item.TestDateTime = expected;
-			Assert.AreEqual(expected, item.TestDateTime);
-		}
-		
-		[Test]
-		public void TestdatetimeDataMapper()
-		{
-			var item = new dboSimulatedSelectStatement();
-            var property = (from prop in item.GetProperties()
-                           where prop.Name == "TestDateTime"
-                           select prop).FirstOrDefault();
-            Assert.IsNotNull(property);
-            var mapper = property.GetAttribute<DataMapperAttribute>();
-            Assert.IsNotNull(mapper);
-            Assert.AreEqual("@TestDateTime", mapper.ParameterName);
+            Assert.AreEqual("@CreatedDateStart", mapper.ParameterName);
             Assert.AreEqual(DbType.DateTime, mapper.DatabaseType);
 		}
 
 		[Test]
-		public void TestcharGetSet()
+		public void CreateddateendGetSet()
 		{
-			var item = new dboSimulatedSelectStatement();
-			var expected = (char)new Random().Next();
-			item.TestChar = expected;
-			Assert.AreEqual(expected, item.TestChar);
+			var item = new ReviewsGetReviews();
+			var expected = DateTime.UtcNow;
+			item.CreatedDateEnd = expected;
+			Assert.AreEqual(expected, item.CreatedDateEnd);
 		}
 		
 		[Test]
-		public void TestcharDataMapper()
+		public void CreateddateendDataMapper()
 		{
-			var item = new dboSimulatedSelectStatement();
+			var item = new ReviewsGetReviews();
             var property = (from prop in item.GetProperties()
-                           where prop.Name == "TestChar"
+                           where prop.Name == "CreatedDateEnd"
                            select prop).FirstOrDefault();
             Assert.IsNotNull(property);
             var mapper = property.GetAttribute<DataMapperAttribute>();
             Assert.IsNotNull(mapper);
-            Assert.AreEqual("@TestChar", mapper.ParameterName);
-            Assert.AreEqual(DbType.Int16, mapper.DatabaseType);
+            Assert.AreEqual("@CreatedDateEnd", mapper.ParameterName);
+            Assert.AreEqual(DbType.DateTime, mapper.DatabaseType);
 		}
 
 		[Test]
-		public void TesttextGetSet()
+		public void LastmodificationstartGetSet()
 		{
-			var item = new dboSimulatedSelectStatement();
+			var item = new ReviewsGetReviews();
+			var expected = DateTime.UtcNow;
+			item.LastModificationStart = expected;
+			Assert.AreEqual(expected, item.LastModificationStart);
+		}
+		
+		[Test]
+		public void LastmodificationstartDataMapper()
+		{
+			var item = new ReviewsGetReviews();
+            var property = (from prop in item.GetProperties()
+                           where prop.Name == "LastModificationStart"
+                           select prop).FirstOrDefault();
+            Assert.IsNotNull(property);
+            var mapper = property.GetAttribute<DataMapperAttribute>();
+            Assert.IsNotNull(mapper);
+            Assert.AreEqual("@LastModificationStart", mapper.ParameterName);
+            Assert.AreEqual(DbType.DateTime, mapper.DatabaseType);
+		}
+
+		[Test]
+		public void LastmodificationendGetSet()
+		{
+			var item = new ReviewsGetReviews();
+			var expected = DateTime.UtcNow;
+			item.LastModificationEnd = expected;
+			Assert.AreEqual(expected, item.LastModificationEnd);
+		}
+		
+		[Test]
+		public void LastmodificationendDataMapper()
+		{
+			var item = new ReviewsGetReviews();
+            var property = (from prop in item.GetProperties()
+                           where prop.Name == "LastModificationEnd"
+                           select prop).FirstOrDefault();
+            Assert.IsNotNull(property);
+            var mapper = property.GetAttribute<DataMapperAttribute>();
+            Assert.IsNotNull(mapper);
+            Assert.AreEqual("@LastModificationEnd", mapper.ParameterName);
+            Assert.AreEqual(DbType.DateTime, mapper.DatabaseType);
+		}
+
+		[Test]
+		public void YearfromGetSet()
+		{
+			var item = new ReviewsGetReviews();
+			var expected = new Random().Next();
+			item.YearFrom = expected;
+			Assert.AreEqual(expected, item.YearFrom);
+		}
+		
+		[Test]
+		public void YearfromDataMapper()
+		{
+			var item = new ReviewsGetReviews();
+            var property = (from prop in item.GetProperties()
+                           where prop.Name == "YearFrom"
+                           select prop).FirstOrDefault();
+            Assert.IsNotNull(property);
+            var mapper = property.GetAttribute<DataMapperAttribute>();
+            Assert.IsNotNull(mapper);
+            Assert.AreEqual("@YearFrom", mapper.ParameterName);
+            Assert.AreEqual(DbType.Int32, mapper.DatabaseType);
+		}
+
+		[Test]
+		public void YeartoGetSet()
+		{
+			var item = new ReviewsGetReviews();
+			var expected = new Random().Next();
+			item.YearTo = expected;
+			Assert.AreEqual(expected, item.YearTo);
+		}
+		
+		[Test]
+		public void YeartoDataMapper()
+		{
+			var item = new ReviewsGetReviews();
+            var property = (from prop in item.GetProperties()
+                           where prop.Name == "YearTo"
+                           select prop).FirstOrDefault();
+            Assert.IsNotNull(property);
+            var mapper = property.GetAttribute<DataMapperAttribute>();
+            Assert.IsNotNull(mapper);
+            Assert.AreEqual("@YearTo", mapper.ParameterName);
+            Assert.AreEqual(DbType.Int32, mapper.DatabaseType);
+		}
+
+		[Test]
+		public void OrderbyGetSet()
+		{
+			var item = new ReviewsGetReviews();
+			var expected = new Random().Next();
+			item.OrderBy = expected;
+			Assert.AreEqual(expected, item.OrderBy);
+		}
+		
+		[Test]
+		public void OrderbyDataMapper()
+		{
+			var item = new ReviewsGetReviews();
+            var property = (from prop in item.GetProperties()
+                           where prop.Name == "OrderBy"
+                           select prop).FirstOrDefault();
+            Assert.IsNotNull(property);
+            var mapper = property.GetAttribute<DataMapperAttribute>();
+            Assert.IsNotNull(mapper);
+            Assert.AreEqual("@OrderBy", mapper.ParameterName);
+            Assert.AreEqual(DbType.Int32, mapper.DatabaseType);
+		}
+
+		#endregion
+	}
+
+	[TestFixture]
+	public class ReviewsGetreviewsummariesbytypeTests
+	{
+		[Test]
+		public void Constructor()
+		{
+			new ReviewsGetReviewSummariesByType();
+		}
+		
+		[Test]
+		public void IsIStoredProcedure()
+		{
+			Assert.IsNotNull(new ReviewsGetReviewSummariesByType() as IStoredProcedure); 
+		}
+		
+		[Test]
+		public void FullyQualifiedName()
+		{
+			var item = new ReviewsGetReviewSummariesByType();
+			Assert.AreEqual("[Reviews].[GetReviewSummariesByType]", item.FullyQualifiedName());
+		}
+		
+		#region Property Tests
+		[Test]
+		public void PathGetSet()
+		{
+			var item = new ReviewsGetReviewSummariesByType();
 			var expected = Guid.NewGuid().ToString();
-			item.TestText = expected;
-			Assert.AreEqual(expected, item.TestText);
+			item.Path = expected;
+			Assert.AreEqual(expected, item.Path);
 		}
 		
 		[Test]
-		public void TesttextDataMapper()
+		public void PathDataMapper()
 		{
-			var item = new dboSimulatedSelectStatement();
+			var item = new ReviewsGetReviewSummariesByType();
             var property = (from prop in item.GetProperties()
-                           where prop.Name == "TestText"
+                           where prop.Name == "Path"
                            select prop).FirstOrDefault();
             Assert.IsNotNull(property);
             var mapper = property.GetAttribute<DataMapperAttribute>();
             Assert.IsNotNull(mapper);
-            Assert.AreEqual("@TestText", mapper.ParameterName);
+            Assert.AreEqual("@Path", mapper.ParameterName);
             Assert.AreEqual(DbType.String, mapper.DatabaseType);
 		}
 
 		[Test]
-		public void TestncharGetSet()
+		public void SiteidGetSet()
 		{
-			var item = new dboSimulatedSelectStatement();
-			var expected = (char)new Random().Next();
-			item.TestNChar = expected;
-			Assert.AreEqual(expected, item.TestNChar);
+			var item = new ReviewsGetReviewSummariesByType();
+			var expected = new Random().Next();
+			item.SiteID = expected;
+			Assert.AreEqual(expected, item.SiteID);
 		}
 		
 		[Test]
-		public void TestncharDataMapper()
+		public void SiteidDataMapper()
 		{
-			var item = new dboSimulatedSelectStatement();
+			var item = new ReviewsGetReviewSummariesByType();
             var property = (from prop in item.GetProperties()
-                           where prop.Name == "TestNChar"
+                           where prop.Name == "SiteID"
                            select prop).FirstOrDefault();
             Assert.IsNotNull(property);
             var mapper = property.GetAttribute<DataMapperAttribute>();
             Assert.IsNotNull(mapper);
-            Assert.AreEqual("@TestNChar", mapper.ParameterName);
-            Assert.AreEqual(DbType.String, mapper.DatabaseType);
+            Assert.AreEqual("@SiteID", mapper.ParameterName);
+            Assert.AreEqual(DbType.Int32, mapper.DatabaseType);
 		}
 
 		[Test]
-		public void TestntextGetSet()
+		public void LcidGetSet()
 		{
-			var item = new dboSimulatedSelectStatement();
+			var item = new ReviewsGetReviewSummariesByType();
+			var expected = new Random().Next();
+			item.LCID = expected;
+			Assert.AreEqual(expected, item.LCID);
+		}
+		
+		[Test]
+		public void LcidDataMapper()
+		{
+			var item = new ReviewsGetReviewSummariesByType();
+            var property = (from prop in item.GetProperties()
+                           where prop.Name == "LCID"
+                           select prop).FirstOrDefault();
+            Assert.IsNotNull(property);
+            var mapper = property.GetAttribute<DataMapperAttribute>();
+            Assert.IsNotNull(mapper);
+            Assert.AreEqual("@LCID", mapper.ParameterName);
+            Assert.AreEqual(DbType.Int32, mapper.DatabaseType);
+		}
+
+		[Test]
+		public void YearfromGetSet()
+		{
+			var item = new ReviewsGetReviewSummariesByType();
+			var expected = new Random().Next();
+			item.YearFrom = expected;
+			Assert.AreEqual(expected, item.YearFrom);
+		}
+		
+		[Test]
+		public void YearfromDataMapper()
+		{
+			var item = new ReviewsGetReviewSummariesByType();
+            var property = (from prop in item.GetProperties()
+                           where prop.Name == "YearFrom"
+                           select prop).FirstOrDefault();
+            Assert.IsNotNull(property);
+            var mapper = property.GetAttribute<DataMapperAttribute>();
+            Assert.IsNotNull(mapper);
+            Assert.AreEqual("@YearFrom", mapper.ParameterName);
+            Assert.AreEqual(DbType.Int32, mapper.DatabaseType);
+		}
+
+		[Test]
+		public void YeartoGetSet()
+		{
+			var item = new ReviewsGetReviewSummariesByType();
+			var expected = new Random().Next();
+			item.YearTo = expected;
+			Assert.AreEqual(expected, item.YearTo);
+		}
+		
+		[Test]
+		public void YeartoDataMapper()
+		{
+			var item = new ReviewsGetReviewSummariesByType();
+            var property = (from prop in item.GetProperties()
+                           where prop.Name == "YearTo"
+                           select prop).FirstOrDefault();
+            Assert.IsNotNull(property);
+            var mapper = property.GetAttribute<DataMapperAttribute>();
+            Assert.IsNotNull(mapper);
+            Assert.AreEqual("@YearTo", mapper.ParameterName);
+            Assert.AreEqual(DbType.Int32, mapper.DatabaseType);
+		}
+
+		#endregion
+	}
+
+	[TestFixture]
+	public class ReviewsGetreviewsummariesbyyearTests
+	{
+		[Test]
+		public void Constructor()
+		{
+			new ReviewsGetReviewSummariesByYear();
+		}
+		
+		[Test]
+		public void IsIStoredProcedure()
+		{
+			Assert.IsNotNull(new ReviewsGetReviewSummariesByYear() as IStoredProcedure); 
+		}
+		
+		[Test]
+		public void FullyQualifiedName()
+		{
+			var item = new ReviewsGetReviewSummariesByYear();
+			Assert.AreEqual("[Reviews].[GetReviewSummariesByYear]", item.FullyQualifiedName());
+		}
+		
+		#region Property Tests
+		[Test]
+		public void PathGetSet()
+		{
+			var item = new ReviewsGetReviewSummariesByYear();
 			var expected = Guid.NewGuid().ToString();
-			item.TestNText = expected;
-			Assert.AreEqual(expected, item.TestNText);
+			item.Path = expected;
+			Assert.AreEqual(expected, item.Path);
 		}
 		
 		[Test]
-		public void TestntextDataMapper()
+		public void PathDataMapper()
 		{
-			var item = new dboSimulatedSelectStatement();
+			var item = new ReviewsGetReviewSummariesByYear();
             var property = (from prop in item.GetProperties()
-                           where prop.Name == "TestNText"
+                           where prop.Name == "Path"
                            select prop).FirstOrDefault();
             Assert.IsNotNull(property);
             var mapper = property.GetAttribute<DataMapperAttribute>();
             Assert.IsNotNull(mapper);
-            Assert.AreEqual("@TestNText", mapper.ParameterName);
+            Assert.AreEqual("@Path", mapper.ParameterName);
             Assert.AreEqual(DbType.String, mapper.DatabaseType);
 		}
 
 		[Test]
-		public void TestbinaryGetSet()
+		public void SiteidGetSet()
 		{
-			var item = new dboSimulatedSelectStatement();
-			var expected = new byte[128]; new Random().NextBytes(expected);
-			item.TestBinary = expected;
-			Assert.AreEqual(expected, item.TestBinary);
+			var item = new ReviewsGetReviewSummariesByYear();
+			var expected = new Random().Next();
+			item.SiteID = expected;
+			Assert.AreEqual(expected, item.SiteID);
 		}
 		
 		[Test]
-		public void TestbinaryDataMapper()
+		public void SiteidDataMapper()
 		{
-			var item = new dboSimulatedSelectStatement();
+			var item = new ReviewsGetReviewSummariesByYear();
             var property = (from prop in item.GetProperties()
-                           where prop.Name == "TestBinary"
+                           where prop.Name == "SiteID"
                            select prop).FirstOrDefault();
             Assert.IsNotNull(property);
             var mapper = property.GetAttribute<DataMapperAttribute>();
             Assert.IsNotNull(mapper);
-            Assert.AreEqual("@TestBinary", mapper.ParameterName);
-            Assert.AreEqual(DbType.Binary, mapper.DatabaseType);
+            Assert.AreEqual("@SiteID", mapper.ParameterName);
+            Assert.AreEqual(DbType.Int32, mapper.DatabaseType);
 		}
 
 		[Test]
-		public void TestimageGetSet()
+		public void LcidGetSet()
 		{
-			var item = new dboSimulatedSelectStatement();
-			var expected = new byte[128]; new Random().NextBytes(expected);
-			item.TestImage = expected;
-			Assert.AreEqual(expected, item.TestImage);
+			var item = new ReviewsGetReviewSummariesByYear();
+			var expected = new Random().Next();
+			item.LCID = expected;
+			Assert.AreEqual(expected, item.LCID);
 		}
 		
 		[Test]
-		public void TestimageDataMapper()
+		public void LcidDataMapper()
 		{
-			var item = new dboSimulatedSelectStatement();
+			var item = new ReviewsGetReviewSummariesByYear();
             var property = (from prop in item.GetProperties()
-                           where prop.Name == "TestImage"
+                           where prop.Name == "LCID"
                            select prop).FirstOrDefault();
             Assert.IsNotNull(property);
             var mapper = property.GetAttribute<DataMapperAttribute>();
             Assert.IsNotNull(mapper);
-            Assert.AreEqual("@TestImage", mapper.ParameterName);
-            Assert.AreEqual(DbType.Binary, mapper.DatabaseType);
+            Assert.AreEqual("@LCID", mapper.ParameterName);
+            Assert.AreEqual(DbType.Int32, mapper.DatabaseType);
 		}
 
 		[Test]
-		public void TestguidGetSet()
+		public void YearGetSet()
 		{
-			var item = new dboSimulatedSelectStatement();
-			var expected = Guid.NewGuid();
-			item.TestGuid = expected;
-			Assert.AreEqual(expected, item.TestGuid);
+			var item = new ReviewsGetReviewSummariesByYear();
+			var expected = new Random().Next();
+			item.Year = expected;
+			Assert.AreEqual(expected, item.Year);
 		}
 		
 		[Test]
-		public void TestguidDataMapper()
+		public void YearDataMapper()
 		{
-			var item = new dboSimulatedSelectStatement();
+			var item = new ReviewsGetReviewSummariesByYear();
             var property = (from prop in item.GetProperties()
-                           where prop.Name == "TestGuid"
+                           where prop.Name == "Year"
                            select prop).FirstOrDefault();
             Assert.IsNotNull(property);
             var mapper = property.GetAttribute<DataMapperAttribute>();
             Assert.IsNotNull(mapper);
-            Assert.AreEqual("@TestGuid", mapper.ParameterName);
-            Assert.AreEqual(DbType.Guid, mapper.DatabaseType);
+            Assert.AreEqual("@Year", mapper.ParameterName);
+            Assert.AreEqual(DbType.Int32, mapper.DatabaseType);
+		}
+
+		#endregion
+	}
+
+	[TestFixture]
+	public class ReviewsGetthumbsTests
+	{
+		[Test]
+		public void Constructor()
+		{
+			new ReviewsGetThumbs();
+		}
+		
+		[Test]
+		public void IsIStoredProcedure()
+		{
+			Assert.IsNotNull(new ReviewsGetThumbs() as IStoredProcedure); 
+		}
+		
+		[Test]
+		public void FullyQualifiedName()
+		{
+			var item = new ReviewsGetThumbs();
+			Assert.AreEqual("[Reviews].[GetThumbs]", item.FullyQualifiedName());
+		}
+		
+		#region Property Tests
+		#endregion
+	}
+
+	[TestFixture]
+	public class DbaLogsqlerrorTests
+	{
+		[Test]
+		public void Constructor()
+		{
+			new DBALogSQLError();
+		}
+		
+		[Test]
+		public void IsIStoredProcedure()
+		{
+			Assert.IsNotNull(new DBALogSQLError() as IStoredProcedure); 
+		}
+		
+		[Test]
+		public void FullyQualifiedName()
+		{
+			var item = new DBALogSQLError();
+			Assert.AreEqual("[DBA].[LogSQLError]", item.FullyQualifiedName());
+		}
+		
+		#region Property Tests
+		[Test]
+		public void RaiserrorGetSet()
+		{
+			var item = new DBALogSQLError();
+			var expected = true;
+			item.RaisError = expected;
+			Assert.AreEqual(expected, item.RaisError);
+		}
+		
+		[Test]
+		public void RaiserrorDataMapper()
+		{
+			var item = new DBALogSQLError();
+            var property = (from prop in item.GetProperties()
+                           where prop.Name == "RaisError"
+                           select prop).FirstOrDefault();
+            Assert.IsNotNull(property);
+            var mapper = property.GetAttribute<DataMapperAttribute>();
+            Assert.IsNotNull(mapper);
+            Assert.AreEqual("@RaisError", mapper.ParameterName);
+            Assert.AreEqual(DbType.Boolean, mapper.DatabaseType);
+		}
+
+		[Test]
+		public void WithlogGetSet()
+		{
+			var item = new DBALogSQLError();
+			var expected = true;
+			item.WithLog = expected;
+			Assert.AreEqual(expected, item.WithLog);
+		}
+		
+		[Test]
+		public void WithlogDataMapper()
+		{
+			var item = new DBALogSQLError();
+            var property = (from prop in item.GetProperties()
+                           where prop.Name == "WithLog"
+                           select prop).FirstOrDefault();
+            Assert.IsNotNull(property);
+            var mapper = property.GetAttribute<DataMapperAttribute>();
+            Assert.IsNotNull(mapper);
+            Assert.AreEqual("@WithLog", mapper.ParameterName);
+            Assert.AreEqual(DbType.Boolean, mapper.DatabaseType);
+		}
+
+		[Test]
+		public void OncallalertGetSet()
+		{
+			var item = new DBALogSQLError();
+			var expected = true;
+			item.OnCallAlert = expected;
+			Assert.AreEqual(expected, item.OnCallAlert);
+		}
+		
+		[Test]
+		public void OncallalertDataMapper()
+		{
+			var item = new DBALogSQLError();
+            var property = (from prop in item.GetProperties()
+                           where prop.Name == "OnCallAlert"
+                           select prop).FirstOrDefault();
+            Assert.IsNotNull(property);
+            var mapper = property.GetAttribute<DataMapperAttribute>();
+            Assert.IsNotNull(mapper);
+            Assert.AreEqual("@OnCallAlert", mapper.ParameterName);
+            Assert.AreEqual(DbType.Boolean, mapper.DatabaseType);
+		}
+
+		#endregion
+	}
+
+	[TestFixture]
+	public class ReviewsSetautomotivereviewTests
+	{
+		[Test]
+		public void Constructor()
+		{
+			new ReviewsSetAutomotiveReview();
+		}
+		
+		[Test]
+		public void IsIStoredProcedure()
+		{
+			Assert.IsNotNull(new ReviewsSetAutomotiveReview() as IStoredProcedure); 
+		}
+		
+		[Test]
+		public void FullyQualifiedName()
+		{
+			var item = new ReviewsSetAutomotiveReview();
+			Assert.AreEqual("[Reviews].[SetAutomotiveReview]", item.FullyQualifiedName());
+		}
+		
+		#region Property Tests
+		[Test]
+		public void ReviewidGetSet()
+		{
+			var item = new ReviewsSetAutomotiveReview();
+			var expected = new Random().Next();
+			item.ReviewID = expected;
+			Assert.AreEqual(expected, item.ReviewID);
+		}
+		
+		[Test]
+		public void ReviewidDataMapper()
+		{
+			var item = new ReviewsSetAutomotiveReview();
+            var property = (from prop in item.GetProperties()
+                           where prop.Name == "ReviewID"
+                           select prop).FirstOrDefault();
+            Assert.IsNotNull(property);
+            var mapper = property.GetAttribute<DataMapperAttribute>();
+            Assert.IsNotNull(mapper);
+            Assert.AreEqual("@ReviewID", mapper.ParameterName);
+            Assert.AreEqual(DbType.Int32, mapper.DatabaseType);
+		}
+
+		[Test]
+		public void KeyGetSet()
+		{
+			var item = new ReviewsSetAutomotiveReview();
+			var expected = Guid.NewGuid().ToString();
+			item.Key = expected;
+			Assert.AreEqual(expected, item.Key);
+		}
+		
+		[Test]
+		public void KeyDataMapper()
+		{
+			var item = new ReviewsSetAutomotiveReview();
+            var property = (from prop in item.GetProperties()
+                           where prop.Name == "Key"
+                           select prop).FirstOrDefault();
+            Assert.IsNotNull(property);
+            var mapper = property.GetAttribute<DataMapperAttribute>();
+            Assert.IsNotNull(mapper);
+            Assert.AreEqual("@Key", mapper.ParameterName);
+            Assert.AreEqual(DbType.String, mapper.DatabaseType);
+		}
+
+		#endregion
+	}
+
+	[TestFixture]
+	public class ReviewsSetmoderationstatusTests
+	{
+		[Test]
+		public void Constructor()
+		{
+			new ReviewsSetModerationStatus();
+		}
+		
+		[Test]
+		public void IsIStoredProcedure()
+		{
+			Assert.IsNotNull(new ReviewsSetModerationStatus() as IStoredProcedure); 
+		}
+		
+		[Test]
+		public void FullyQualifiedName()
+		{
+			var item = new ReviewsSetModerationStatus();
+			Assert.AreEqual("[Reviews].[SetModerationStatus]", item.FullyQualifiedName());
+		}
+		
+		#region Property Tests
+		[Test]
+		public void ReviewidGetSet()
+		{
+			var item = new ReviewsSetModerationStatus();
+			var expected = new Random().Next();
+			item.ReviewID = expected;
+			Assert.AreEqual(expected, item.ReviewID);
+		}
+		
+		[Test]
+		public void ReviewidDataMapper()
+		{
+			var item = new ReviewsSetModerationStatus();
+            var property = (from prop in item.GetProperties()
+                           where prop.Name == "ReviewID"
+                           select prop).FirstOrDefault();
+            Assert.IsNotNull(property);
+            var mapper = property.GetAttribute<DataMapperAttribute>();
+            Assert.IsNotNull(mapper);
+            Assert.AreEqual("@ReviewID", mapper.ParameterName);
+            Assert.AreEqual(DbType.Int32, mapper.DatabaseType);
+		}
+
+		[Test]
+		public void ModeratoridGetSet()
+		{
+			var item = new ReviewsSetModerationStatus();
+			var expected = new Random().Next();
+			item.ModeratorID = expected;
+			Assert.AreEqual(expected, item.ModeratorID);
+		}
+		
+		[Test]
+		public void ModeratoridDataMapper()
+		{
+			var item = new ReviewsSetModerationStatus();
+            var property = (from prop in item.GetProperties()
+                           where prop.Name == "ModeratorID"
+                           select prop).FirstOrDefault();
+            Assert.IsNotNull(property);
+            var mapper = property.GetAttribute<DataMapperAttribute>();
+            Assert.IsNotNull(mapper);
+            Assert.AreEqual("@ModeratorID", mapper.ParameterName);
+            Assert.AreEqual(DbType.Int32, mapper.DatabaseType);
+		}
+
+		[Test]
+		public void ModerationstatusGetSet()
+		{
+			var item = new ReviewsSetModerationStatus();
+			var expected = new Random().Next();
+			item.ModerationStatus = expected;
+			Assert.AreEqual(expected, item.ModerationStatus);
+		}
+		
+		[Test]
+		public void ModerationstatusDataMapper()
+		{
+			var item = new ReviewsSetModerationStatus();
+            var property = (from prop in item.GetProperties()
+                           where prop.Name == "ModerationStatus"
+                           select prop).FirstOrDefault();
+            Assert.IsNotNull(property);
+            var mapper = property.GetAttribute<DataMapperAttribute>();
+            Assert.IsNotNull(mapper);
+            Assert.AreEqual("@ModerationStatus", mapper.ParameterName);
+            Assert.AreEqual(DbType.Int32, mapper.DatabaseType);
+		}
+
+		[Test]
+		public void DenialreasonGetSet()
+		{
+			var item = new ReviewsSetModerationStatus();
+			var expected = new Random().Next();
+			item.DenialReason = expected;
+			Assert.AreEqual(expected, item.DenialReason);
+		}
+		
+		[Test]
+		public void DenialreasonDataMapper()
+		{
+			var item = new ReviewsSetModerationStatus();
+            var property = (from prop in item.GetProperties()
+                           where prop.Name == "DenialReason"
+                           select prop).FirstOrDefault();
+            Assert.IsNotNull(property);
+            var mapper = property.GetAttribute<DataMapperAttribute>();
+            Assert.IsNotNull(mapper);
+            Assert.AreEqual("@DenialReason", mapper.ParameterName);
+            Assert.AreEqual(DbType.Int32, mapper.DatabaseType);
+		}
+
+		[Test]
+		public void RemarkGetSet()
+		{
+			var item = new ReviewsSetModerationStatus();
+			var expected = Guid.NewGuid().ToString();
+			item.Remark = expected;
+			Assert.AreEqual(expected, item.Remark);
+		}
+		
+		[Test]
+		public void RemarkDataMapper()
+		{
+			var item = new ReviewsSetModerationStatus();
+            var property = (from prop in item.GetProperties()
+                           where prop.Name == "Remark"
+                           select prop).FirstOrDefault();
+            Assert.IsNotNull(property);
+            var mapper = property.GetAttribute<DataMapperAttribute>();
+            Assert.IsNotNull(mapper);
+            Assert.AreEqual("@Remark", mapper.ParameterName);
+            Assert.AreEqual(DbType.String, mapper.DatabaseType);
+		}
+
+		[Test]
+		public void NoteGetSet()
+		{
+			var item = new ReviewsSetModerationStatus();
+			var expected = Guid.NewGuid().ToString();
+			item.Note = expected;
+			Assert.AreEqual(expected, item.Note);
+		}
+		
+		[Test]
+		public void NoteDataMapper()
+		{
+			var item = new ReviewsSetModerationStatus();
+            var property = (from prop in item.GetProperties()
+                           where prop.Name == "Note"
+                           select prop).FirstOrDefault();
+            Assert.IsNotNull(property);
+            var mapper = property.GetAttribute<DataMapperAttribute>();
+            Assert.IsNotNull(mapper);
+            Assert.AreEqual("@Note", mapper.ParameterName);
+            Assert.AreEqual(DbType.String, mapper.DatabaseType);
+		}
+
+		#endregion
+	}
+
+	[TestFixture]
+	public class ReviewsSetreviewTests
+	{
+		[Test]
+		public void Constructor()
+		{
+			new ReviewsSetReview();
+		}
+		
+		[Test]
+		public void IsIStoredProcedure()
+		{
+			Assert.IsNotNull(new ReviewsSetReview() as IStoredProcedure); 
+		}
+		
+		[Test]
+		public void FullyQualifiedName()
+		{
+			var item = new ReviewsSetReview();
+			Assert.AreEqual("[Reviews].[SetReview]", item.FullyQualifiedName());
+		}
+		
+		#region Property Tests
+		[Test]
+		public void UseridGetSet()
+		{
+			var item = new ReviewsSetReview();
+			var expected = new Random().Next();
+			item.UserID = expected;
+			Assert.AreEqual(expected, item.UserID);
+		}
+		
+		[Test]
+		public void UseridDataMapper()
+		{
+			var item = new ReviewsSetReview();
+            var property = (from prop in item.GetProperties()
+                           where prop.Name == "UserID"
+                           select prop).FirstOrDefault();
+            Assert.IsNotNull(property);
+            var mapper = property.GetAttribute<DataMapperAttribute>();
+            Assert.IsNotNull(mapper);
+            Assert.AreEqual("@UserID", mapper.ParameterName);
+            Assert.AreEqual(DbType.Int32, mapper.DatabaseType);
+		}
+
+		[Test]
+		public void TypeGetSet()
+		{
+			var item = new ReviewsSetReview();
+			var expected = new Random().Next();
+			item.Type = expected;
+			Assert.AreEqual(expected, item.Type);
+		}
+		
+		[Test]
+		public void TypeDataMapper()
+		{
+			var item = new ReviewsSetReview();
+            var property = (from prop in item.GetProperties()
+                           where prop.Name == "Type"
+                           select prop).FirstOrDefault();
+            Assert.IsNotNull(property);
+            var mapper = property.GetAttribute<DataMapperAttribute>();
+            Assert.IsNotNull(mapper);
+            Assert.AreEqual("@Type", mapper.ParameterName);
+            Assert.AreEqual(DbType.Int32, mapper.DatabaseType);
+		}
+
+		[Test]
+		public void SiteidGetSet()
+		{
+			var item = new ReviewsSetReview();
+			var expected = new Random().Next();
+			item.SiteID = expected;
+			Assert.AreEqual(expected, item.SiteID);
+		}
+		
+		[Test]
+		public void SiteidDataMapper()
+		{
+			var item = new ReviewsSetReview();
+            var property = (from prop in item.GetProperties()
+                           where prop.Name == "SiteID"
+                           select prop).FirstOrDefault();
+            Assert.IsNotNull(property);
+            var mapper = property.GetAttribute<DataMapperAttribute>();
+            Assert.IsNotNull(mapper);
+            Assert.AreEqual("@SiteID", mapper.ParameterName);
+            Assert.AreEqual(DbType.Int32, mapper.DatabaseType);
+		}
+
+		[Test]
+		public void LcidGetSet()
+		{
+			var item = new ReviewsSetReview();
+			var expected = new Random().Next();
+			item.LCID = expected;
+			Assert.AreEqual(expected, item.LCID);
+		}
+		
+		[Test]
+		public void LcidDataMapper()
+		{
+			var item = new ReviewsSetReview();
+            var property = (from prop in item.GetProperties()
+                           where prop.Name == "LCID"
+                           select prop).FirstOrDefault();
+            Assert.IsNotNull(property);
+            var mapper = property.GetAttribute<DataMapperAttribute>();
+            Assert.IsNotNull(mapper);
+            Assert.AreEqual("@LCID", mapper.ParameterName);
+            Assert.AreEqual(DbType.Int32, mapper.DatabaseType);
+		}
+
+		[Test]
+		public void KeyGetSet()
+		{
+			var item = new ReviewsSetReview();
+			var expected = Guid.NewGuid().ToString();
+			item.Key = expected;
+			Assert.AreEqual(expected, item.Key);
+		}
+		
+		[Test]
+		public void KeyDataMapper()
+		{
+			var item = new ReviewsSetReview();
+            var property = (from prop in item.GetProperties()
+                           where prop.Name == "Key"
+                           select prop).FirstOrDefault();
+            Assert.IsNotNull(property);
+            var mapper = property.GetAttribute<DataMapperAttribute>();
+            Assert.IsNotNull(mapper);
+            Assert.AreEqual("@Key", mapper.ParameterName);
+            Assert.AreEqual(DbType.String, mapper.DatabaseType);
+		}
+
+		[Test]
+		public void TitleGetSet()
+		{
+			var item = new ReviewsSetReview();
+			var expected = Guid.NewGuid().ToString();
+			item.Title = expected;
+			Assert.AreEqual(expected, item.Title);
+		}
+		
+		[Test]
+		public void TitleDataMapper()
+		{
+			var item = new ReviewsSetReview();
+            var property = (from prop in item.GetProperties()
+                           where prop.Name == "Title"
+                           select prop).FirstOrDefault();
+            Assert.IsNotNull(property);
+            var mapper = property.GetAttribute<DataMapperAttribute>();
+            Assert.IsNotNull(mapper);
+            Assert.AreEqual("@Title", mapper.ParameterName);
+            Assert.AreEqual(DbType.String, mapper.DatabaseType);
+		}
+
+		[Test]
+		public void ContentGetSet()
+		{
+			var item = new ReviewsSetReview();
+			var expected = Guid.NewGuid().ToString();
+			item.Content = expected;
+			Assert.AreEqual(expected, item.Content);
+		}
+		
+		[Test]
+		public void ContentDataMapper()
+		{
+			var item = new ReviewsSetReview();
+            var property = (from prop in item.GetProperties()
+                           where prop.Name == "Content"
+                           select prop).FirstOrDefault();
+            Assert.IsNotNull(property);
+            var mapper = property.GetAttribute<DataMapperAttribute>();
+            Assert.IsNotNull(mapper);
+            Assert.AreEqual("@Content", mapper.ParameterName);
+            Assert.AreEqual(DbType.String, mapper.DatabaseType);
+		}
+
+		[Test]
+		public void ReviewidGetSet()
+		{
+			var item = new ReviewsSetReview();
+			var expected = new Random().Next();
+			item.ReviewID = expected;
+			Assert.AreEqual(expected, item.ReviewID);
+		}
+		
+		[Test]
+		public void ReviewidDataMapper()
+		{
+			var item = new ReviewsSetReview();
+            var property = (from prop in item.GetProperties()
+                           where prop.Name == "ReviewID"
+                           select prop).FirstOrDefault();
+            Assert.IsNotNull(property);
+            var mapper = property.GetAttribute<DataMapperAttribute>();
+            Assert.IsNotNull(mapper);
+            Assert.AreEqual("@ReviewID", mapper.ParameterName);
+            Assert.AreEqual(DbType.Int32, mapper.DatabaseType);
+		}
+
+		#endregion
+	}
+
+	[TestFixture]
+	public class ReviewsSetreviewratingTests
+	{
+		[Test]
+		public void Constructor()
+		{
+			new ReviewsSetReviewRating();
+		}
+		
+		[Test]
+		public void IsIStoredProcedure()
+		{
+			Assert.IsNotNull(new ReviewsSetReviewRating() as IStoredProcedure); 
+		}
+		
+		[Test]
+		public void FullyQualifiedName()
+		{
+			var item = new ReviewsSetReviewRating();
+			Assert.AreEqual("[Reviews].[SetReviewRating]", item.FullyQualifiedName());
+		}
+		
+		#region Property Tests
+		[Test]
+		public void ReviewidGetSet()
+		{
+			var item = new ReviewsSetReviewRating();
+			var expected = new Random().Next();
+			item.ReviewID = expected;
+			Assert.AreEqual(expected, item.ReviewID);
+		}
+		
+		[Test]
+		public void ReviewidDataMapper()
+		{
+			var item = new ReviewsSetReviewRating();
+            var property = (from prop in item.GetProperties()
+                           where prop.Name == "ReviewID"
+                           select prop).FirstOrDefault();
+            Assert.IsNotNull(property);
+            var mapper = property.GetAttribute<DataMapperAttribute>();
+            Assert.IsNotNull(mapper);
+            Assert.AreEqual("@ReviewID", mapper.ParameterName);
+            Assert.AreEqual(DbType.Int32, mapper.DatabaseType);
+		}
+
+		#endregion
+	}
+
+	[TestFixture]
+	public class ReviewsSetreviewthumbTests
+	{
+		[Test]
+		public void Constructor()
+		{
+			new ReviewsSetReviewThumb();
+		}
+		
+		[Test]
+		public void IsIStoredProcedure()
+		{
+			Assert.IsNotNull(new ReviewsSetReviewThumb() as IStoredProcedure); 
+		}
+		
+		[Test]
+		public void FullyQualifiedName()
+		{
+			var item = new ReviewsSetReviewThumb();
+			Assert.AreEqual("[Reviews].[SetReviewThumb]", item.FullyQualifiedName());
+		}
+		
+		#region Property Tests
+		[Test]
+		public void ReviewidGetSet()
+		{
+			var item = new ReviewsSetReviewThumb();
+			var expected = new Random().Next();
+			item.ReviewID = expected;
+			Assert.AreEqual(expected, item.ReviewID);
+		}
+		
+		[Test]
+		public void ReviewidDataMapper()
+		{
+			var item = new ReviewsSetReviewThumb();
+            var property = (from prop in item.GetProperties()
+                           where prop.Name == "ReviewID"
+                           select prop).FirstOrDefault();
+            Assert.IsNotNull(property);
+            var mapper = property.GetAttribute<DataMapperAttribute>();
+            Assert.IsNotNull(mapper);
+            Assert.AreEqual("@ReviewID", mapper.ParameterName);
+            Assert.AreEqual(DbType.Int32, mapper.DatabaseType);
+		}
+
+		[Test]
+		public void UseridGetSet()
+		{
+			var item = new ReviewsSetReviewThumb();
+			var expected = new Random().Next();
+			item.UserID = expected;
+			Assert.AreEqual(expected, item.UserID);
+		}
+		
+		[Test]
+		public void UseridDataMapper()
+		{
+			var item = new ReviewsSetReviewThumb();
+            var property = (from prop in item.GetProperties()
+                           where prop.Name == "UserID"
+                           select prop).FirstOrDefault();
+            Assert.IsNotNull(property);
+            var mapper = property.GetAttribute<DataMapperAttribute>();
+            Assert.IsNotNull(mapper);
+            Assert.AreEqual("@UserID", mapper.ParameterName);
+            Assert.AreEqual(DbType.Int32, mapper.DatabaseType);
+		}
+
+		[Test]
+		public void UpGetSet()
+		{
+			var item = new ReviewsSetReviewThumb();
+			var expected = true;
+			item.Up = expected;
+			Assert.AreEqual(expected, item.Up);
+		}
+		
+		[Test]
+		public void UpDataMapper()
+		{
+			var item = new ReviewsSetReviewThumb();
+            var property = (from prop in item.GetProperties()
+                           where prop.Name == "Up"
+                           select prop).FirstOrDefault();
+            Assert.IsNotNull(property);
+            var mapper = property.GetAttribute<DataMapperAttribute>();
+            Assert.IsNotNull(mapper);
+            Assert.AreEqual("@Up", mapper.ParameterName);
+            Assert.AreEqual(DbType.Boolean, mapper.DatabaseType);
 		}
 
 		#endregion
