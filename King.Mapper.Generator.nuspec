@@ -15,7 +15,7 @@
         <releaseNotes>All methods and properties marked virtual</releaseNotes>
         <copyright>Jef King</copyright>
         <language>en-US</language>
-        <tags>Code Generation King.Mapper DAL Data Access Layer Stored Procedure SQL Server Azure Database DBO SPROC ORM Relational NUnit MSTest</tags>
+        <tags>King.Mapper.Generator Code Generation King.Mapper DAL Data Access Layer Stored Procedure SQL Server Azure Database DBO SPROC ORM Relational NUnit MSTest</tags>
     </metadata>
     <files>
         <file src="King.Mapper.Generator\bin\Release\King.Mapper.dll" target="content\King.Mapper.Generator\King.Mapper.dll" />
