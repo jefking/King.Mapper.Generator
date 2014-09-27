@@ -24,6 +24,11 @@
         /// Data Loader
         /// </summary>
         private readonly ILoader<Schema> loader = null;
+
+        /// <summary>
+        /// Definition Comparer
+        /// </summary>
+        private static readonly DefinitionComparer comparer = new DefinitionComparer();
         #endregion
 
         #region Constructors
@@ -79,13 +84,11 @@
         {
             IEnumerable<Schema> schemas = null;
             using (var connection = new SqlConnection(connectionString))
+            using (var execute = new SqlCommand(Statement.SelectSchema, connection))
             {
-                using (var execute = new SqlCommand(Statement.SelectSchema, connection))
-                {
-                    await connection.OpenAsync();
+                await connection.OpenAsync();
 
-                    schemas = loader.Models(execute);
-                }
+                schemas = loader.Models(execute);
             }
 
             return schemas;
@@ -103,9 +106,8 @@
                 throw new ArgumentNullException("schemas");
             }
 
-            var compare = new DefinitionComparer();
             return (from s in schemas
-                    select s.Map<Definition>()).Distinct(compare);
+                    select s.Map<Definition>()).Distinct(comparer);
         }
 
         /// <summary>
@@ -126,7 +128,6 @@
             }
 
             var manifest = new Dictionary<int, Definition>();
-            var comparer = new DefinitionComparer();
             foreach (var d in definitions)
             {
                 d.Variables = from s in schemas
