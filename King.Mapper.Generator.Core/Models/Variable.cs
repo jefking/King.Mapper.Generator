@@ -9,7 +9,7 @@
         /// <summary>
         /// Data Type
         /// </summary>
-        public string DataType
+        public virtual string DataType
         {
             get;
             set;
@@ -19,7 +19,7 @@
         /// Parameter Name
         /// </summary>
         [ActionName("Parameter")]
-        public string ParameterName
+        public virtual string ParameterName
         {
             get;
             set;
@@ -28,7 +28,7 @@
         /// <summary>
         /// Maximum Length
         /// </summary>
-        public int MaxLength
+        public virtual int MaxLength
         {
             get;
             set;

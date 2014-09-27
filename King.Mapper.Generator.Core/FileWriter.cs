@@ -39,7 +39,7 @@
         /// <summary>
         /// Write All Renderers
         /// </summary>
-        public void WriteAll(IEnumerable<IRender> renderers)
+        public virtual void WriteAll(IEnumerable<IRender> renderers)
         {
             if (null == renderers)
             {

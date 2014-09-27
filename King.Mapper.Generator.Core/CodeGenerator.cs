@@ -60,7 +60,7 @@
         /// Generate Code
         /// </summary>
         /// <returns>Threading Task</returns>
-        public async Task Generate()
+        public virtual async Task Generate()
         {
             Trace.TraceInformation("Loading schema from data source.");
 

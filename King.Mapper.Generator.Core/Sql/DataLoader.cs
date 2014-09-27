@@ -62,7 +62,7 @@
         /// Load data from Database, and return the models.
         /// </summary>
         /// <returns>Schemas to process</returns>
-        public async Task<IDictionary<int, Definition>> Load()
+        public virtual async Task<IDictionary<int, Definition>> Load()
         {
             var schemas = await this.Schemas();
 
@@ -75,7 +75,7 @@
         /// Load Schemas from data source
         /// </summary>
         /// <returns></returns>
-        public async Task<IEnumerable<Schema>> Schemas()
+        public virtual async Task<IEnumerable<Schema>> Schemas()
         {
             IEnumerable<Schema> schemas = null;
             using (var connection = new SqlConnection(connectionString))
@@ -96,7 +96,7 @@
         /// </summary>
         /// <param name="schemas"></param>
         /// <returns></returns>
-        public IEnumerable<Definition> Minimize(IEnumerable<Schema> schemas)
+        public virtual IEnumerable<Definition> Minimize(IEnumerable<Schema> schemas)
         {
             if (null == schemas)
             {
@@ -114,7 +114,7 @@
         /// <param name="definitions">Definitions</param>
         /// <param name="schemas">Schemas</param>
         /// <returns></returns>
-        public IDictionary<int, Definition> BuildManifest(IEnumerable<Definition> definitions, IEnumerable<Schema> schemas)
+        public virtual IDictionary<int, Definition> BuildManifest(IEnumerable<Definition> definitions, IEnumerable<Schema> schemas)
         {
             if (null == definitions)
             {

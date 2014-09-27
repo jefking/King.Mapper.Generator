@@ -53,7 +53,7 @@
         /// <summary>
         /// File Name for output
         /// </summary>
-        public string FileName
+        public virtual string FileName
         {
             get
             {
@@ -67,7 +67,7 @@
         /// Render
         /// </summary>
         /// <returns></returns>
-        public string Render()
+        public virtual string Render()
         {
             return template.TransformText();
         }

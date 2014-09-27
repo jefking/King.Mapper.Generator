@@ -11,7 +11,7 @@
         /// <summary>
         /// Preface
         /// </summary>
-        public string Preface
+        public virtual string Preface
         {
             get;
             set;
@@ -20,7 +20,7 @@
         /// <summary>
         /// Name
         /// </summary>
-        public string Name
+        public virtual string Name
         {
             get;
             set;
@@ -29,7 +29,7 @@
         /// <summary>
         /// Variables
         /// </summary>
-        public IEnumerable<Variable> Variables
+        public virtual IEnumerable<Variable> Variables
         {
             get;
             set;

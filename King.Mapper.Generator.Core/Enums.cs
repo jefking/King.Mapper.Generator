@@ -1,5 +1,8 @@
 ﻿namespace King.Mapper.Generator
 {
+    /// <summary>
+    /// Test Suites
+    /// </summary>
     public enum TestSuite
     {
         None = 0,

@@ -12,7 +12,7 @@
         /// <summary>
         /// Parameter
         /// </summary>
-        public string Parameter
+        public virtual string Parameter
         {
             get;
             set;
@@ -21,7 +21,7 @@
         /// <summary>
         /// Data Type
         /// </summary>
-        public string DataType
+        public virtual string DataType
         {
             get;
             set;
@@ -31,7 +31,7 @@
         /// Preface
         /// </summary>
         [ActionName("Schema")]
-        public string Preface
+        public virtual string Preface
         {
             get;
             set;
@@ -41,7 +41,7 @@
         /// Name
         /// </summary>
         [ActionName("StoredProcedure")]
-        public string Name
+        public virtual string Name
         {
             get;
             set;
@@ -50,7 +50,7 @@
         /// <summary>
         /// Maximum Length
         /// </summary>
-        public string MaxLength
+        public virtual string MaxLength
         {
             get;
             set;
