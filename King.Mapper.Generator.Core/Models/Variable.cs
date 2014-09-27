@@ -3,7 +3,7 @@
     /// <summary>
     /// Variable
     /// </summary>
-    public class Variable
+    public class Variable : IVariable
     {
         #region Properties
         /// <summary>

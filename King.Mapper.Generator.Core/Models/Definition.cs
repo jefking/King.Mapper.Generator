@@ -5,7 +5,7 @@
     /// <summary>
     /// Definition
     /// </summary>
-    public class Definition
+    public class Definition : IDefinition
     {
         #region Properties
         /// <summary>
@@ -29,7 +29,7 @@
         /// <summary>
         /// Variables
         /// </summary>
-        public virtual IEnumerable<Variable> Variables
+        public virtual IEnumerable<IVariable> Variables
         {
             get;
             set;

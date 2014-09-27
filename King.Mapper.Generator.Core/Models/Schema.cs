@@ -6,7 +6,7 @@
     /// <summary>
     /// Schema
     /// </summary>
-    public class Schema
+    public class Schema : ISchema
     {
         #region Properties
         /// <summary>

@@ -28,7 +28,7 @@
         /// <summary>
         /// Definition Comparer
         /// </summary>
-        private static readonly DefinitionComparer comparer = new DefinitionComparer();
+        private static readonly EqualityComparer<IDefinition> comparer = new DefinitionComparer();
         #endregion
 
         #region Constructors
@@ -67,7 +67,7 @@
         /// Load data from Database, and return the models.
         /// </summary>
         /// <returns>Schemas to process</returns>
-        public virtual async Task<IDictionary<int, Definition>> Load()
+        public virtual async Task<IDictionary<int, IDefinition>> Load()
         {
             var schemas = await this.Schemas();
 
@@ -80,9 +80,9 @@
         /// Load Schemas from data source
         /// </summary>
         /// <returns></returns>
-        public virtual async Task<IEnumerable<Schema>> Schemas()
+        public virtual async Task<IEnumerable<ISchema>> Schemas()
         {
-            IEnumerable<Schema> schemas = null;
+            IEnumerable<ISchema> schemas = null;
             using (var connection = new SqlConnection(connectionString))
             using (var execute = new SqlCommand(Statement.SelectSchema, connection))
             {
@@ -99,7 +99,7 @@
         /// </summary>
         /// <param name="schemas"></param>
         /// <returns></returns>
-        public virtual IEnumerable<Definition> Minimize(IEnumerable<Schema> schemas)
+        public virtual IEnumerable<IDefinition> Minimize(IEnumerable<ISchema> schemas)
         {
             if (null == schemas)
             {
@@ -116,7 +116,7 @@
         /// <param name="definitions">Definitions</param>
         /// <param name="schemas">Schemas</param>
         /// <returns></returns>
-        public virtual IDictionary<int, Definition> BuildManifest(IEnumerable<Definition> definitions, IEnumerable<Schema> schemas)
+        public virtual IDictionary<int, IDefinition> BuildManifest(IEnumerable<IDefinition> definitions, IEnumerable<ISchema> schemas)
         {
             if (null == definitions)
             {
@@ -127,7 +127,7 @@
                 throw new ArgumentNullException("schemas");
             }
 
-            var manifest = new Dictionary<int, Definition>();
+            var manifest = new Dictionary<int, IDefinition>();
             foreach (var d in definitions)
             {
                 d.Variables = from s in schemas

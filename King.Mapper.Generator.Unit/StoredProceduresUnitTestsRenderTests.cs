@@ -11,7 +11,7 @@
         [Test]
         public void Constructor()
         {
-            new StoredProceduresUnitTestsRender(new Dictionary<int, Definition>());
+            new StoredProceduresUnitTestsRender(new Dictionary<int, IDefinition>());
         }
 
         [Test]
@@ -24,14 +24,14 @@
         [Test]
         public void FileName()
         {
-            var c = new StoredProceduresUnitTestsRender(new Dictionary<int, Definition>());
+            var c = new StoredProceduresUnitTestsRender(new Dictionary<int, IDefinition>());
             Assert.AreEqual("StoredProcedures.Unit.Test.Generated.cs", c.FileName);
         }
 
         [Test]
         public void Render()
         {
-            var c = new StoredProceduresUnitTestsRender(new Dictionary<int, Definition>());
+            var c = new StoredProceduresUnitTestsRender(new Dictionary<int, IDefinition>());
             var output = c.Render();
 
             Assert.IsFalse(string.IsNullOrWhiteSpace(output));

@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enums.cs" />
+    <Compile Include="Models\Interfaces.cs" />
     <Compile Include="Renderer.cs" />
     <Compile Include="StoredProceduresUnitTestsRender .cs" />
     <Compile Include="StoredProceduresRender.cs" />

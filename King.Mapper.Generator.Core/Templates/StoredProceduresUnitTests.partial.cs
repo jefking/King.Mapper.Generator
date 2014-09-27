@@ -30,7 +30,7 @@
         /// <summary>
         /// Gets or sets Manifest
         /// </summary>
-        public IDictionary<int, Definition> Manifest
+        public virtual IDictionary<int, IDefinition> Manifest
         {
             get;
             set;
@@ -39,7 +39,7 @@
         /// <summary>
         /// Test Class Attribute
         /// </summary>
-        public string TestingNamespace
+        public virtual string TestingNamespace
         {
             get
             {
@@ -50,7 +50,7 @@
         /// <summary>
         /// Test Class Attribute
         /// </summary>
-        public string TestClassAttribute
+        public virtual string TestClassAttribute
         {
             get
             {
@@ -61,7 +61,7 @@
         /// <summary>
         /// Test Method Attribute
         /// </summary>
-        public string TestMethodAttribute
+        public virtual string TestMethodAttribute
         {
             get
             {
@@ -72,7 +72,7 @@
         /// <summary>
         /// AreEqual<X>
         /// </summary>
-        public bool AreEqualGeneric
+        public virtual bool AreEqualGeneric
         {
             get
             {

@@ -54,9 +54,9 @@
         [Test]
         public async Task Generate()
         {
-            IDictionary<int, Definition> manifest = new Dictionary<int, Definition>();
+            var manifest = new Dictionary<int, IDefinition>();
             var loader = Substitute.For<IDataLoader>();
-            loader.Load().Returns(Task.FromResult(manifest));
+            loader.Load().Returns(Task.FromResult<IDictionary<int, IDefinition>>(manifest));
 
             var renderers = new List<IRender>();
             var factory = Substitute.For<IRenderFactory>();

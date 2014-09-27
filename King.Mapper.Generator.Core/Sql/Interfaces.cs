@@ -15,7 +15,7 @@
         /// Load
         /// </summary>
         /// <returns>Manifest</returns>
-        Task<IDictionary<int, Definition>> Load();
+        Task<IDictionary<int, IDefinition>> Load();
         #endregion
     }
     #endregion

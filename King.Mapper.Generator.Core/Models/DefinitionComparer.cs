@@ -6,7 +6,7 @@
     /// <summary>
     /// Definition Comparer
     /// </summary>
-    public class DefinitionComparer : EqualityComparer<Definition>
+    public class DefinitionComparer : EqualityComparer<IDefinition>
     {
         #region Methods
         /// <summary>
@@ -15,7 +15,7 @@
         /// <param name="x">Definition</param>
         /// <param name="y">Definition</param>
         /// <returns>Are Equal</returns>
-        public override bool Equals(Definition x, Definition y)
+        public override bool Equals(IDefinition x, IDefinition y)
         {
             if (null == x)
             {
@@ -34,7 +34,7 @@
         /// </summary>
         /// <param name="obj">Definition</param>
         /// <returns>Hash Code</returns>
-        public override int GetHashCode(Definition obj)
+        public override int GetHashCode(IDefinition obj)
         {
             if (null == obj)
             {

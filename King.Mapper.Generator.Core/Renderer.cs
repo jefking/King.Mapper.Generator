@@ -28,7 +28,7 @@
         /// </summary>
         /// <param name="connectionString"></param>
         /// <param name="folder"></param>
-        public Renderer(IManifestTemplate template, IDictionary<int, Definition> manifest, string fileName)
+        public Renderer(IManifestTemplate template, IDictionary<int, IDefinition> manifest, string fileName)
         {
             if (null == template)
             {
