@@ -1,6 +1,6 @@
 ﻿namespace King.Mapper.Generator
 {
-    using King.Mapper.Generator.Sql;
+    using King.Data.Sql.Reflection;
     using System;
     using System.Diagnostics;
     using System.Threading.Tasks;

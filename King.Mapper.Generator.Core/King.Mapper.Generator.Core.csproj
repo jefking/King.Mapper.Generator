@@ -37,9 +37,11 @@
     <ApplicationIcon>icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="King.Mapper, Version=1.3.0.7, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\King.Mapper.1.7.6\lib\net451\King.Mapper.dll</HintPath>
+    <Reference Include="King.Data.Sql.Reflection">
+      <HintPath>..\packages\King.Data.Sql.Reflection.0.0.2\lib\net451\King.Data.Sql.Reflection.dll</HintPath>
+    </Reference>
+    <Reference Include="King.Mapper">
+      <HintPath>..\packages\King.Mapper.1.7.7\lib\net451\King.Mapper.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -47,7 +49,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enums.cs" />
-    <Compile Include="Models\Interfaces.cs" />
     <Compile Include="Renderer.cs" />
     <Compile Include="StoredProceduresUnitTestsRender .cs" />
     <Compile Include="StoredProceduresRender.cs" />
@@ -56,15 +57,8 @@
     <Compile Include="FileWriter.cs" />
     <Compile Include="CodeGenerator.cs" />
     <Compile Include="Interfaces.cs" />
-    <Compile Include="Models\Definition.cs" />
-    <Compile Include="Models\DefinitionComparer.cs" />
-    <Compile Include="Models\Schema.cs" />
-    <Compile Include="Models\Variable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RenderFactory.cs" />
-    <Compile Include="Sql\DataLoader.cs" />
-    <Compile Include="Sql\Interfaces.cs" />
-    <Compile Include="Sql\Statement.cs" />
     <Compile Include="Templates\Interfaces.cs" />
     <Compile Include="Templates\StoredProcedures.cs">
       <AutoGen>True</AutoGen>

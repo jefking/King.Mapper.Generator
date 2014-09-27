@@ -1,7 +1,7 @@
 ﻿namespace King.Mapper.Generator.Unit
 {
-    using King.Mapper.Generator.Models;
-    using King.Mapper.Generator.Sql;
+    using King.Data.Sql.Reflection;
+    using King.Data.Sql.Reflection.Models;
     using NSubstitute;
     using NUnit.Framework;
     using System;

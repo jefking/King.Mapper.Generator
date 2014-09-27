@@ -38,9 +38,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="King.Mapper, Version=1.3.0.7, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\King.Mapper.1.7.6\lib\net451\King.Mapper.dll</HintPath>
+    <Reference Include="King.Data.Sql.Reflection">
+      <HintPath>..\packages\King.Data.Sql.Reflection.0.0.2\lib\net451\King.Data.Sql.Reflection.dll</HintPath>
+    </Reference>
+    <Reference Include="King.Mapper">
+      <HintPath>..\packages\King.Mapper.1.7.7\lib\net451\King.Mapper.dll</HintPath>
     </Reference>
     <Reference Include="NSubstitute">
       <HintPath>..\packages\NSubstitute.1.7.2.0\lib\NET45\NSubstitute.dll</HintPath>
@@ -70,15 +72,9 @@
     <Compile Include="StoredProceduresRenderTests.cs" />
     <Compile Include="DataTypeMappingsTests.cs" />
     <Compile Include="FileWriterTests.cs" />
-    <Compile Include="Models\DefinitionComparerTests.cs" />
-    <Compile Include="Models\DefinitionTests.cs" />
-    <Compile Include="Models\SchemaTests.cs" />
-    <Compile Include="Models\VariableTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RendererTests.cs" />
     <Compile Include="RenderFactoryTests.cs" />
-    <Compile Include="Sql\DataLoaderTests.cs" />
-    <Compile Include="Sql\StatementTests.cs" />
     <Compile Include="Templates\ExtensionMethodsTests.cs" />
     <Compile Include="Templates\StoredProceduresTests.cs" />
     <Compile Include="Templates\StoredProceduresUnitTestsTests.cs" />

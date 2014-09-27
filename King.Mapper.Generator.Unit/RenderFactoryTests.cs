@@ -1,6 +1,6 @@
 ﻿namespace King.Mapper.Generator.Unit
 {
-    using King.Mapper.Generator.Models;
+    using King.Data.Sql.Reflection.Models;
     using NUnit.Framework;
     using System;
     using System.Collections.Generic;

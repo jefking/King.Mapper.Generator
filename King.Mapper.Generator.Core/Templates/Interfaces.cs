@@ -1,6 +1,6 @@
 ﻿namespace King.Mapper.Generator.Templates
 {
-    using King.Mapper.Generator.Models;
+    using King.Data.Sql.Reflection.Models;
     using System.Collections.Generic;
 
     /// <summary>
