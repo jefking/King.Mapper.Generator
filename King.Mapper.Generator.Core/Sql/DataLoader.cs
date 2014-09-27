@@ -98,7 +98,7 @@
         /// Minimize Schemas, product definintions
         /// </summary>
         /// <param name="schemas"></param>
-        /// <returns></returns>
+        /// <returns>Definitions</returns>
         public virtual IEnumerable<IDefinition> Minimize(IEnumerable<ISchema> schemas)
         {
             if (null == schemas)
@@ -114,7 +114,7 @@
         /// </summary>
         /// <param name="definitions">Definitions</param>
         /// <param name="schemas">Schemas</param>
-        /// <returns></returns>
+        /// <returns>Manifest</returns>
         public virtual IDictionary<int, IDefinition> BuildManifest(IEnumerable<IDefinition> definitions, IEnumerable<ISchema> schemas)
         {
             if (null == definitions)
