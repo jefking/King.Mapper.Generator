@@ -106,8 +106,7 @@
                 throw new ArgumentNullException("schemas");
             }
 
-            return (from s in schemas
-                    select s.Map<Definition>()).Distinct(comparer);
+            return schemas.Select(s => s.Map<Definition>()).Distinct(comparer);
         }
 
         /// <summary>
