@@ -12,7 +12,7 @@
     {
         #region Methods
         /// <summary>
-        /// Load
+        /// Load Manifest (From Data Store)
         /// </summary>
         /// <returns>Manifest</returns>
         Task<IDictionary<int, IDefinition>> Load();
