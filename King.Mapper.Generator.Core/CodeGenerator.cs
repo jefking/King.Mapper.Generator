@@ -61,7 +61,7 @@
         {
             Trace.TraceInformation("Loading schema from data source.");
 
-            var manifest = await reader.Load();
+            var manifest = await reader.Load(SchemaTypes.StoredProcedure);
 
             Trace.TraceInformation("Loading renderers.");
 

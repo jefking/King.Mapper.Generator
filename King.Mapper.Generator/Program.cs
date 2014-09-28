@@ -54,10 +54,10 @@
 
             var code = args.Any(a => a.ToLowerInvariant() == "code");
 
-            var loader = new SchemaReader(connectionString);
+            var reader = new SchemaReader(connectionString);
             var factory = new RenderFactory(code, suite);
             var writer = new FileWriter(folder);
-            var codeGenerator = new CodeGenerator(loader, factory, writer);
+            var codeGenerator = new CodeGenerator(reader, factory, writer);
 
             try
             {
