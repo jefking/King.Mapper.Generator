@@ -12,9 +12,9 @@
     {
         #region Members
         /// <summary>
-        /// Data Loader
+        /// Schema Reader
         /// </summary>
-        private readonly IDataLoader loader = null;
+        private readonly ISchemaReader reader = null;
 
         /// <summary>
         /// File Writer
@@ -31,14 +31,11 @@
         /// <summary>
         /// Mockable Constructor
         /// </summary>
-        /// <param name="loader">Data Loader</param>
-        /// <param name="renderFactory">Render Factory</param>
-        /// <param name="writer">File Writer</param>
-        public CodeGenerator(IDataLoader loader, IRenderFactory renderFactory, IFileWriter writer)
+        public CodeGenerator(ISchemaReader reader, IRenderFactory renderFactory, IFileWriter writer)
         {
-            if (null == loader)
+            if (null == reader)
             {
-                throw new ArgumentNullException("loader");
+                throw new ArgumentNullException("reader");
             }
             if (null == renderFactory)
             {
@@ -49,7 +46,7 @@
                 throw new ArgumentNullException("writer");
             }
 
-            this.loader = loader;
+            this.reader = reader;
             this.renderFactory = renderFactory;
             this.writer = writer;
         }
@@ -64,7 +61,7 @@
         {
             Trace.TraceInformation("Loading schema from data source.");
 
-            var manifest = await loader.Load();
+            var manifest = await reader.Load();
 
             Trace.TraceInformation("Loading renderers.");
 

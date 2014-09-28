@@ -14,7 +14,7 @@
         [Test]
         public void Constructor()
         {
-            var loader = Substitute.For<IDataLoader>();
+            var loader = Substitute.For<ISchemaReader>();
             var factory = Substitute.For<IRenderFactory>();
             var writer = Substitute.For<IFileWriter>();
 
@@ -35,7 +35,7 @@
         [ExpectedException(typeof(ArgumentNullException))]
         public void ConstructorFactoryNull()
         {
-            var loader = Substitute.For<IDataLoader>();
+            var loader = Substitute.For<ISchemaReader>();
             var writer = Substitute.For<IFileWriter>();
 
             new CodeGenerator(loader, null, writer);
@@ -45,7 +45,7 @@
         [ExpectedException(typeof(ArgumentNullException))]
         public void ConstructorWriterNull()
         {
-            var loader = Substitute.For<IDataLoader>();
+            var loader = Substitute.For<ISchemaReader>();
             var factory = Substitute.For<IRenderFactory>();
 
             new CodeGenerator(loader, factory, null);
@@ -55,7 +55,7 @@
         public async Task Generate()
         {
             var manifest = new Dictionary<int, IDefinition>();
-            var loader = Substitute.For<IDataLoader>();
+            var loader = Substitute.For<ISchemaReader>();
             loader.Load().Returns(Task.FromResult<IDictionary<int, IDefinition>>(manifest));
 
             var renderers = new List<IRender>();

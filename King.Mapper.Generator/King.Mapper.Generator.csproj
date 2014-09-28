@@ -40,8 +40,9 @@
     <ApplicationIcon>icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="King.Data.Sql.Reflection">
-      <HintPath>..\packages\King.Data.Sql.Reflection.0.0.2\lib\net451\King.Data.Sql.Reflection.dll</HintPath>
+    <Reference Include="King.Data.Sql.Reflection, Version=1.0.0.4, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\King.Data.Sql.Reflection.1.0.0\lib\net451\King.Data.Sql.Reflection.dll</HintPath>
     </Reference>
     <Reference Include="King.Mapper">
       <HintPath>..\packages\King.Mapper.1.7.7\lib\net451\King.Mapper.dll</HintPath>

@@ -54,7 +54,7 @@
 
             var code = args.Any(a => a.ToLowerInvariant() == "code");
 
-            var loader = new DataLoader(connectionString);
+            var loader = new SchemaReader(connectionString);
             var factory = new RenderFactory(code, suite);
             var writer = new FileWriter(folder);
             var codeGenerator = new CodeGenerator(loader, factory, writer);
