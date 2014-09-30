@@ -39,7 +39,7 @@
         /// </summary>
         /// <param name="manifest">Manifest</param>
         /// <returns>Renderers</returns>
-        public virtual IEnumerable<IRender> Load(IDictionary<int, IDefinition> manifest)
+        public virtual IEnumerable<IRender> Load(IEnumerable<IDefinition> manifest)
         {
             if (null == manifest)
             {

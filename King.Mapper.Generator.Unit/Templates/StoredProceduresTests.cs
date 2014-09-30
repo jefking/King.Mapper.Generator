@@ -23,7 +23,7 @@
         [Test]
         public void Manifest()
         {
-            var expected = new Dictionary<int, IDefinition>();
+            var expected = new List<IDefinition>();
             var sp = new StoredProcedures()
             {
                 Manifest = expected,
@@ -37,7 +37,7 @@
         {
             var sp = new StoredProcedures()
             {
-                Manifest = new Dictionary<int, IDefinition>(),
+                Manifest = new List<IDefinition>(),
             };
 
             Assert.IsFalse(string.IsNullOrWhiteSpace(sp.TransformText()));

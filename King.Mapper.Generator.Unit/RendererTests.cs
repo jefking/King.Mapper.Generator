@@ -14,14 +14,14 @@
         public void Constructor()
         {
             var template = Substitute.For<IManifestTemplate>();
-            new Renderer(template, new Dictionary<int, IDefinition>(), Guid.NewGuid().ToString());
+            new Renderer(template, new List<IDefinition>(), Guid.NewGuid().ToString());
         }
 
         [Test]
         public void IsIRender()
         {
             var template = Substitute.For<IManifestTemplate>();
-            Assert.IsNotNull(new Renderer(template, new Dictionary<int, IDefinition>(), Guid.NewGuid().ToString()) as IRender);
+            Assert.IsNotNull(new Renderer(template, new List<IDefinition>(), Guid.NewGuid().ToString()) as IRender);
         }
 
         [Test]
@@ -36,7 +36,7 @@
         [ExpectedException(typeof(ArgumentNullException))]
         public void ConstructorTemplateNull()
         {
-            new Renderer(null, new Dictionary<int, IDefinition>(), Guid.NewGuid().ToString());
+            new Renderer(null, new List<IDefinition>(), Guid.NewGuid().ToString());
         }
 
         [Test]
@@ -44,7 +44,7 @@
         public void ConstructorFileNull()
         {
             var template = Substitute.For<IManifestTemplate>();
-            new Renderer(template, new Dictionary<int, IDefinition>(), null);
+            new Renderer(template, new List<IDefinition>(), null);
         }
 
         [Test]
@@ -52,7 +52,7 @@
         {
             var file = Guid.NewGuid().ToString();
             var template = Substitute.For<IManifestTemplate>();
-            var c = new Renderer(template, new Dictionary<int, IDefinition>(), file);
+            var c = new Renderer(template, new List<IDefinition>(), file);
             Assert.AreEqual(file, c.FileName);
         }
 
@@ -61,7 +61,7 @@
         {
             var template = Substitute.For<IManifestTemplate>();
             template.TransformText().Returns(Guid.NewGuid().ToString());
-            var c = new Renderer(template, new Dictionary<int, IDefinition>(), Guid.NewGuid().ToString());
+            var c = new Renderer(template, new List<IDefinition>(), Guid.NewGuid().ToString());
             var output = c.Render();
 
             template.Received().TransformText();

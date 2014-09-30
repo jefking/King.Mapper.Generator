@@ -12,7 +12,7 @@
         /// <summary>
         /// Gets or sets Manifest
         /// </summary>
-        public virtual IDictionary<int, IDefinition> Manifest
+        public virtual IEnumerable<IDefinition> Manifest
         {
             get;
             set;

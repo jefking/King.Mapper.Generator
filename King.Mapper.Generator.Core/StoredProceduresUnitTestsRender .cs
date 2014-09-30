@@ -13,7 +13,7 @@
         /// <summary>
         /// Default Constructor
         /// </summary>
-        public StoredProceduresUnitTestsRender(IDictionary<int, IDefinition> manifest, TestSuite suite = TestSuite.MSTest)
+        public StoredProceduresUnitTestsRender(IEnumerable<IDefinition> manifest, TestSuite suite = TestSuite.MSTest)
             : base(new StoredProceduresUnitTests(suite), manifest, "StoredProcedures.Unit.Test.Generated.cs")
         {
         }

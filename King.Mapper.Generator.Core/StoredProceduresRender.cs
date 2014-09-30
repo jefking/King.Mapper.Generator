@@ -13,7 +13,7 @@
         /// <summary>
         /// Default Constructor
         /// </summary>
-        public StoredProceduresRender(IDictionary<int, IDefinition> manifest)
+        public StoredProceduresRender(IEnumerable<IDefinition> manifest)
             : base(new StoredProcedures(), manifest, "StoredProcedures.Generated.cs")
         {
         }

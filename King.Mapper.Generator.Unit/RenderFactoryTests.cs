@@ -19,7 +19,7 @@
         public void Load()
         {
             var factory = new RenderFactory(true);
-            var renderers = factory.Load(new Dictionary<int, IDefinition>());
+            var renderers = factory.Load(new List<IDefinition>());
 
             Assert.IsNotNull(renderers);
             Assert.AreEqual(1, renderers.Count());
@@ -29,7 +29,7 @@
         public void LoadMSTest()
         {
             var factory = new RenderFactory(false, TestSuite.MSTest);
-            var renderers = factory.Load(new Dictionary<int, IDefinition>());
+            var renderers = factory.Load(new List<IDefinition>());
 
             Assert.IsNotNull(renderers);
             Assert.AreEqual(1, renderers.Count());
@@ -39,7 +39,7 @@
         public void LoadNUnitTest()
         {
             var factory = new RenderFactory(false, TestSuite.NUnit);
-            var renderers = factory.Load(new Dictionary<int, IDefinition>());
+            var renderers = factory.Load(new List<IDefinition>());
 
             Assert.IsNotNull(renderers);
             Assert.AreEqual(1, renderers.Count());

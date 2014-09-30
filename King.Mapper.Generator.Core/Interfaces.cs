@@ -57,7 +57,7 @@
         /// </summary>
         /// <param name="manifest">Manifest</param>
         /// <returns>Renderers</returns>
-        IEnumerable<IRender> Load(IDictionary<int, IDefinition> manifest);
+        IEnumerable<IRender> Load(IEnumerable<IDefinition> manifest);
         #endregion
     }
     #endregion

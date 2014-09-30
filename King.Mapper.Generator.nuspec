@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>King.Mapper.Generator</id>
-        <version>1.2.1</version>
+        <version>1.2.2</version>
         <title>King.Mapper.Generator</title>
         <authors>Jef King</authors>
         <owners>Jef King</owners>
@@ -12,7 +12,7 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>Generate a data access layer for your SQL Server database for use with the King.Mapper framework.</description>
         <summary>Why write your own DAL when you can get it for free? SQL Server C# generation from Stored Procedure definitions.</summary>
-        <releaseNotes>All methods and properties marked virtual</releaseNotes>
+        <releaseNotes>Update NuGet packages and verified compatability.</releaseNotes>
         <copyright>Jef King</copyright>
         <language>en-US</language>
         <tags>King.Mapper.Generator Code Generation King.Mapper DAL Data Access Layer Stored Procedure SQL Server Azure Database DBO SPROC ORM Relational NUnit MSTest King.Mapper King.Data.Sql.Reflection</tags>
