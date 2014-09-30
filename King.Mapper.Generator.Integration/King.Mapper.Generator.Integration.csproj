@@ -38,12 +38,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="King.Data.Sql.Reflection, Version=1.0.0.4, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="King.Data.Sql.Reflection, Version=1.0.0.5, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\King.Data.Sql.Reflection.1.0.0\lib\net451\King.Data.Sql.Reflection.dll</HintPath>
+      <HintPath>..\packages\King.Data.Sql.Reflection.1.0.1\lib\net451\King.Data.Sql.Reflection.dll</HintPath>
     </Reference>
-    <Reference Include="King.Mapper">
-      <HintPath>..\packages\King.Mapper.1.7.7\lib\net451\King.Mapper.dll</HintPath>
+    <Reference Include="King.Mapper, Version=1.3.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\King.Mapper.1.7.8\lib\net451\King.Mapper.dll</HintPath>
     </Reference>
     <Reference Include="NSubstitute">
       <HintPath>..\packages\NSubstitute.1.7.2.0\lib\NET45\NSubstitute.dll</HintPath>
