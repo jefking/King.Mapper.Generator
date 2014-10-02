@@ -15,7 +15,7 @@
         /// <summary>
         /// Folder
         /// </summary>
-        private readonly string folder = null;
+        protected readonly string folder = null;
         #endregion
 
         #region Constructor

@@ -13,12 +13,12 @@
         /// <summary>
         /// Test Code
         /// </summary>
-        private readonly TestSuite suite = TestSuite.None;
+        protected readonly TestSuite suite = TestSuite.None;
 
         /// <summary>
         /// Generate Code
         /// </summary>
-        private readonly bool generateCode = true;
+        protected readonly bool generateCode = true;
         #endregion
 
         #region Constructors

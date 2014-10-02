@@ -3,7 +3,7 @@
     /// <summary>
     /// Test Suites
     /// </summary>
-    public enum TestSuite
+    public enum TestSuite : byte
     {
         None = 0,
         MSTest = 1,

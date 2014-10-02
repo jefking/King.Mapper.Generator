@@ -2,6 +2,20 @@
 {
     using King.Data.Sql.Reflection.Models;
     using System.Collections.Generic;
+    using System.Threading.Tasks;
+
+    #region ICodeGenerator
+    public interface ICodeGenerator
+    {
+        #region Methods
+        /// <summary>
+        /// Generate Code
+        /// </summary>
+        /// <returns>Threading Task</returns>
+        Task Generate();
+        #endregion
+    }
+    #endregion
 
     #region IRender
     /// <summary>

@@ -4,7 +4,7 @@
     using System.Collections.Generic;
 
     /// <summary>
-    /// 
+    /// Manifest interface
     /// </summary>
     public interface IManifest
     {
@@ -21,15 +21,15 @@
     }
     
     /// <summary>
-    /// 
+    /// Manifest Temlate interface
     /// </summary>
     public interface IManifestTemplate : IManifest
     {
         #region Methods
         /// <summary>
-        /// 
+        /// Transform Text
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Text</returns>
         string TransformText();
         #endregion
     }

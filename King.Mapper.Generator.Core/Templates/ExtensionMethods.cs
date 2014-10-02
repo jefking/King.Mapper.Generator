@@ -26,8 +26,7 @@
             {
                 if (word.Length > 0)
                 {
-                    sb.Append(char.ToUpper(word[0]));
-                    sb.Append(word.Substring(1).ToLower());
+                    sb.AppendFormat("{0}{1}", char.ToUpper(word[0]), word.Substring(1).ToLower());
                 }
                 sb.Append(' ');
             }

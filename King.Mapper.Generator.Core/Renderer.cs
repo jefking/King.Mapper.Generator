@@ -14,12 +14,12 @@
         /// <summary>
         /// File Name
         /// </summary>
-        private readonly string fileName = null;
+        protected readonly string fileName = null;
 
         /// <summary>
         /// Template to Render
         /// </summary>
-        private readonly IManifestTemplate template = null;
+        protected readonly IManifestTemplate template = null;
         #endregion
 
         #region Constructors

@@ -8,23 +8,23 @@
     /// <summary>
     /// Code Generaetor
     /// </summary>
-    public class CodeGenerator
+    public class CodeGenerator  : ICodeGenerator
     {
         #region Members
         /// <summary>
         /// Schema Reader
         /// </summary>
-        private readonly ISchemaReader reader = null;
+        protected readonly ISchemaReader reader = null;
 
         /// <summary>
         /// File Writer
         /// </summary>
-        private readonly IFileWriter writer = null;
+        protected readonly IFileWriter writer = null;
 
         /// <summary>
         /// Render Factory
         /// </summary>
-        private readonly IRenderFactory renderFactory = null;
+        protected readonly IRenderFactory renderFactory = null;
         #endregion
 
         #region Constructors
