@@ -27,6 +27,8 @@
                 case "ntext":
                 case "text":
                 case "string":
+                case "char":
+                case "nchar":
                     return "string";
                 case "int":
                     return "int?";
@@ -49,9 +51,6 @@
                     return "Guid?";
                 case "float":
                     return "float?";
-                case "char":
-                case "nchar":
-                    return "char";
                 case "binary":
                 case "image":
                     return "byte[]";
@@ -80,6 +79,7 @@
                 case "text":
                 case "string":
                 case "nchar":
+                case "char":
                     return "DbType.String";
                 case "int":
                     return "DbType.Int32";
@@ -88,7 +88,6 @@
                 case "tinyint":
                     return "DbType.Byte";
                 case "smallint":
-                case "char":
                     return "DbType.Int16";
                 case "money":
                     return "DbType.Currency";

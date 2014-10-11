@@ -60,7 +60,7 @@
                 Assert.AreEqual(sproc.TestDateTime2.Value.Date, obj.DateTime2.Date);
                 Assert.AreEqual(sproc.TestDate.Value.Date, obj.Date.Date);
                 Assert.AreEqual(sproc.TestFloat, obj.Float);
-                Assert.AreEqual(sproc.TestNChar, obj.NChar);
+                Assert.AreEqual(sproc.TestNChar, obj.NChar.ToString());
                 Assert.AreEqual(sproc.TestText, obj.Text);
                 CollectionAssert.AreEqual(sproc.TestBinary, obj.Binary);
                 CollectionAssert.AreEqual(sproc.TestImage, obj.Image);
@@ -75,14 +75,14 @@
                 TestInt = random.Next(),
                 TestBigInt = random.Next(),
                 TestBit = true,
-                TestChar = 'x',
+                TestChar = "x",
                 TestDate = DateTime.UtcNow,
                 TestDateTime = DateTime.UtcNow,
                 TestDateTime2 = DateTime.UtcNow,
                 TestDecimal = Convert.ToDecimal(random.NextDouble()),
                 TestFloat = Convert.ToSingle(random.NextDouble()),
                 TestMoney = Convert.ToDecimal(random.NextDouble()),
-                TestNChar = 'y',
+                TestNChar = "y",
                 TestNText = Guid.NewGuid().ToString(),
                 TestText = Guid.NewGuid().ToString(),
                 TestGuid = Guid.NewGuid(),
