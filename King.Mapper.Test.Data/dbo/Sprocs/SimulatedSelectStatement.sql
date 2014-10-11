@@ -15,6 +15,7 @@
 	, @TestBinary binary(64) = NULL
 	, @TestImage image = NULL
 	, @TestGuid uniqueidentifier = NULL
+	, @TestXml xml = NULL
 AS
 BEGIN
 
@@ -34,5 +35,6 @@ BEGIN
 		, @TestBinary AS 'Binary'
 		, @TestImage AS 'Image'
 		, @TestGuid AS 'Unique'
+		, @TestXml AS 'Xml'
 
 END
