@@ -256,6 +256,16 @@ namespace King.Mapper.Generated.Sql
 			set;
 		}
 
+        /// <summary>
+        /// Gets or sets the parameter value
+        /// </summary>
+		[DataMapper("@TestXml", DbType.String)]
+		public virtual string TestXml
+		{
+			get;
+			set;
+		}
+
 		#endregion
 	}
 

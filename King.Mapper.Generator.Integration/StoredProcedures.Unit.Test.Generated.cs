@@ -530,6 +530,29 @@ namespace King.Mapper.Generated.Sql
             Assert.AreEqual(DbType.Guid, mapper.DatabaseType);
 		}
 
+		[Test]
+		public void TestxmlGetSet()
+		{
+			var item = new dboSimulatedSelectStatement();
+			var expected = Guid.NewGuid().ToString();
+			item.TestXml = expected;
+			Assert.AreEqual(expected, item.TestXml);
+		}
+		
+		[Test]
+		public void TestxmlDataMapper()
+		{
+			var item = new dboSimulatedSelectStatement();
+            var property = (from prop in item.GetProperties()
+                           where prop.Name == "TestXml"
+                           select prop).FirstOrDefault();
+            Assert.IsNotNull(property);
+            var mapper = property.GetAttribute<DataMapperAttribute>();
+            Assert.IsNotNull(mapper);
+            Assert.AreEqual("@TestXml", mapper.ParameterName);
+            Assert.AreEqual(DbType.String, mapper.DatabaseType);
+		}
+
 		#endregion
 	}
 

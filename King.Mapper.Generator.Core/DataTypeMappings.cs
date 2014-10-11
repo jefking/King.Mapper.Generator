@@ -29,6 +29,7 @@
                 case "string":
                 case "char":
                 case "nchar":
+                case "xml":
                     return "string";
                 case "int":
                     return "int?";
@@ -80,6 +81,7 @@
                 case "string":
                 case "nchar":
                 case "char":
+                case "xml":
                     return "DbType.String";
                 case "int":
                     return "DbType.Int32";

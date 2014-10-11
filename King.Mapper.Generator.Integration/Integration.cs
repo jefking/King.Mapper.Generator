@@ -62,6 +62,7 @@
                 Assert.AreEqual(sproc.TestFloat, obj.Float);
                 Assert.AreEqual(sproc.TestNChar, obj.NChar.ToString());
                 Assert.AreEqual(sproc.TestText, obj.Text);
+                Assert.AreEqual(sproc.TestXml, obj.Xml);
                 CollectionAssert.AreEqual(sproc.TestBinary, obj.Binary);
                 CollectionAssert.AreEqual(sproc.TestImage, obj.Image);
             }
@@ -86,6 +87,7 @@
                 TestNText = Guid.NewGuid().ToString(),
                 TestText = Guid.NewGuid().ToString(),
                 TestGuid = Guid.NewGuid(),
+                TestXml = "<data />"
             };
 
             data.TestBinary = new byte[64];
