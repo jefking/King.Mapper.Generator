@@ -1,7 +1,6 @@
 Generate a data access layer for your SQL Server database for use with the [King.Mapper](https://github.com/jefking/King.Mapper) framework.
 
-## NuGet
-[Add via NuGet](https://www.nuget.org/packages/King.Mapper.Generator)
+## [NuGet](https://www.nuget.org/packages/King.Mapper.Generator)
 ```
 PM> Install-Package King.Mapper.Generator
 ```
