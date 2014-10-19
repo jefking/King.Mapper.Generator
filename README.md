@@ -1,4 +1,10 @@
 Generate a data access layer for your SQL Server database for use with the [King.Mapper](https://github.com/jefking/King.Mapper) framework.
++ Generate Data Access Layer, per-compile
++ Ensure DAL reflects current SQL Server
++ C# output for custom usages
++ Test Case Generation in [NUnit](http://http://nunit.org/) & MSTest
++ Fully mockable
++ Fully extendable
 
 ## [NuGet](https://www.nuget.org/packages/King.Mapper.Generator)
 ```
