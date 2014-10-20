@@ -10,7 +10,7 @@
         <projectUrl>https://github.com/jefking/King.Mapper.Generator</projectUrl>
         <iconUrl>https://raw.githubusercontent.com/jefking/King.Mapper.Generator/master/icon.png</iconUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <description>Generate a data access layer for your SQL Server database for use with the King.Mapper framework.</description>
+        <description>DAL generation for SQL Server</description>
         <summary>Why write your own DAL when you can get it for free? SQL Server C# generation from Stored Procedure definitions.</summary>
         <releaseNotes>Handle XML Data types and NChar/Char with string.</releaseNotes>
         <copyright>Jef King</copyright>
