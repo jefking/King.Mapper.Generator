@@ -1,4 +1,4 @@
-### Generate a data access layer for SQL Server database, using [King.Mapper](https://github.com/jefking/King.Mapper) framework.
+### DAL generation for SQL Server, using [King.Mapper](https://github.com/jefking/King.Mapper) framework.
 + Generate Data Access Layer, per-compile
 + Ensure DAL reflects current SQL Server
 + C# output for custom usages
