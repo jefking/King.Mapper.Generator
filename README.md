@@ -1,4 +1,4 @@
-Generate a data access layer for your SQL Server database for use with the [King.Mapper](https://github.com/jefking/King.Mapper) framework.
+### Generate a data access layer for SQL Server database, using [King.Mapper](https://github.com/jefking/King.Mapper) framework.
 + Generate Data Access Layer, per-compile
 + Ensure DAL reflects current SQL Server
 + C# output for custom usages
@@ -6,7 +6,7 @@ Generate a data access layer for your SQL Server database for use with the [King
 + Fully mockable
 + Fully extendable
 
-## [NuGet](https://www.nuget.org/packages/King.Mapper.Generator)
+### [NuGet](https://www.nuget.org/packages/King.Mapper.Generator)
 ```
 PM> Install-Package King.Mapper.Generator
 ```
