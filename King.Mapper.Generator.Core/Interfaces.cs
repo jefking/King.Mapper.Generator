@@ -5,6 +5,9 @@
     using System.Threading.Tasks;
 
     #region ICodeGenerator
+    /// <summary>
+    /// Code Generator Interface
+    /// </summary>
     public interface ICodeGenerator
     {
         #region Methods

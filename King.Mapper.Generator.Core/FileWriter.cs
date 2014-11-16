@@ -22,7 +22,6 @@
         /// <summary>
         /// Constructor
         /// </summary>
-        /// <param name="renderers">Renderers</param>
         /// <param name="folder">Output Folder</param>
         public FileWriter(string folder)
         {
@@ -47,12 +46,11 @@
             }
             
             Parallel.ForEach(renderers, renderer =>
-                {
-                    Trace.TraceInformation("Writing file '{0}' in folder: '{1}'.", renderer.FileName, folder);
+            {
+                Trace.TraceInformation("Writing file '{0}' in folder: '{1}'.", renderer.FileName, folder);
 
-                    File.WriteAllText(string.Format("{0}{1}", folder, renderer.FileName), renderer.Render());
-                }
-            );
+                File.WriteAllText(string.Format("{0}{1}", folder, renderer.FileName), renderer.Render());
+            });
         }
         #endregion
     }
