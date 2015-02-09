@@ -41,9 +41,9 @@
     <ApplicationIcon>icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="King.Data.Sql.Reflection, Version=1.0.0.6, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="King.Data.Sql.Reflection, Version=1.0.0.8, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\King.Data.Sql.Reflection.1.0.2\lib\net451\King.Data.Sql.Reflection.dll</HintPath>
+      <HintPath>..\packages\King.Data.Sql.Reflection.1.0.3\lib\net45\King.Data.Sql.Reflection.dll</HintPath>
     </Reference>
     <Reference Include="King.Mapper, Version=1.3.1.4, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
