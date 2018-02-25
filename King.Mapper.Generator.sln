@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "King.Mapper.Generator", "King.Mapper.Generator\King.Mapper.Generator.csproj", "{1D1DA9ED-7D16-47AE-A718-F989EF97EA47}"
 EndProject
@@ -10,13 +10,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "King.Mapper.Generator.Core", "King.Mapper.Generator.Core\King.Mapper.Generator.Core.csproj", "{1AE5BE5C-13AD-4E25-9ACD-0AFC587B6587}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "King.Mapper.Generator.Unit", "King.Mapper.Generator.Unit\King.Mapper.Generator.Unit.csproj", "{DBD15692-DF69-47CC-862C-71571E6F6670}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{453E5ED0-8189-410B-89A1-D41F536596C0}"
-	ProjectSection(SolutionItems) = preProject
-		.nuget\NuGet.Config = .nuget\NuGet.Config
-		.nuget\NuGet.exe = .nuget\NuGet.exe
-		.nuget\NuGet.targets = .nuget\NuGet.targets
-	EndProjectSection
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "King.Mapper.Test.Data", "King.Mapper.Test.Data\King.Mapper.Test.Data.sqlproj", "{8075CCC9-EF9B-4BC4-ADA6-A3612C91981E}"
 EndProject
@@ -64,5 +57,8 @@ Global
 		{DBD15692-DF69-47CC-862C-71571E6F6670} = {BF933523-B789-4573-B378-129B8E3AF699}
 		{8075CCC9-EF9B-4BC4-ADA6-A3612C91981E} = {BF933523-B789-4573-B378-129B8E3AF699}
 		{2234E374-61FF-4B85-9EE8-C33858D6B351} = {BF933523-B789-4573-B378-129B8E3AF699}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {27CE9763-E246-43D7-88F3-FF57076B6AC0}
 	EndGlobalSection
 EndGlobal
