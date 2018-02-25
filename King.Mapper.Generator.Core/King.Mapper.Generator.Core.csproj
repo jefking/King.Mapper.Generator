@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>King.Mapper.Generator</RootNamespace>
     <AssemblyName>King.Mapper.Generator.Core</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
@@ -43,8 +43,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\King.Data.Sql.Reflection.1.0.3\lib\net45\King.Data.Sql.Reflection.dll</HintPath>
     </Reference>
-    <Reference Include="King.Mapper, Version=1.3.1.4, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="King.Mapper">
       <HintPath>..\packages\King.Mapper.1.7.14\lib\net45\King.Mapper.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
