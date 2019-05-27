@@ -14,3 +14,6 @@ PM> Install-Package King.Mapper.Generator
 
 ### [Wiki](https://github.com/jefking/King.Mapper.Generator/wiki)
 View the wiki to learn how to use this.
+
+### CI
+[![Build status](https://dev.azure.com/jefkin/oss/_apis/build/status/King.Mapper.Generator)](https://dev.azure.com/jefkin/oss/_build/latest?definitionId=21)
